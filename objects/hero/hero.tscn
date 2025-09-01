@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8421kh2irmhm"]
+[gd_scene load_steps=4 format=3 uid="uid://c8421kh2irmhm"]
 
 [ext_resource type="Script" uid="uid://draeexon34i3b" path="res://objects/hero/hero.gd" id="1_5qjx0"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="2_n56uh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5qjx0"]
+radius = 56.0
+height = 192.0
 
 [node name="Hero" type="Node2D"]
 script = ExtResource("1_5qjx0")
@@ -10,3 +14,11 @@ script = ExtResource("1_5qjx0")
 position = Vector2(0, -7.62939e-06)
 scale = Vector2(0.22195, 0.22195)
 texture = ExtResource("2_n56uh")
+
+[node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_5qjx0")
+
+[connection signal="area_entered" from="Area2D" to="." method="on_hit"]
