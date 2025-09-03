@@ -4,7 +4,7 @@ signal correct_word_entered()
 signal incorrect_character_entered()
 signal typing_complete()
 
-var current_text: String = "The quick brown fox jumped over the lazy dog"
+var current_text: String = "The quick brown fox jumps over the lazy dog"
 
 const allowed_characters = [
 	'A','B','C','D','E','F','G','H','I',
@@ -58,7 +58,13 @@ func _input(event: InputEvent) -> void:
 			delete_character()
 		elif event.keycode == KEY_SPACE:
 			add_character(' ')
+		elif event.keycode == KEY_PERIOD:
+			add_character('.')
+		elif event.keycode == KEY_COMMA:
+			add_character(',')
 		elif OS.get_keycode_string(event.keycode) in allowed_characters:
 			# Pressed key to enter text
 			var key = OS.get_keycode_string(event.keycode)
 			add_character(key)
+		else:
+			print('Ignoring key press: ' + OS.get_keycode_string(event.keycode))
