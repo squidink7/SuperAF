@@ -1,3 +1,144 @@
-[gd_scene format=3 uid="uid://b56n5pjnbnu3j"]
+[gd_scene load_steps=3 format=3 uid="uid://b56n5pjnbnu3j"]
 
-[node name="Login" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_pymad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pymad"]
+bg_color = Color(0.16261, 0.143209, 0.210806, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Login" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = -188.0
+offset_right = 371.0
+offset_bottom = -124.0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Keyboard Warriors"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = -91.0
+offset_right = 336.0
+offset_bottom = -68.0
+grow_vertical = 2
+text = "I am a"
+horizontal_alignment = 1
+
+[node name="StudentButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = -36.0
+offset_right = 304.0
+offset_bottom = -4.0
+grow_vertical = 2
+text = "Student"
+
+[node name="TeacherButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_top = 28.0
+offset_right = 304.0
+offset_bottom = 60.0
+grow_vertical = 2
+text = "Teacher"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 576.0
+offset_top = 128.0
+offset_right = -88.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pymad")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="IDPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -132.0
+offset_right = 216.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pymad")
+
+[node name="LineEdit" type="LineEdit" parent="IDPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 20.0
+offset_right = 172.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="IDPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 68.0
+offset_right = 172.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm"
+
+[node name="Label" type="Label" parent="IDPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -68.0
+offset_right = 132.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Please Enter ID"
+horizontal_alignment = 1

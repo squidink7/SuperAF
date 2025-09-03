@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://cgp2iebbyf76s"]
 
-[node name="Admin Page" type="Node2D"]
+[node name="Admin Page" type="Control"]
+layout_mode = 3
+anchors_preset = 0
