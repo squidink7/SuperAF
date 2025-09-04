@@ -13,6 +13,8 @@ const allowed_characters = [
 	'.',',',';','?','!'
 ]
 
+const LOOKAHEAD = 2
+
 var current_word: int = 0
 var typed_text: String = ""
 var prompt_text: String = ""
@@ -24,13 +26,15 @@ func update_text():
 	$InputLabel.text = typed_text
 
 func update_prompt():
-	var new_prompt = current_text.split(" ").slice(0, current_word+1)
+	var new_prompt = current_text.split(" ").slice(0, current_word+LOOKAHEAD)
 	prompt_text = " ".join(new_prompt)
 	$PromptLabel.text = prompt_text
 
 func add_character(chr: String):	
+	var correct = false
 	if current_text.length() > typed_text.length() && current_text[typed_text.length()].to_upper() == chr:
 		chr = current_text[typed_text.length()]
+		correct = true
 	else:
 		incorrect_character_entered.emit()
 	
@@ -38,7 +42,7 @@ func add_character(chr: String):
 	
 	update_text()
 
-	if typed_text == prompt_text:
+	if correct && chr == ' ':
 		current_word += 1
 		update_prompt()
 		correct_word_entered.emit()
