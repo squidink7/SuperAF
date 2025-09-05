@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d1wuknvb1iawb"
+path="res://.godot/imported/Missile Launch.wav-6d1ed016b95ebd103858c1e4f52bae2b.sample"
+
+[deps]
+
+source_file="res://sounds/UI sounds/button click/Missile Launch.wav"
+dest_files=["res://.godot/imported/Missile Launch.wav-6d1ed016b95ebd103858c1e4f52bae2b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
