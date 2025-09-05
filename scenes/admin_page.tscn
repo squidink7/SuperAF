@@ -1,5 +1,47 @@
-[gd_scene format=3 uid="uid://cgp2iebbyf76s"]
+[gd_scene load_steps=6 format=3 uid="uid://cgp2iebbyf76s"]
+
+[ext_resource type="Texture2D" uid="uid://dcuj1bda2ies4" path="res://assets/textures/UI/Backgrounds/background.png" id="1_cdovq"]
+[ext_resource type="Texture2D" uid="uid://dp8b1kj216nxw" path="res://assets/textures/UI/Backgrounds/button group background.png" id="2_ktobt"]
+[ext_resource type="Texture2D" uid="uid://duwsiaqp7vnoh" path="res://assets/textures/UI/Buttons/checkbox.png" id="3_xrmyy"]
+[ext_resource type="Texture2D" uid="uid://dy4c5w8ri874i" path="res://assets/textures/UI/Buttons/long button.png" id="4_av1fa"]
+[ext_resource type="Texture2D" uid="uid://bqm0kyqgo6odw" path="res://assets/textures/UI/Buttons/thick long button.png" id="5_q218w"]
 
 [node name="Admin Page" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(950, 377)
+texture = ExtResource("1_cdovq")
+
+[node name="ButtonGroupBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(759.149, 1311.5)
+scale = Vector2(0.656095, 2.55833)
+texture = ExtResource("2_ktobt")
+
+[node name="Checkbox" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1219, 95)
+scale = Vector2(0.446, 0.446)
+texture = ExtResource("3_xrmyy")
+
+[node name="LongButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(624, 92)
+scale = Vector2(0.442, 0.442)
+texture = ExtResource("4_av1fa")
+
+[node name="ThickLongButton" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(751.375, 524.688)
+scale = Vector2(0.579625, 0.582625)
+texture = ExtResource("5_q218w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
