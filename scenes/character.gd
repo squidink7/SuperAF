@@ -1,0 +1,37 @@
+extends CharacterBody2D
+
+signal game_over
+
+@export var maxLives: int
+@export var lives: int:
+
+	set(value):
+		lives = clamp(value,0, maxLives)
+	
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+	
+
+func _on_game_logic_manager_life_lost() -> void:
+		lives -= 1
+		print("Life lost, current: " + str(lives))
+		
+		
+		if (lives <= 0):
+			game_over.emit()
+		
+		#TODO: Play animation
+
+
+func _on_game_logic_manager_life_gain() -> void:
+	lives += 1
+	print("Life lost, current " + str(lives))
+	#TODO: Play animation
