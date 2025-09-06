@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctaboy2ynsoel"]
+
+[ext_resource type="PackedScene" uid="uid://c1gincyh23502" path="res://scenes/character.tscn" id="1_qucyr"]
+[ext_resource type="Script" uid="uid://c545cdpty8qhe" path="res://scenes/visualisations/visualisation.gd" id="1_y3pbu"]
+
+[sub_resource type="Animation" id="Animation_kmt88"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("World/Character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(528, 288)]
+}
+
+[sub_resource type="Animation" id="Animation_y3pbu"]
+resource_name = "fail"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Character:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.261799, 0.261799, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mm13q"]
+resource_name = "success"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(528, 288), Vector2(528, 264), Vector2(528, 288), Vector2(528, 264), Vector2(528, 288)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mm13q"]
+_data = {
+&"RESET": SubResource("Animation_kmt88"),
+&"fail": SubResource("Animation_y3pbu"),
+&"success": SubResource("Animation_mm13q")
+}
+
+[node name="Visualisation" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_y3pbu")
+
+[node name="Viewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="World" type="Node2D" parent="Viewport"]
+
+[node name="Camera" type="Camera2D" parent="Viewport/World"]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+
+[node name="Character" parent="Viewport/World" instance=ExtResource("1_qucyr")]
+position = Vector2(528, 288)
+
+[node name="Animation" type="AnimationPlayer" parent="Viewport"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_mm13q")
+}
