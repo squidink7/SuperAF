@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 64.0
-offset_right = -784.0
+offset_right = -848.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -33,9 +33,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 408.0
+offset_left = 328.0
 offset_top = 64.0
-offset_right = -256.0
+offset_right = -432.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -56,6 +56,14 @@ offset_right = 91.0
 offset_bottom = 47.0
 text = "< Back"
 
+[node name="GoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 520.0
+offset_right = 1000.0
+offset_bottom = 616.0
+text = "GO!"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 112.0
@@ -64,3 +72,17 @@ offset_right = 261.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 24
 text = "Select lesson"
+
+[node name="DifficultySelectPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 64.0
+offset_right = 1000.0
+offset_bottom = 256.0
+
+[node name="GameModePanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 272.0
+offset_right = 1000.0
+offset_bottom = 504.0

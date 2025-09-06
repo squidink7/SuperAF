@@ -15,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 64.0
-offset_right = -784.0
+offset_right = -927.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -28,17 +28,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="QuizCheck" type="CheckBox" parent="TopicsPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TopicsPanel/Topics"]
+custom_minimum_size = Vector2(200, 550)
+layout_mode = 2
+
+[node name="Topic" type="Panel" parent="TopicsPanel"]
 layout_mode = 0
+offset_right = 200.0
+offset_bottom = 48.0
 
 [node name="LessonsPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 408.0
+offset_left = 251.0
 offset_top = 64.0
-offset_right = -256.0
+offset_right = -615.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -48,11 +54,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LessonCheck" type="CheckBox" parent="LessonsPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="LessonsPanel/Lessons"]
+custom_minimum_size = Vector2(290, 550)
+layout_mode = 2
+
+[node name="Lesson" type="Panel" parent="LessonsPanel"]
 layout_mode = 0
+offset_right = 285.0
+offset_bottom = 40.0
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
@@ -76,9 +90,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 408.0
+offset_left = 558.0
 offset_top = 64.0
-offset_right = -256.0
+offset_right = -46.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -88,5 +102,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -268.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StudentCheckPanel/StudentIDCheck"]
+custom_minimum_size = Vector2(270, 550)
+layout_mode = 2
