@@ -20,7 +20,6 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 
-
 [node name="Topics" type="ScrollContainer" parent="TopicsPanel"]
 layout_mode = 1
 anchors_preset = 15
@@ -28,6 +27,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="QuizCheck" type="CheckBox" parent="TopicsPanel"]
+layout_mode = 0
 
 [node name="LessonsPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -49,6 +51,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LessonCheck" type="CheckBox" parent="LessonsPanel"]
+layout_mode = 0
+
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 32.0
@@ -66,7 +71,7 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 24
 text = "Select lesson"
 
-[node name="StudentCheckPanel" type="Panel" parent='.']
+[node name="StudentCheckPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +83,6 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 
-
 [node name="StudentIDCheck" type="ScrollContainer" parent="StudentCheckPanel"]
 layout_mode = 1
 anchors_preset = 15
@@ -86,8 +90,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="LessonCheck" type="checkbox" parent="LessonsPanel"]
-
-
-[node name="QuizCheck" type="checkbox" parent="TopicsPanel"]
