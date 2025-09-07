@@ -35,7 +35,7 @@ func _on_terminal_correct_word_entered() -> void:
 	current_correct_count += 1
 	
 	if (current_correct_count >= correct_before_life_increase):
-		current_correct_count += 1
+		current_correct_count = 0
 		life_gain.emit()
 		
 

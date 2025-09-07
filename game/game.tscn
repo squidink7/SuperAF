@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://game/game.gd" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://game/terminal/terminal.tscn" id="2_h7iqs"]
-[ext_resource type="Script" path="res://scripts/data.gd" id="3_h7iqs"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://ctaboy2ynsoel" path="res://scenes/visualisations/visualisation.tscn" id="4_4fuuu"]
 

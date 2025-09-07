@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_game_logic_manager_life_lost() -> void:
+	
 	#TODO: Animation / change position
 	pass # Replace with function body.
 

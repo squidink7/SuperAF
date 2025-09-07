@@ -33,5 +33,5 @@ func _on_game_logic_manager_life_lost() -> void:
 
 func _on_game_logic_manager_life_gain() -> void:
 	lives += 1
-	print("Life lost, current " + str(lives))
+	print("Life gained, current " + str(lives))
 	#TODO: Play animation

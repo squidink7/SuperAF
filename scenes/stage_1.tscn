@@ -16,17 +16,17 @@ scale = Vector2(1.964, 0.295)
 texture = ExtResource("1_e77qm")
 
 [node name="Character" parent="." instance=ExtResource("2_kx1yv")]
-position = Vector2(265, 36)
+position = Vector2(523, 32)
 script = ExtResource("3_kx1yv")
 maxLives = 5
 lives = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Character"]
+[node name="Sprite2D2" type="Sprite2D" parent="Character"]
 scale = Vector2(0.1025, 0.1025)
 texture = ExtResource("3_e4xaw")
 
 [node name="Villian" type="CharacterBody2D" parent="."]
-position = Vector2(39, 41)
+position = Vector2(-77, 42)
 script = ExtResource("5_e4xaw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Villian"]
