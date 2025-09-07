@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_terminal_incorrect_character_entered() -> void:
+func typing_correct() -> void:
 	current_mistake_count += 1
 	
 	if (current_mistake_count >= mistakes_before_life_loss):
@@ -31,7 +31,7 @@ func _on_terminal_incorrect_character_entered() -> void:
 		life_lost.emit()
 		
 
-func _on_terminal_correct_word_entered() -> void:
+func typing_incorrect() -> void:
 	current_correct_count += 1
 	
 	if (current_correct_count >= correct_before_life_increase):

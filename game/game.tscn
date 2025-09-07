@@ -44,6 +44,6 @@ offset_right = -24.0
 offset_bottom = -224.0
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
-[connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="success"]
+[connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
-[connection signal="incorrect_character_entered" from="Terminal" to="Visualisation" method="fail"]
+[connection signal="incorrect_character_entered" from="Terminal" to="Visualisation" method="incorrect"]
