@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 signal game_over
 
-@export var maxLives: int
+@export var max_lives: int
 @export var lives: int:
 
 	set(value):
-		lives = clamp(value,0, maxLives)
+		lives = clamp(value,0, max_lives)
 	
 
 # Called when the node enters the scene tree for the first time.
