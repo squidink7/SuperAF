@@ -35,6 +35,7 @@ offset_bottom = 48.0
 grow_horizontal = 0
 
 [node name="Data" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_h7iqs")
 
 [node name="Visualisation" parent="." instance=ExtResource("4_4fuuu")]

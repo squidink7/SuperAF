@@ -1,3 +1,4 @@
+class_name Data
 extends Node
 
 
@@ -22,7 +23,7 @@ func _ready():
 	print(get_lessons('health'))
 	print(get_lesson('health', 'cardio'))
 
-func get_student(id: String) -> Student:
+static func get_student(id: String) -> Student:
 	var file = FileAccess.open("user://students/" + id, FileAccess.READ)
 	
 	if file == null:
@@ -37,7 +38,7 @@ func get_student(id: String) -> Student:
 		print('Error loading student')
 		return null
 
-func set_student(student: Student):
+static func set_student(student: Student):
 	DirAccess.make_dir_absolute("user://students/")
 	var file = FileAccess.open("user://students/" + student.id, FileAccess.WRITE)
 	
@@ -47,10 +48,10 @@ func set_student(student: Student):
 	
 	file.store_string(var_to_str(student))
 
-func get_topics() -> PackedStringArray:
+static func get_topics() -> PackedStringArray:
 	return DirAccess.get_directories_at('res://assets/text/')
 
-func get_lessons(topic: String) -> PackedStringArray:
+static func get_lessons(topic: String) -> PackedStringArray:
 	if !DirAccess.dir_exists_absolute('res://assets/text/' + topic):
 		return []
 	
@@ -63,7 +64,7 @@ func get_lessons(topic: String) -> PackedStringArray:
 	
 	return lessons
 
-func get_lesson(topic: String, lesson: String) -> String:
+static func get_lesson(topic: String, lesson: String) -> String:
 	var path = 'res://assets/text/' + topic + '/lessons/' + lesson + '.txt'
 	
 	if !FileAccess.file_exists(path):
