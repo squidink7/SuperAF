@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://iwyp1k14kx6y"]
+[gd_scene load_steps=7 format=3 uid="uid://iwyp1k14kx6y"]
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://game/game.gd" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://game/terminal/terminal.tscn" id="2_h7iqs"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://ctaboy2ynsoel" path="res://scenes/visualisations/visualisation.tscn" id="4_4fuuu"]
+[ext_resource type="AudioStream" uid="uid://ir6vagub2bwy" path="res://assets/SFX/Game SFX/incorrect.wav" id="5_dakft"]
+[ext_resource type="AudioStream" uid="uid://bwinosnrlhtc" path="res://assets/SFX/Game SFX/correct.wav" id="6_u5opy"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_vasa2")
@@ -43,6 +45,13 @@ offset_left = 24.0
 offset_top = 96.0
 offset_right = -24.0
 offset_bottom = -224.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IncorrectAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_dakft")
+
+[node name="CorrectAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_u5opy")
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="correct"]
