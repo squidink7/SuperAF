@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=10 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://cdsbgskgexgwb" path="res://assets/textures/dummy/exampleGround.png" id="2_alf7g"]
@@ -6,6 +6,67 @@
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
 [ext_resource type="Script" uid="uid://7g3x17lqq0gf" path="res://scenes/visualisations/surfers/villian.gd" id="6_m4g1a"]
+
+[sub_resource type="Animation" id="Animation_s7m7o"]
+resource_name = "hero_walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character/Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0872665, 0.0, 0.0872665, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_alf7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character/Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyyca"]
+_data = {
+&"RESET": SubResource("Animation_alf7g"),
+&"hero_walk": SubResource("Animation_s7m7o")
+}
 
 [node name="Stage1" type="Node2D"]
 script = ExtResource("1_s7m7o")
@@ -19,7 +80,7 @@ texture = ExtResource("2_alf7g")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(846, 280)
+position = Vector2(611, 162)
 script = ExtResource("4_yh6pm")
 max_lives = 5
 lives = 3
@@ -27,6 +88,7 @@ lives = 3
 [node name="Sprite2D2" type="Sprite2D" parent="Character"]
 scale = Vector2(0.1025, 0.1025)
 texture = ExtResource("5_alf7g")
+flip_h = true
 
 [node name="Villian" type="CharacterBody2D" parent="."]
 position = Vector2(246, 290)
@@ -36,6 +98,12 @@ script = ExtResource("6_m4g1a")
 position = Vector2(-7.62939e-06, 7.62939e-06)
 scale = Vector2(0.086, 0.086)
 texture = ExtResource("5_ux3oo")
+
+[node name="Hero Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vyyca")
+}
+speed_scale = 2.0
 
 [connection signal="life_gain" from="." to="Character" method="_on_game_logic_manager_life_gain"]
 [connection signal="life_gain" from="." to="Villian" method="_on_game_logic_manager_life_gain"]
