@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxgssobc54n4n"]
 
-[ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student_page.gd" id="1_bdrup"]
+[ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bdrup")
+script = ExtResource("1_cmtof")
 
 [node name="TopicsPanel" type="Panel" parent="."]
 layout_mode = 1

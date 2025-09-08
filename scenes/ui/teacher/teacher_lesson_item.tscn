@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://df2kqtpump4ga"]
 
-[ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher_lesson_item.gd" id="1_uq666"]
+[ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher/teacher_lesson_item.gd" id="1_6eip7"]
 
 [node name="TeacherLessonItem" type="Control"]
 custom_minimum_size = Vector2(256, 128)
@@ -9,7 +9,7 @@ anchor_right = 0.222
 anchor_bottom = 0.198
 offset_right = 0.255981
 offset_bottom = -0.304016
-script = ExtResource("1_uq666")
+script = ExtResource("1_6eip7")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

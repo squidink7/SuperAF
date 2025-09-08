@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b416fgkhjpflw"]
 
-[ext_resource type="Script" uid="uid://bnn47fifbdnkv" path="res://scenes/ui/teacher_game_settings.gd" id="1_17ptd"]
+[ext_resource type="Script" uid="uid://bnn47fifbdnkv" path="res://scenes/ui/teacher/teacher_game_settings.gd" id="1_pcbq7"]
 
 [node name="TeacherGameSettings" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_17ptd")
+script = ExtResource("1_pcbq7")
 
 [node name="TopicPanel" type="Panel" parent="."]
 layout_mode = 0
