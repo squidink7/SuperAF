@@ -1,12 +1,16 @@
-extends Node
+class_name Game
+extends Control
 
 var score: int = 0
 var score_multiplier := 1.0
 var time: float = 0
 
+func setup(lesson_text: String):
+	$Terminal.source_text = lesson_text
+
 func _process(delta: float) -> void:
 	time += delta
-	$Time.text = 'Time: ' + str(time)
+	$Time.text = 'Time: ' + str("%0.2f" % time,"s")
 
 func correct():
 	score_multiplier += 0.5
@@ -15,7 +19,6 @@ func correct():
 	$Score.text = 'Score: ' + str(score)
 	print(score)
 	%CorrectSound.play()
-	
 
 func incorrect():
 	score_multiplier = 0.0

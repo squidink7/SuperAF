@@ -274,3 +274,5 @@ offset_left = -184.0
 offset_right = -119.0
 offset_bottom = 23.0
 text = "Random"
+
+[connection signal="pressed" from="GoButton" to="." method="start_lesson"]
