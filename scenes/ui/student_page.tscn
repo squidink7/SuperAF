@@ -150,6 +150,7 @@ offset_bottom = 28.0
 text = "Difficulty Setting"
 
 [node name="Difficulty1" type="CheckButton" parent="DifficultySelectPanel"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = 15.0
 offset_right = 64.0
@@ -164,6 +165,7 @@ offset_bottom = 36.0
 text = "1"
 
 [node name="Difficulty2" type="CheckButton" parent="DifficultySelectPanel"]
+layout_mode = 0
 offset_left = 93.0
 offset_top = 15.0
 offset_right = 158.0
@@ -178,6 +180,7 @@ offset_bottom = 35.0
 text = "2"
 
 [node name="Difficulty3" type="CheckButton" parent="DifficultySelectPanel"]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 16.0
 offset_right = 264.0
