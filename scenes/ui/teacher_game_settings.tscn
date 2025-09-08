@@ -52,13 +52,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="LessonText" type="Label" parent="LessonPanel/Lessons/Lessons"]
-unique_name_in_owner = true
-layout_mode = 2
-autowrap_mode = 2
-clip_text = true
-text_overrun_behavior = 4
-
 [node name="SettingsPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 896.0
