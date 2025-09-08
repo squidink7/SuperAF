@@ -18,13 +18,13 @@ offset_top = 124.0
 offset_right = -24.0
 offset_bottom = -32.0
 
-[node name="IncorrectSound" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("3_dakft")
-
-[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+[node name="CorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("6_u5opy")
+
+[node name="IncorrectSound" type="AudioStreamPlayer" parent="Terminal"]
+unique_name_in_owner = true
+stream = ExtResource("3_dakft")
 
 [node name="Score" type="Label" parent="."]
 anchors_preset = 1
