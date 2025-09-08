@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
-[ext_resource type="Texture2D" uid="uid://cdsbgskgexgwb" path="res://assets/textures/dummy/exampleGround.png" id="2_alf7g"]
+[ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
@@ -74,13 +74,13 @@ correct_before_life_increase = 3
 mistakes_before_life_loss = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(579, 451.25)
-scale = Vector2(1.964, 0.295)
-texture = ExtResource("2_alf7g")
+position = Vector2(810, 429)
+scale = Vector2(0.648, 0.295)
+texture = ExtResource("2_s7m7o")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(801, 280)
+position = Vector2(801, 261)
 script = ExtResource("4_yh6pm")
 max_lives = 5
 lives = 3
@@ -91,7 +91,7 @@ texture = ExtResource("5_alf7g")
 flip_h = true
 
 [node name="Villian" type="CharacterBody2D" parent="."]
-position = Vector2(246, 357)
+position = Vector2(246, 338)
 script = ExtResource("6_m4g1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Villian"]
