@@ -36,7 +36,15 @@ func set_lesson(topic: String, lesson: String):
 
 func start_lesson():
 	var lesson_text = Data.get_lesson(current_topic, current_lesson)
-	
+	var game_mode = ''
+
+	if %RandomGameMode.button_pressed:
+		game_mode = 'melons'
+	elif %SubwaySurfersMode.button_pressed:
+		game_mode = 'surfers'
+
 	var game = $/root/Main.load_scene('game/game')
-	game.setup(lesson_text)
-	$/root/Main.set_scene(game)
+	
+	$/root/Main.add_child(game)
+	game.setup(lesson_text, game_mode)
+	$/root/Main.remove_child(self)

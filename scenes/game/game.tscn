@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://iwyp1k14kx6y"]
+[gd_scene load_steps=6 format=3 uid="uid://iwyp1k14kx6y"]
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_bdhmt"]
 [ext_resource type="AudioStream" uid="uid://bwinosnrlhtc" path="res://assets/SFX/Game SFX/correct.wav" id="3_87uf6"]
 [ext_resource type="AudioStream" uid="uid://xxe2mckdx8fs" path="res://assets/SFX/Game SFX/incorrect_sound.wav" id="4_2a8rs"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="5_4j704"]
-[ext_resource type="PackedScene" uid="uid://ctaboy2ynsoel" path="res://scenes/visualisations/visualisation.tscn" id="6_kp23o"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -61,17 +60,16 @@ text = "Time: 0"
 unique_name_in_owner = true
 script = ExtResource("5_4j704")
 
-[node name="Visualisation" parent="." instance=ExtResource("6_kp23o")]
+[node name="Visualisation" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.537037
-offset_left = 32.0
-offset_top = 72.0
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = 56.0
 offset_right = -16.0
-offset_bottom = 76.0
-metadata/_edit_use_anchors_ = true
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
-[connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
-[connection signal="incorrect_character_entered" from="Terminal" to="Visualisation" method="incorrect"]

@@ -31,7 +31,7 @@ direction = Vector3(0, 1, 0)
 initial_velocity_min = 2.0
 initial_velocity_max = 3.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_w2srb")
 
 [connection signal="finished" from="Particles" to="." method="_on_particles_finished"]

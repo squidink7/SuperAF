@@ -5,8 +5,15 @@ var score: int = 0
 var score_multiplier := 1.0
 var time: float = 0
 
-func setup(lesson_text: String):
+func setup(lesson_text: String, game_mode: String):
 	$Terminal.source_text = lesson_text
+	
+	var game = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
+
+	$Terminal.correct_word_entered.connect(game.correct)
+	$Terminal.incorrect_character_entered.connect(game.incorrect)
+
+	$Visualisation.add_child(game)
 
 func _process(delta: float) -> void:
 	time += delta

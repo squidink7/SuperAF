@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=3 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
+[ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
@@ -220,11 +221,14 @@ text = "Game Mode"
 horizontal_alignment = 1
 
 [node name="SubwaySurfersMode" type="CheckButton" parent="GameModePanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 216.0
 offset_top = 16.0
 offset_right = 260.0
 offset_bottom = 40.0
+button_pressed = true
+button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]
 layout_mode = 0
@@ -234,11 +238,13 @@ offset_bottom = 23.0
 text = "Subway Surfer"
 
 [node name="EndlessRunnerMode" type="CheckButton" parent="GameModePanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 216.0
 offset_top = 40.0
 offset_right = 260.0
 offset_bottom = 64.0
+button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode2Label" type="Label" parent="GameModePanel/EndlessRunnerMode"]
 layout_mode = 0
@@ -248,11 +254,13 @@ offset_bottom = 23.0
 text = "EndlessRunner"
 
 [node name="MeteorDefenseMode" type="CheckButton" parent="GameModePanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 216.0
 offset_top = 64.0
 offset_right = 260.0
 offset_bottom = 88.0
+button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode3Label" type="Label" parent="GameModePanel/MeteorDefenseMode"]
 layout_mode = 0
@@ -262,11 +270,13 @@ offset_bottom = 23.0
 text = "Meteor Defense"
 
 [node name="RandomGameMode" type="CheckButton" parent="GameModePanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 216.0
 offset_top = 88.0
 offset_right = 260.0
 offset_bottom = 112.0
+button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode4Label" type="Label" parent="GameModePanel/RandomGameMode"]
 layout_mode = 0
