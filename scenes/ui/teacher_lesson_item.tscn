@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://df2kqtpump4ga"]
+
+[ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher_lesson_item.gd" id="1_uq666"]
+
+[node name="TeacherLessonItem" type="Control"]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 3
+anchor_right = 0.222
+anchor_bottom = 0.198
+offset_right = 0.255981
+offset_bottom = -0.304016
+script = ExtResource("1_uq666")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -72.0
+offset_bottom = 48.0
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 64.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 4
+
+[node name="IsActive" type="CheckButton" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.0
+offset_top = 16.0
+offset_right = -12.0
+offset_bottom = 40.0
+grow_horizontal = 0

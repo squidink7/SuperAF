@@ -1,12 +1,17 @@
 [gd_scene load_steps=0 format=3 uid="uid://3ggcwo0433gk"]
 
-[node name="Panel" type="Panel"]
-offset_left = 64.0
+[node name="StudentCheckPanel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 558.0
 offset_top = 64.0
-offset_right = 512.0
-offset_bottom = 152.0
+offset_right = -46.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="StudentID" type="Label" parent="."]
 layout_mode = 0
-offset_right = 256.0
-offset_bottom = 88.0
+offset_right = 338.0
+offset_bottom = 64.0

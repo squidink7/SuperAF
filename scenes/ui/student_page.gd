@@ -11,6 +11,11 @@ func _ready():
 
 func show_lessons(topic: String):
 	var lessons = Data.get_lessons(topic)
+	
+	# Clear lessons
+	for child in $Lessons.get_children():
+		%Lessons.remove_child(child)
+		child.queue_free()
 
 	for lesson in lessons:
 		var b = Button.new()
