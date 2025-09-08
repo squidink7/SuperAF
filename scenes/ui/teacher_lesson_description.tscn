@@ -1,35 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://df2kqtpump4ga"]
-
-[ext_resource type="Script" uid="uid://dxhrxvec6nw3i" path="res://scenes/ui/lessons_description.gd" id="1_8vems"]
+[gd_scene format=3 uid="uid://df2kqtpump4ga"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 
-[node name="Panel" type="Panel" parent="."]
+[node name="LessonsPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 61.0
 offset_right = 304.0
 offset_bottom = 224.0
 
-[node name="Lessons" type="VBoxContainer" parent="Panel"]
+[node name="Lessons" type="VBoxContainer" parent="LessonsPanel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_top = 3.0
 offset_right = 179.0
 offset_bottom = 67.0
 
-[node name="LessonsDescription" type="VBoxContainer" parent="Panel"]
+[node name="LessonsDescription" type="VBoxContainer" parent="LessonsPanel"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 3.0
 offset_top = 67.0
 offset_right = 259.0
 offset_bottom = 163.0
-script = ExtResource("1_8vems")
 
-[node name="CheckButton" type="CheckButton" parent="Panel"]
+[node name="CheckButton" type="CheckButton" parent="LessonsPanel"]
 layout_mode = 0
 offset_left = 195.0
 offset_top = 11.0
