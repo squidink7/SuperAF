@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxvv80o6wtb8m"
+path="res://.godot/imported/loss_trombone.wav-59b3eba0192f8fb0c2995f736a7bd182.sample"
+
+[deps]
+
+source_file="res://assets/SFX/Game SFX/loss_trombone.wav"
+dest_files=["res://.godot/imported/loss_trombone.wav-59b3eba0192f8fb0c2995f736a7bd182.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
