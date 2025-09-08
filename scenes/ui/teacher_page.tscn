@@ -31,10 +31,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopicsPanel/Topics"]
+[node name="Topics" type="VBoxContainer" parent="TopicsPanel/Topics"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TopicsPanel/Topics"]
+layout_mode = 2
 
 [node name="LessonsPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -57,7 +61,8 @@ offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LessonsPanel/Lessons"]
+[node name="Lessons" type="VBoxContainer" parent="LessonsPanel/Lessons"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -99,7 +104,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StudentCheckPanel/StudentIDCheck"]
+[node name="StudentPassPanel" type="VBoxContainer" parent="StudentCheckPanel/StudentIDCheck"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
