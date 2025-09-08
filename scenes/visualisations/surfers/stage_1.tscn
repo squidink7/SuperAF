@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=7 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://cdsbgskgexgwb" path="res://assets/textures/dummy/exampleGround.png" id="2_alf7g"]
-[ext_resource type="PackedScene" uid="uid://c1gincyh23502" path="res://scenes/visualisations/surfers/character.tscn" id="3_vyyca"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
@@ -18,7 +17,7 @@ position = Vector2(579, 384.25)
 scale = Vector2(1.964, 0.295)
 texture = ExtResource("2_alf7g")
 
-[node name="Character" parent="." instance=ExtResource("3_vyyca")]
+[node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(846, 280)
 script = ExtResource("4_yh6pm")
