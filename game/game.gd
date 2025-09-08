@@ -11,8 +11,11 @@ func correct():
 	score += 1
 	print("Correct word entered!")
 	$Score.text = 'Score: ' + str(score)
+	%CorrectSound.play()
+	
 
 func incorrect():
 	score -= 1
 	print("Incorrect character pressed!")
 	$Score.text = 'Score: ' + str(score)
+	%IncorrectSound.play()
