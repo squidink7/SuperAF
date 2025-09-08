@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=0 format=3 uid="uid://dj6vo16ihoime"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
