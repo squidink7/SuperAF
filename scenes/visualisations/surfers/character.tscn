@@ -1,9 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1gincyh23502"]
-
-[ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_ryio3"]
+[gd_scene format=3 uid="uid://c1gincyh23502"]
 
 [node name="Character" type="CharacterBody2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.205119, 0.205119)
-texture = ExtResource("1_ryio3")
