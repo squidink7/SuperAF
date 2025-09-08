@@ -14,7 +14,7 @@ var current_mistake_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	$"Hero Animation".play("hero_walk")
 
 
 

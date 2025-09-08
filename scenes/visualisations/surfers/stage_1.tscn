@@ -7,6 +7,33 @@
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
 [ext_resource type="Script" uid="uid://7g3x17lqq0gf" path="res://scenes/visualisations/surfers/villian.gd" id="6_m4g1a"]
 
+[sub_resource type="Animation" id="Animation_alf7g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character/Sprite2D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_s7m7o"]
 resource_name = "hero_walk"
 loop_mode = 1
@@ -35,33 +62,6 @@ tracks/1/keys = {
 "values": [0.0, -0.0872665, 0.0, 0.0872665, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_alf7g"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Character/Sprite2D2:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Character/Sprite2D2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vyyca"]
 _data = {
 &"RESET": SubResource("Animation_alf7g"),
@@ -80,7 +80,7 @@ texture = ExtResource("2_alf7g")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(611, 162)
+position = Vector2(801, 213)
 script = ExtResource("4_yh6pm")
 max_lives = 5
 lives = 3
