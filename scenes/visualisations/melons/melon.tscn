@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://drhr4dbe6gt25"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8guy85ulp3yw" path="res://assets/models/melon/3DMelon001_SQ-1K-JPG.obj" id="1_l81id"]
+[ext_resource type="Script" uid="uid://dytwdqrsh84gw" path="res://scenes/visualisations/melons/melon.gd" id="1_w2srb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2srb"]
+albedo_color = Color(1, 0, 0.121459, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ivqaq"]
+material = SubResource("StandardMaterial3D_w2srb")
+radius = 0.05
+height = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_w2srb"]
+radius = 0.37257
+
+[node name="Melon" type="RigidBody3D"]
+script = ExtResource("1_w2srb")
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.35919, 0)
+mesh = ExtResource("1_l81id")
+
+[node name="Particles" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_ivqaq")
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_w2srb")
+
+[connection signal="finished" from="Particles" to="." method="_on_particles_finished"]

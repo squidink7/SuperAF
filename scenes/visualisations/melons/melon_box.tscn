@@ -1,0 +1,176 @@
+[gd_scene load_steps=21 format=3 uid="uid://c3sya1p6tedio"]
+
+[ext_resource type="Texture2D" uid="uid://b5xqm3af0x5ei" path="res://assets/textures/dark_wood/4K-woodparquet_18_basecolor-min.jpg" id="1_1qqh1"]
+[ext_resource type="Script" uid="uid://dle8mgswt0ekt" path="res://scenes/visualisations/melons/melon_box.gd" id="1_jmx4y"]
+[ext_resource type="Texture2D" uid="uid://cnasjafv26xw0" path="res://assets/textures/dark_wood/4K-woodparquet_18_ambientocclusion-min.jpg" id="2_nkj22"]
+[ext_resource type="Texture2D" uid="uid://busaduy6tb20n" path="res://assets/textures/dark_wood/4K-woodparquet_18_height-min.jpg" id="3_7ek7s"]
+[ext_resource type="Texture2D" uid="uid://e2jpid0nlarh" path="res://assets/textures/dark_wood/4K-woodparquet_18_metallic-min.jpg" id="4_yv0x2"]
+[ext_resource type="Texture2D" uid="uid://caorvdto304pb" path="res://assets/textures/dark_wood/4K-woodparquet_18_normal-min.jpg" id="5_kumld"]
+[ext_resource type="Texture2D" uid="uid://2pi423bdbypt" path="res://assets/textures/dark_wood/4K-woodparquet_18_roughness-min.jpg" id="6_xjyx0"]
+[ext_resource type="Texture2D" uid="uid://bwcvsi05sfnxf" path="res://assets/textures/brick_wall/4K-brick_wall_2-diffuse-min.jpg" id="7_nkj22"]
+[ext_resource type="Texture2D" uid="uid://uqgvmlxhoubb" path="res://assets/textures/brick_wall/4K-brick_wall_2-ao-min.jpg" id="8_xjyx0"]
+[ext_resource type="Texture2D" uid="uid://tns1yawesubb" path="res://assets/textures/brick_wall/4K-brick_wall_2-displacement-min.jpg" id="9_jmx4y"]
+[ext_resource type="Texture2D" uid="uid://cwnsm0u17efpi" path="res://assets/textures/brick_wall/4K-brick_wall_2-specular-min.jpg" id="10_k85xh"]
+[ext_resource type="Texture2D" uid="uid://dkcv0dxdlk3q6" path="res://assets/textures/brick_wall/4K-brick_wall_2-normal-min.jpg" id="11_8604r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmx4y"]
+albedo_texture = ExtResource("1_1qqh1")
+metallic = 1.0
+metallic_texture = ExtResource("4_yv0x2")
+roughness_texture = ExtResource("6_xjyx0")
+normal_enabled = true
+normal_texture = ExtResource("5_kumld")
+ao_enabled = true
+ao_texture = ExtResource("2_nkj22")
+heightmap_texture = ExtResource("3_7ek7s")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6vi8"]
+material = SubResource("StandardMaterial3D_jmx4y")
+size = Vector2(4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ek7s"]
+albedo_texture = ExtResource("7_nkj22")
+metallic = 1.0
+metallic_texture = ExtResource("10_k85xh")
+normal_enabled = true
+normal_texture = ExtResource("11_8604r")
+ao_enabled = true
+ao_texture = ExtResource("8_xjyx0")
+heightmap_texture = ExtResource("9_jmx4y")
+uv1_scale = Vector3(2, 2, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dn0wd"]
+material = SubResource("StandardMaterial3D_7ek7s")
+size = Vector2(4, 4)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_dn0wd"]
+
+[sub_resource type="Animation" id="Animation_1qqh1"]
+resource_name = "idle"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.0872665, 0, 0), Vector3(0, 0, 0), Vector3(0.0872665, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Node3D/SpotLight3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 3.2, 5.2, 7.2),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.122173, 0), Vector3(0, 0, 0), Vector3(0, -0.122173, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_nkj22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D/Node3D/SpotLight3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D/Node3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.785398, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkj22"]
+_data = {
+&"RESET": SubResource("Animation_nkj22"),
+&"idle": SubResource("Animation_1qqh1")
+}
+
+[node name="MelonBox" type="Node3D"]
+script = ExtResource("1_jmx4y")
+
+[node name="bounds" type="StaticBody3D" parent="."]
+
+[node name="floor" type="MeshInstance3D" parent="bounds"]
+mesh = SubResource("PlaneMesh_k6vi8")
+skeleton = NodePath("../..")
+
+[node name="wallz" type="MeshInstance3D" parent="bounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2, -2)
+mesh = SubResource("PlaneMesh_dn0wd")
+skeleton = NodePath("../..")
+
+[node name="wallz3" type="MeshInstance3D" parent="bounds"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 2, 2, 0)
+mesh = SubResource("PlaneMesh_dn0wd")
+skeleton = NodePath("../..")
+
+[node name="wallz2" type="MeshInstance3D" parent="bounds"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -2, 2, 0)
+mesh = SubResource("PlaneMesh_dn0wd")
+skeleton = NodePath("../..")
+
+[node name="floorcol" type="CollisionShape3D" parent="bounds"]
+visible = false
+shape = SubResource("WorldBoundaryShape3D_dn0wd")
+
+[node name="wallxcol" type="CollisionShape3D" parent="bounds"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 2, 0, 0)
+visible = false
+shape = SubResource("WorldBoundaryShape3D_dn0wd")
+
+[node name="wallxcol2" type="CollisionShape3D" parent="bounds"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -2, 0, 0)
+visible = false
+shape = SubResource("WorldBoundaryShape3D_dn0wd")
+
+[node name="wallzcol" type="CollisionShape3D" parent="bounds"]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, -1, 0, 1, 2.98023e-08, 0, 0, -2)
+visible = false
+shape = SubResource("WorldBoundaryShape3D_dn0wd")
+
+[node name="wallzcol2" type="CollisionShape3D" parent="bounds"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 2)
+visible = false
+shape = SubResource("WorldBoundaryShape3D_dn0wd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nkj22")
+}
+autoplay = "idle"
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+
+[node name="Node3D" type="Node3D" parent="Node3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_energy = 5.0
+
+[node name="MelonSpawner" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)

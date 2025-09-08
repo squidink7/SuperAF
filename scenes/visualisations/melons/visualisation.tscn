@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://crr38i03kgh26"]
+
+[ext_resource type="Script" uid="uid://20wf528yoe3y" path="res://scenes/visualisations/melons/visualisation.gd" id="1_r0ktr"]
+[ext_resource type="PackedScene" uid="uid://c3sya1p6tedio" path="res://scenes/visualisations/melons/melon_box.tscn" id="2_r0ktr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r0ktr"]
+sky_top_color = Color(0.618156, 0.621647, 0.79202, 1)
+sky_horizon_color = Color(0.854828, 0.856066, 0.898054, 1)
+ground_bottom_color = Color(0.158651, 0.160111, 0.157687, 1)
+ground_horizon_color = Color(0.854828, 0.856066, 0.898054, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_jmx4y"]
+sky_material = SubResource("ProceduralSkyMaterial_r0ktr")
+
+[sub_resource type="Environment" id="Environment_g77wd"]
+background_mode = 2
+sky = SubResource("Sky_jmx4y")
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+
+[node name="Visualisation" type="SubViewportContainer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.642
+offset_bottom = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_r0ktr")
+
+[node name="Viewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 416)
+render_target_update_mode = 4
+
+[node name="World" type="Node3D" parent="Viewport"]
+
+[node name="MelonBox" parent="Viewport/World" instance=ExtResource("2_r0ktr")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Viewport/World"]
+environment = SubResource("Environment_g77wd")
+
+[node name="Camera" type="Camera3D" parent="Viewport/World"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 3.9, 3.7)
+keep_aspect = 0
+current = true
+fov = 76.791
+
+[connection signal="fail" from="." to="Viewport/World/MelonBox" method="destroy_melon"]
+[connection signal="success" from="." to="Viewport/World/MelonBox" method="spawn_melon"]
