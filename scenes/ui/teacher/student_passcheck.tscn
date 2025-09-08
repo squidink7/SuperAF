@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://3ggcwo0433gk"]
+[gd_scene load_steps=0 format=3 uid="uid://3ggcwo0433gk"]
 
 [node name="StudentCheckPanel" type="Panel"]
 anchors_preset = 15
