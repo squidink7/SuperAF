@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://b416fgkhjpflw"]
 
-[node name="TeacherGameSettings" type="Node2D"]
+[node name="TeacherGameSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TopicPanel" type="Panel" parent="."]
 offset_left = 16.0
@@ -8,11 +14,17 @@ offset_top = 64.0
 offset_right = 408.0
 offset_bottom = 664.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TopicPanel"]
+[node name="Topics" type="ScrollContainer" parent="TopicPanel"]
 layout_mode = 0
-offset_top = 64.0
-offset_right = 392.0
-offset_bottom = 600.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Topics" type="VBoxContainer" parent="TopicPanel/Topics"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TopicPanel/Topics"]
+layout_mode = 2
 
 [node name="LessonPanel" type="Panel" parent="."]
 offset_left = 432.0
@@ -22,60 +34,45 @@ offset_bottom = 664.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LessonPanel"]
 layout_mode = 0
-offset_top = 64.0
 offset_right = 440.0
 offset_bottom = 600.0
 
-[node name="DifficultyPanel" type="Panel" parent="."]
-offset_left = 896.0
-offset_top = 64.0
-offset_right = 1126.0
-offset_bottom = 256.0
-
-[node name="GameMode1" type="CheckButton" parent="DifficultyPanel"]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 19.0
-offset_right = 94.0
-offset_bottom = 70.0
-
-[node name="GameMode2" type="CheckButton" parent="DifficultyPanel"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 16.0
-offset_right = 216.0
-offset_bottom = 67.0
-
-[node name="GameMode3" type="CheckButton" parent="DifficultyPanel"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 128.0
-offset_right = 96.0
-offset_bottom = 179.0
-
-[node name="GameMode4" type="CheckButton" parent="DifficultyPanel"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 128.0
-offset_right = 216.0
-offset_bottom = 179.0
-
 [node name="SettingsPanel" type="Panel" parent="."]
 offset_left = 896.0
-offset_top = 272.0
+offset_top = 256.0
 offset_right = 1128.0
 offset_bottom = 664.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
-layout_mode = 0
-offset_top = 48.0
+[node name="GameSettings" type="Label" parent="SettingsPanel"]
+layout_mode = 2
 offset_right = 232.0
-offset_bottom = 392.0
+offset_bottom = 23.0
+text = "Game Settings"
+horizontal_alignment = 1
 
-[node name="Panel" type="Panel" parent="SettingsPanel"]
-layout_mode = 0
-offset_right = 232.0
-offset_bottom = 48.0
+[node name="QuizMode" type="Label" parent="SettingsPanel"]
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 128.0
+offset_bottom = 63.0
+text = "Quiz Mode"
+
+[node name="QuizModeCheckButton" type="CheckButton" parent="SettingsPanel/QuizMode"]
+offset_left = 180.0
+offset_right = 224.0
+offset_bottom = 24.0
+
+[node name="GeneralSettings" type="Label" parent="SettingsPanel"]
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 135.0
+offset_bottom = 87.0
+text = "General Settings"
+
+[node name="GeneralSettingsCheckButton" type="CheckButton" parent="SettingsPanel/GeneralSettings"]
+offset_left = 180.0
+offset_right = 224.0
+offset_bottom = 24.0
 
 [node name="BackButton" type="Button" parent="."]
 offset_left = 16.0
@@ -83,3 +80,75 @@ offset_top = 24.0
 offset_right = 75.0
 offset_bottom = 55.0
 text = "< Back"
+
+[node name="GameModePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -232.0
+offset_bottom = 168.0
+grow_horizontal = 0
+
+[node name="GameModeSetting" type="Label" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 207.0
+offset_bottom = 23.0
+text = "Game Mode"
+
+[node name="SubwaySurfersMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 32.0
+offset_right = 232.0
+offset_bottom = 56.0
+
+[node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -72.0
+offset_bottom = 23.0
+text = "Subway Surfer"
+
+[node name="EndlessRunnerMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 64.0
+offset_right = 232.0
+offset_bottom = 88.0
+
+[node name="GameMode2Label" type="Label" parent="GameModePanel/EndlessRunnerMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -68.0
+offset_bottom = 23.0
+text = "EndlessRunner"
+
+[node name="MeteorDefenseMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 96.0
+offset_right = 232.0
+offset_bottom = 120.0
+
+[node name="GameMode3Label" type="Label" parent="GameModePanel/MeteorDefenseMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -60.0
+offset_bottom = 23.0
+text = "Meteor Defense"
+
+[node name="RandomGameMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 128.0
+offset_right = 232.0
+offset_bottom = 152.0
+
+[node name="GameMode4Label" type="Label" parent="GameModePanel/RandomGameMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -119.0
+offset_bottom = 23.0
+text = "Random"

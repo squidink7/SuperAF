@@ -37,6 +37,9 @@ offset_bottom = -32.0161
 unique_name_in_owner = true
 layout_mode = 2
 
+[node name="Label" type="Label" parent="TopicsPanel/Topics"]
+layout_mode = 2
+
 [node name="LessonsPanel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -108,7 +111,7 @@ anchor_bottom = 1.0
 offset_left = -416.0
 offset_top = 64.0
 offset_right = -152.0
-offset_bottom = -320.0
+offset_bottom = -337.0
 grow_horizontal = 0
 grow_vertical = 2
 
@@ -132,11 +135,61 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -416.0
-offset_top = -304.0
+offset_top = -320.0
 offset_right = -152.0
-offset_bottom = -232.0
+offset_bottom = -264.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="DifficultySetting" type="Label" parent="DifficultySelectPanel"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 5.0
+offset_right = 227.0
+offset_bottom = 28.0
+text = "Difficulty Setting"
+
+[node name="Difficulty1" type="CheckButton" parent="DifficultySelectPanel"]
+offset_left = -1.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 63.0
+
+[node name="Difficulty1Label" type="Label" parent="DifficultySelectPanel/Difficulty1"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 13.0
+offset_right = 51.0
+offset_bottom = 36.0
+text = "1"
+
+[node name="Difficulty2" type="CheckButton" parent="DifficultySelectPanel"]
+offset_left = 93.0
+offset_top = 15.0
+offset_right = 158.0
+offset_bottom = 63.0
+
+[node name="Difficulty2Label" type="Label" parent="DifficultySelectPanel/Difficulty2"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 51.0
+offset_bottom = 35.0
+text = "2"
+
+[node name="Difficulty3" type="CheckButton" parent="DifficultySelectPanel"]
+offset_left = 199.0
+offset_top = 16.0
+offset_right = 264.0
+offset_bottom = 64.0
+
+[node name="Difficulty3Label" type="Label" parent="DifficultySelectPanel/Difficulty3"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 49.0
+offset_bottom = 34.0
+text = "3"
 
 [node name="GameModePanel" type="Panel" parent="."]
 layout_mode = 1
@@ -146,8 +199,71 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -416.0
-offset_top = -216.0
+offset_top = -256.0
 offset_right = -152.0
 offset_bottom = -144.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="GameModeSetting" type="Label" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 79.0
+offset_right = 207.0
+offset_bottom = 23.0
+text = "Game Mode"
+
+[node name="SubwaySurfersMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 260.0
+offset_bottom = 40.0
+
+[node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -72.0
+offset_bottom = 23.0
+text = "Subway Surfer"
+
+[node name="EndlessRunnerMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 40.0
+offset_right = 260.0
+offset_bottom = 64.0
+
+[node name="GameMode2Label" type="Label" parent="GameModePanel/EndlessRunnerMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -68.0
+offset_bottom = 23.0
+text = "EndlessRunner"
+
+[node name="MeteorDefenseMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 64.0
+offset_right = 260.0
+offset_bottom = 88.0
+
+[node name="GameMode3Label" type="Label" parent="GameModePanel/MeteorDefenseMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -60.0
+offset_bottom = 23.0
+text = "Meteor Defense"
+
+[node name="RandomGameMode" type="CheckButton" parent="GameModePanel"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 88.0
+offset_right = 260.0
+offset_bottom = 112.0
+
+[node name="GameMode4Label" type="Label" parent="GameModePanel/RandomGameMode"]
+layout_mode = 0
+offset_left = -184.0
+offset_right = -119.0
+offset_bottom = 23.0
+text = "Random"
