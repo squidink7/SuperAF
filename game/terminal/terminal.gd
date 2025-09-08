@@ -4,7 +4,7 @@ signal correct_word_entered()
 signal incorrect_character_entered()
 signal typing_complete()
 
-var current_text: String = "The quick brown fox jumps over the lazy dog"
+var source_text: String = "The quick brown fox jumps over the lazy dog"
 
 const allowed_characters = [
 	'A','B','C','D','E','F','G','H','I',
@@ -15,45 +15,55 @@ const allowed_characters = [
 
 const LOOKAHEAD = 2
 
-var current_word: int = 0
-var typed_text: String = ""
-var prompt_text: String = ""
+var char_index: int = 0
+var incorrect_chars: String = ''
 
 func _ready():
-	update_prompt()
+	update_text()
 
 func update_text():
-	$InputLabel.text = typed_text
+	var text = source_text.substr(0, char_index)
+	
+	if incorrect_chars != '':
+		text += '[color=#f00]' + incorrect_chars + '[/color]'
+	else:
+		text += '[color=#888]' + get_prompt_text() + '[/color]'
+	
+	%Label.text = text
 
-func update_prompt():
-	var new_prompt = current_text.split(" ").slice(0, current_word+LOOKAHEAD)
-	prompt_text = " ".join(new_prompt)
-	$PromptLabel.text = prompt_text
+# Returns prompt text, including next `LOOKAHEAD` words of the text
+func get_prompt_text() -> String:
+	var prompt = source_text.substr(char_index).split(' ')
+	return ' '.join(prompt.slice(0, LOOKAHEAD+1))
 
-func add_character(chr: String):	
+# Adds a character to the typed text
+func add_character(chr: String):
+	# Checks if the chatacter is correct
 	var correct = false
-	if current_text.length() > typed_text.length() && current_text[typed_text.length()].to_upper() == chr:
-		chr = current_text[typed_text.length()]
+	if source_text.length() > char_index && source_text[char_index].to_upper() == chr:
+		char_index += 1
 		correct = true
 	else:
+		# Add incorrect character to array
+		incorrect_chars += chr.to_lower()
 		incorrect_character_entered.emit()
-	
-	typed_text += chr
 	
 	update_text()
 
-	if correct && chr == ' ':
-		current_word += 1
-		update_prompt()
-		correct_word_entered.emit()
-	
-	if typed_text.length() == current_text.length():
+	# Reached end of text
+	if correct && char_index == source_text.length():
 		typing_complete.emit()
+		return
+
+	# Reached end of word
+	if correct && source_text[char_index] == ' ':
+		correct_word_entered.emit()
 
 func delete_character():
-	if typed_text.length() > 0:
-		typed_text = typed_text.substr(0, typed_text.length()-1)
-	
+	if incorrect_chars != '':
+		incorrect_chars = incorrect_chars.erase(incorrect_chars.length()-1)
+	else:
+		char_index = max(char_index-1, 0)
 	update_text()
 
 func _input(event: InputEvent) -> void:
