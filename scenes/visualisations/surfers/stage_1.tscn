@@ -74,13 +74,13 @@ correct_before_life_increase = 3
 mistakes_before_life_loss = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(810, 429)
-scale = Vector2(0.648, 0.295)
-texture = ExtResource("2_s7m7o")
+position = Vector2(579, 384.25)
+scale = Vector2(1.964, 0.295)
+texture = ExtResource("2_alf7g")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(801, 261)
+position = Vector2(801, 213)
 script = ExtResource("4_yh6pm")
 max_lives = 5
 lives = 3
@@ -91,7 +91,7 @@ texture = ExtResource("5_alf7g")
 flip_h = true
 
 [node name="Villian" type="CharacterBody2D" parent="."]
-position = Vector2(246, 338)
+position = Vector2(246, 290)
 script = ExtResource("6_m4g1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Villian"]

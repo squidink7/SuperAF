@@ -52,11 +52,11 @@ script = ExtResource("3_h7iqs")
 
 [node name="Visualisation" parent="." instance=ExtResource("4_4fuuu")]
 anchors_preset = -1
-anchor_bottom = 0.54321
-offset_left = 24.0
-offset_top = 185.0
-offset_right = -24.0
-offset_bottom = 189.0
+anchor_bottom = 0.537037
+offset_left = 32.0
+offset_top = 72.0
+offset_right = -16.0
+offset_bottom = 76.0
 metadata/_edit_use_anchors_ = true
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
