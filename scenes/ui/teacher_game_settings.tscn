@@ -48,10 +48,6 @@ offset_bottom = 600.0
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="LessonPreview" type="VBoxContainer" parent="LessonPanel/Lessons/Lessons"]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="SettingsPanel" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 896.0

@@ -1,4 +1,19 @@
 extends Control
 
+
 func _ready():
-	pass
+	var topics = Data.get_topics()
+
+	for topic in topics:
+		var b = Button.new()
+		b.text = topic
+		b.pressed.connect(show_lessons.bind(topic))
+		%Topics.add_child(b)
+
+func show_lessons(topic: String):
+	var lessons = Data.get_lessons(topic)
+
+	for lesson in lessons:
+		var b = Button.new()
+		b.text = lesson
+
