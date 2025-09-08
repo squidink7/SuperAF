@@ -1,6 +1,6 @@
 extends Control
 
-var lesson_item = load('res://scenes/ui/teacher_lesson_item.tscn')
+var lesson_item = load('res://scenes/ui/teacher/lesson_item.tscn')
 
 func _ready():
 	var topics = Data.get_topics()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://df2kqtpump4ga"]
 
-[ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher/teacher_lesson_item.gd" id="1_6eip7"]
+[ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher/lesson_item.gd" id="1_6eip7"]
 
 [node name="TeacherLessonItem" type="Control"]
 custom_minimum_size = Vector2(256, 128)
