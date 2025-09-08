@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b56n5pjnbnu3j"]
 
-[ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_pymad"]
+[ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_ec7l3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pymad"]
 bg_color = Color(0.16261, 0.143209, 0.210806, 1)
@@ -79,7 +79,7 @@ offset_right = -88.0
 offset_bottom = -192.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_pymad")
+texture = ExtResource("1_ec7l3")
 expand_mode = 1
 stretch_mode = 4
 

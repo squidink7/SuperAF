@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 signal game_over
 
-@export var maxLives: int
+@export var max_lives: int
 @export var lives: int:
 
 	set(value):
-		lives = clamp(value,0, maxLives)
+		lives = clamp(value,0, max_lives)
 	
 
 # Called when the node enters the scene tree for the first time.
@@ -33,5 +33,5 @@ func _on_game_logic_manager_life_lost() -> void:
 
 func _on_game_logic_manager_life_gain() -> void:
 	lives += 1
-	print("Life lost, current " + str(lives))
+	print("Life gained, current " + str(lives))
 	#TODO: Play animation

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://game/game.gd" id="1_vasa2"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://game/terminal/terminal.tscn" id="2_h7iqs"]
-[ext_resource type="Script" path="res://scripts/data.gd" id="3_h7iqs"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://ctaboy2ynsoel" path="res://scenes/visualisations/visualisation.tscn" id="4_4fuuu"]
 
@@ -36,6 +35,7 @@ offset_bottom = 48.0
 grow_horizontal = 0
 
 [node name="Data" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("3_h7iqs")
 
 [node name="Visualisation" parent="." instance=ExtResource("4_4fuuu")]
@@ -45,6 +45,6 @@ offset_right = -24.0
 offset_bottom = -224.0
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
-[connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="success"]
+[connection signal="correct_word_entered" from="Terminal" to="Visualisation" method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
-[connection signal="incorrect_character_entered" from="Terminal" to="Visualisation" method="fail"]
+[connection signal="incorrect_character_entered" from="Terminal" to="Visualisation" method="incorrect"]
