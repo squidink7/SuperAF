@@ -13,16 +13,6 @@ extends Node
 # - students/
 #  - student data.json
 
-func _ready():
-	var stud = Student.new()
-	stud.id = 'test'
-	stud.name = 'Jeremy Exampleton'
-	set_student(stud)
-
-	print(get_topics())
-	print(get_lessons('health'))
-	print(get_lesson('health', 'cardio'))
-
 static func get_student(id: String) -> Student:
 	var file = FileAccess.open("user://students/" + id, FileAccess.READ)
 	
