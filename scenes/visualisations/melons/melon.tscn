@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://drhr4dbe6gt25"]
+[gd_scene load_steps=7 format=3 uid="uid://drhr4dbe6gt25"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8guy85ulp3yw" path="res://assets/models/melon/3DMelon001_SQ-1K-JPG.obj" id="1_l81id"]
 [ext_resource type="Script" uid="uid://dytwdqrsh84gw" path="res://scenes/visualisations/melons/melon.gd" id="1_w2srb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w2srb"]
+bounce = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2srb"]
 albedo_color = Color(1, 0, 0.121459, 1)
@@ -15,6 +18,8 @@ height = 0.1
 radius = 0.37257
 
 [node name="Melon" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_w2srb")
+can_sleep = false
 script = ExtResource("1_w2srb")
 
 [node name="Model" type="MeshInstance3D" parent="."]
