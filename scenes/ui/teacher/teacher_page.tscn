@@ -153,3 +153,11 @@ offset_top = 24.0
 offset_right = 1104.0
 offset_bottom = 56.0
 text = "Game Settings"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 24.0
+offset_right = 941.0
+offset_bottom = 55.0
+text = "High Scores"

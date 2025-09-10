@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_55yv3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="WinGamePanel"]
+[node name="LoseLabel" type="RichTextLabel" parent="WinGamePanel"]
 layout_mode = 0
 offset_left = 536.0
 offset_top = 64.0
