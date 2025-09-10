@@ -286,7 +286,14 @@ offset_right = -119.0
 offset_bottom = 23.0
 text = "Random"
 
-[node name="Label2" type="Label" parent="."]
+[node name="HighScoreButton" type="Button" parent="."]
+offset_left = 984.0
+offset_top = 16.0
+offset_right = 1128.0
+offset_bottom = 48.0
+text = "High Score"
+
+[node name="TopicLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 64.0
@@ -295,19 +302,21 @@ offset_bottom = 87.0
 text = "Topics"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label2"]
+[node name="LessonLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 304.0
-offset_right = 816.0
-offset_bottom = 23.0
+offset_left = 328.0
+offset_top = 64.0
+offset_right = 840.0
+offset_bottom = 87.0
 text = "Lesson "
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label2/Label"]
+[node name="DescriptionLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 536.0
-offset_right = 799.0
-offset_bottom = 23.0
+offset_left = 864.0
+offset_top = 64.0
+offset_right = 1127.0
+offset_bottom = 87.0
 text = "Description"
 horizontal_alignment = 1
 

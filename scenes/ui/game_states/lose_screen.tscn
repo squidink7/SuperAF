@@ -19,18 +19,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_55yv3")
 
-[node name="WinLabel" type="Label" parent="WinGamePanel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -88.0
-offset_top = 40.0
-offset_right = 88.0
-offset_bottom = 88.0
-grow_horizontal = 2
-text = "You Lose"
-horizontal_alignment = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="WinGamePanel"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 64.0
+offset_right = 616.0
+offset_bottom = 96.0
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]You Lose[/wave]
+"
 
 [node name="RestartButton" type="Button" parent="WinGamePanel"]
 unique_name_in_owner = true

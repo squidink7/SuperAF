@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://csxsx8mhfjgog"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HighScorePanel" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 448.0
+offset_bottom = 448.0
+
+[node name="StudentIDLabel" type="Label" parent="HighScorePanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 32.0
+text = "Student ID"
+
+[node name="HighScoreLabel" type="Label" parent="HighScorePanel"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 32.0
+text = "HighScore"
+
+[node name="CurrentScoreLabel" type="Label" parent="HighScorePanel"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 448.0
+offset_bottom = 32.0
+text = "Current Score"
+
+[node name="StudentHighScore" type="ScrollContainer" parent="HighScorePanel"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 448.0
+offset_bottom = 448.0
+
+[node name="StudentHighScore" type="VBoxContainer" parent="HighScorePanel/StudentHighScore"]
+layout_mode = 2

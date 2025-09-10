@@ -145,3 +145,11 @@ offset_left = 426.0
 offset_right = 531.0
 offset_bottom = 23.0
 text = "Lesson Check"
+
+[node name="LessonSettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 24.0
+offset_right = 1104.0
+offset_bottom = 56.0
+text = "Game Settings"
