@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://daw6a2atdcnga"]
+
+[ext_resource type="Texture2D" uid="uid://chib4ablj7mm4" path="res://assets/textures/visualisation game textures/clound1.png" id="1_rjexr"]
+[ext_resource type="Script" uid="uid://sfqweg8l4b4y" path="res://scripts/decoration_object.gd" id="2_o34gk"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_rjexr")
+script = ExtResource("2_o34gk")

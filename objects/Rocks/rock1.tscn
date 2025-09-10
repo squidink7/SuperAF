@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwgef1d8jtliy"]
+
+[ext_resource type="Texture2D" uid="uid://lkbmb0vmgkow" path="res://assets/textures/visualisation game textures/rock1.png" id="1_bksm0"]
+[ext_resource type="Script" uid="uid://sfqweg8l4b4y" path="res://scripts/decoration_object.gd" id="2_8dh2f"]
+
+[node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_bksm0")
+script = ExtResource("2_8dh2f")

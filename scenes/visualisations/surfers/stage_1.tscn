@@ -123,6 +123,10 @@ libraries = {
 }
 speed_scale = 2.0
 
+[node name="Object Spawner" type="Node2D" parent="."]
+position = Vector2(1271, 262)
+script = ExtResource("8_vyyca")
+
 [connection signal="life_gain" from="." to="Character" method="_on_game_logic_manager_life_gain"]
 [connection signal="life_gain" from="." to="Villian" method="_on_game_logic_manager_life_gain"]
 [connection signal="life_lost" from="." to="Character" method="_on_game_logic_manager_life_lost"]
