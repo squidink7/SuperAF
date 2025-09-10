@@ -28,6 +28,35 @@ static func get_student(id: String) -> Student:
 		print('Error loading student')
 		return null
 
+func set_lesson_completion(student_id: String, topic: String, lesson: String):
+	var path = 'user://students/' + student_id + '.txt'
+	
+	if !FileAccess.file_exists(path):
+		# Create student file
+		FileAccess.open(path, FileAccess.WRITE).close()
+	
+	var file = FileAccess.open(path, FileAccess.WRITE)
+	var completed_lessons = file.get_as_text().split('\n')
+	if !topic + '/lessons/' + lesson in completed_lessons:
+		file.store_string(topic + '/lessons/' + lesson)
+	
+
+func get_students() -> PackedStringArray:
+	if !DirAccess.dir_exists_absolute('user://students/'):
+		return []
+
+	return DirAccess.get_directories_at('user://students/')
+
+func get_lesson_completion(student_id: String, topic: String, lesson: String) -> bool:
+	var path = 'user://students/' + student_id + '.txt'
+	
+	if !FileAccess.file_exists(path):
+		return false
+	
+	var file = FileAccess.open(path, FileAccess.READ)
+	var completed_lessons = file.get_as_text().split('\n')
+	return topic + '/lessons/' + lesson in completed_lessons
+
 static func set_student(student: Student):
 	DirAccess.make_dir_absolute("user://students/")
 	var file = FileAccess.open("user://students/" + student.id, FileAccess.WRITE)

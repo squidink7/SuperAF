@@ -95,4 +95,3 @@ func _input(event: InputEvent) -> void:
 
 		if valid_input_for_sound == true:
 			key_pressed.emit()
-
