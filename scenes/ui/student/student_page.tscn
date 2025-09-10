@@ -227,7 +227,6 @@ offset_left = 216.0
 offset_top = 16.0
 offset_right = 260.0
 offset_bottom = 40.0
-button_pressed = true
 button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]

@@ -84,6 +84,13 @@ offset_bottom = 32.0
 text = "Lessons"
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="LessonsPanel"]
+layout_mode = 0
+offset_right = 288.0
+offset_bottom = 32.0
+text = "Lessons"
+horizontal_alignment = 1
+
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 32.0
@@ -126,3 +133,27 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="StudentIDLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 87.0
+text = "Student ID "
+
+[node name="QuizCheckLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 856.0
+offset_top = 64.0
+offset_right = 928.0
+offset_bottom = 87.0
+text = "Quiz Check"
+
+[node name="QuizCheckLabel2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 984.0
+offset_top = 64.0
+offset_right = 1070.0
+offset_bottom = 87.0
+text = "Lesson Check"
