@@ -20,11 +20,11 @@ var background_y_range = [100, 250]
 var forground_y_range = [375, 450]
 var object_x_position = 1200
 
-var background_speed = 50
-var foreground_speed = 100
+var background_speed = 320
+var foreground_speed = 800
 
 #Object spawn timers:
-var max_time = 7;
+var max_time = 3;
 var timer = 0
 
 var cloud_spawn_time = 0;
@@ -39,9 +39,13 @@ var bush_spawned = false
 
 
 func get_new_spawn_times():
-	cloud_spawn_time = randf_range(3, max_time)
-	rock_spawn_time = randf_range(3, max_time)
-	bush_spawn_time = randf_range(3, max_time) 
+	cloud_spawn_time = randf_range(0.5, max_time)
+	rock_spawn_time = randf_range(0.5, max_time)
+	bush_spawn_time = randf_range(0.5, max_time) 
+
+	cloud_spawned = false;
+	rock_spawned = false;
+	bush_spawned = false;
 
 func spawn_cloud():
 	var cloud = clouds[randi_range(0, len(clouds) - 1)].instantiate()
@@ -57,15 +61,18 @@ func _ready():
 	get_new_spawn_times()
 
 func _process(delta: float):
-	
+	timer += delta
 	
 	if timer > cloud_spawn_time and not cloud_spawned:
+		cloud_spawned = true
 		spawn_cloud()
 
 	if timer > rock_spawn_time and not rock_spawned:
+		rock_spawned = true
 		spawn_rock()
 	
 	if timer > bush_spawn_time and not bush_spawned:
+		bush_spawned = true
 		pass
 
 	if timer >= max_time:
