@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg880pmddjqbh"]
+
+[ext_resource type="Script" uid="uid://uufh0cvaghpo" path="res://scenes/ui/win_screen.gd" id="1_55yv3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinGamePanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = -0.037
+anchor_right = 0.021
+anchor_bottom = -0.037
+offset_left = 39.808
+offset_top = 87.976
+offset_right = 743.808
+offset_bottom = 471.976
+script = ExtResource("1_55yv3")
+
+[node name="WinLabel" type="Label" parent="WinGamePanel"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 16.0
+offset_right = 432.0
+offset_bottom = 64.0
+text = "You Lose"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = -0.037
+anchor_right = 0.021
+anchor_bottom = -0.037
+offset_left = 639.808
+offset_top = 335.976
+offset_right = 717.808
+offset_bottom = 384.976
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+
+[node name="Quit" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = -0.037
+anchor_right = 0.021
+anchor_bottom = -0.037
+offset_left = 639.808
+offset_top = 407.976
+offset_right = 717.808
+offset_bottom = 456.976
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
