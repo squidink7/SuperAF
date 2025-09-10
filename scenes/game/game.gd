@@ -1,9 +1,26 @@
 class_name Game
 extends Control
 
+signal life_changed(current_lives: int, max_lives: int, increase: bool)
+signal game_over
+
 var score: int = 0
 var score_multiplier := 1.0
 var time: float = 0
+
+@export var correct_before_life_increase: int
+var current_correct_count := 0
+
+@export var mistakes_before_life_loss: int
+var current_mistake_count := 0
+
+
+@export var max_lives: int
+@export var lives: int:
+
+	set(value):
+		lives = clamp(value,0, max_lives)
+
 
 func setup(lesson_text: String, game_mode: String):
 	$Terminal.setup(lesson_text)
@@ -12,8 +29,9 @@ func setup(lesson_text: String, game_mode: String):
 
 	$Terminal.correct_word_entered.connect(visualisation.correct)
 	$Terminal.incorrect_character_entered.connect(visualisation.incorrect)
-
+	life_changed.connect(visualisation.life_changed)
 	$Visualisation.add_child(visualisation)
+	
 
 func _process(delta: float) -> void:
 	time += delta
@@ -33,3 +51,32 @@ func incorrect():
 	print("Incorrect character pressed!")
 	$Score.text = 'Score: ' + str(score)
 	%IncorrectSound.play()
+	
+	
+func on_game_over():
+	print("Game over")
+	
+
+func typing_correct() -> void:
+	current_correct_count += 1
+	
+	if (current_correct_count >= correct_before_life_increase):
+		current_correct_count = 0
+		lives += 1
+		print("Life gained, current " + str(lives))
+		life_changed.emit(lives, max_lives, true)
+		
+
+
+
+func typing_incorrect() -> void:
+	current_mistake_count += 1
+	if (current_mistake_count >= mistakes_before_life_loss):
+		current_mistake_count = 0
+		lives -= 1
+		print("Life lost, current: " + str(lives))
+		life_changed.emit(lives, max_lives, false)
+		
+		if (lives <= 0): 
+			game_over.emit()
+			

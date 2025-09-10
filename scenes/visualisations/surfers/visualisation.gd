@@ -14,3 +14,7 @@ func correct():
 
 func incorrect():
 	fail.emit()
+	
+	
+func life_changed(current_lives: int, max_lives: int, increase: bool):
+	%Stage.on_life_changed(current_lives, max_lives, increase)
