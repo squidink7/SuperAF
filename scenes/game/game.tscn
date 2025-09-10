@@ -81,10 +81,9 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="game_over" from="." to="." method="on_game_over"]
-[connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
-[connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
+[connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
+[connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
 [connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]
