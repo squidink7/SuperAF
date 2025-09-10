@@ -25,10 +25,16 @@ var foreground_speed = 100
 
 #Object spawn timers:
 var max_time = 7;
-var timer = 0;
+var timer = 0
+
 var cloud_spawn_time = 0;
+var cloud_spawned = false;
+
 var rock_spawn_time = 0;
+var rock_spawned = false
+
 var bush_spawn_time = 0;
+var bush_spawned = false
 
 
 
@@ -51,15 +57,15 @@ func _ready():
 	get_new_spawn_times()
 
 func _process(delta: float):
-	timer += delta
 	
-	if (cloud_spawn_time - 0.005) < timer and timer < cloud_spawn_time:
+	
+	if timer > cloud_spawn_time and not cloud_spawned:
 		spawn_cloud()
 
-	if (rock_spawn_time - 0.005) < timer and timer < rock_spawn_time:
+	if timer > rock_spawn_time and not rock_spawned:
 		spawn_rock()
 	
-	if (bush_spawn_time - 0.005) < timer and timer < bush_spawn_time:
+	if timer > bush_spawn_time and not bush_spawned:
 		pass
 
 	if timer >= max_time:
