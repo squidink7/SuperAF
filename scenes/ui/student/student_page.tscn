@@ -8,6 +8,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmtof")
@@ -28,7 +30,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 16.0
+offset_top = 24.0
 offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 2
@@ -59,7 +61,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 16.0
+offset_top = 24.0
 offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 2
@@ -121,7 +123,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = 16.0
+offset_top = 24.0
 offset_right = -16.0
 offset_bottom = -15.0
 grow_horizontal = 2
@@ -283,5 +285,30 @@ offset_left = -184.0
 offset_right = -119.0
 offset_bottom = 23.0
 text = "Random"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 304.0
+offset_bottom = 87.0
+text = "Topics"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label2"]
+layout_mode = 0
+offset_left = 304.0
+offset_right = 816.0
+offset_bottom = 23.0
+text = "Lesson "
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label2/Label"]
+layout_mode = 0
+offset_left = 536.0
+offset_right = 799.0
+offset_bottom = 23.0
+text = "Description"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="GoButton" to="." method="start_lesson"]
