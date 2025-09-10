@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
 [ext_resource type="Shader" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
-[ext_resource type="Shader" uid="uid://dktcryorg1o0h" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
+[ext_resource type="Shader" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]

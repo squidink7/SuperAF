@@ -1,15 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=4 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
+[ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 8.0
-offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmtof")
@@ -160,6 +159,8 @@ offset_left = -1.0
 offset_top = 15.0
 offset_right = 64.0
 offset_bottom = 63.0
+button_pressed = true
+button_group = ExtResource("2_qbap6")
 
 [node name="Difficulty1Label" type="Label" parent="DifficultySelectPanel/Difficulty1"]
 layout_mode = 0
@@ -175,6 +176,7 @@ offset_left = 93.0
 offset_top = 15.0
 offset_right = 158.0
 offset_bottom = 63.0
+button_group = ExtResource("2_qbap6")
 
 [node name="Difficulty2Label" type="Label" parent="DifficultySelectPanel/Difficulty2"]
 layout_mode = 0
@@ -190,6 +192,7 @@ offset_left = 199.0
 offset_top = 16.0
 offset_right = 264.0
 offset_bottom = 64.0
+button_group = ExtResource("2_qbap6")
 
 [node name="Difficulty3Label" type="Label" parent="DifficultySelectPanel/Difficulty3"]
 layout_mode = 0
@@ -229,6 +232,7 @@ offset_left = 216.0
 offset_top = 16.0
 offset_right = 260.0
 offset_bottom = 40.0
+button_pressed = true
 button_group = ExtResource("2_ds8ba")
 
 [node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]
@@ -320,4 +324,18 @@ offset_bottom = 87.0
 text = "Description"
 horizontal_alignment = 1
 
+[node name="StudentID" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -288.0
+offset_top = 16.0
+offset_right = -40.0
+offset_bottom = 56.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 2
+
+[connection signal="pressed" from="BackButton" to="." method="exit"]
 [connection signal="pressed" from="GoButton" to="." method="start_lesson"]

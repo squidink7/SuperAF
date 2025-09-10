@@ -11,3 +11,12 @@ func correct():
 
 func incorrect():
 	fail.emit()
+
+func life_changed(lives,max_lives,delta):
+	pass
+
+func game_win():
+	pass
+
+func game_lose():
+	pass

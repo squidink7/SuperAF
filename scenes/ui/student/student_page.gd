@@ -48,3 +48,7 @@ func start_lesson():
 	$/root/Main.add_child(game)
 	game.setup(lesson_text, game_mode)
 	$/root/Main.remove_child(self)
+
+
+func exit() -> void:
+	pass # Replace with function body.

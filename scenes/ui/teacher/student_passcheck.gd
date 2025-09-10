@@ -1,5 +1,7 @@
 extends Control
 
+func exit():
+	get_tree().quit()
 
 func set_data(studentID,quizcomplete,lessoncomplete):
     %StudentID.text = studentID
