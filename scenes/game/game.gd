@@ -80,3 +80,7 @@ func typing_incorrect() -> void:
 			
 func typing_complete():
 	game_win.emit()
+
+
+func exit() -> void:
+	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))

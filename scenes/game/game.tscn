@@ -42,6 +42,14 @@ volume_db = 1.0
 unique_name_in_owner = true
 stream = ExtResource("4_2a8rs")
 
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 48.0
+text = "< Back"
+
 [node name="Score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -87,3 +95,4 @@ grow_vertical = 2
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
 [connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]
+[connection signal="pressed" from="BackButton" to="." method="exit"]
