@@ -21,7 +21,8 @@ const LOOKAHEAD = 2
 var char_index: int = 0
 var incorrect_chars: String = ''
 
-func _ready():
+func setup(text: String):
+	source_text = text
 	update_text()
 
 func update_text():
@@ -43,12 +44,12 @@ func get_prompt_text() -> String:
 func add_character(chr: String):
 	# Checks if the chatacter is correct
 	var correct = false
-	if source_text.length() > char_index && source_text[char_index].to_upper() == chr:
+	if source_text.length() > char_index && source_text[char_index].to_upper() == chr && incorrect_chars.length() == 0:
 		char_index += 1
 		correct = true
 	else:
 		# Add incorrect character to array
-		incorrect_chars += chr.to_lower()
+		incorrect_chars += chr.to_lower().replace(' ', '▮')
 		incorrect_character_entered.emit()
 	
 	update_text()
@@ -81,6 +82,8 @@ func _input(event: InputEvent) -> void:
 			add_character('.')
 		elif event.keycode == KEY_COMMA:
 			add_character(',')
+		elif event.keycode == KEY_ENTER:
+			add_character('\n')
 		elif OS.get_keycode_string(event.keycode) in allowed_characters:
 			# Pressed key to enter text
 			var key = OS.get_keycode_string(event.keycode)
