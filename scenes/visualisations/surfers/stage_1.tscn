@@ -89,7 +89,7 @@ unique_name_in_owner = true
 position = Vector2(801, 261)
 script = ExtResource("4_yh6pm")
 max_lives = 5
-lives = 3
+lives = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="Character"]
 scale = Vector2(0.1025, 0.1025)

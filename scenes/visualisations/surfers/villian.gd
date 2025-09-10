@@ -40,11 +40,17 @@ func _on_game_logic_manager_life_lost() -> void:
 func _on_game_logic_manager_life_gain() -> void:
 	
 	# Since both character and villian signals run at the same time, 1 has to be added
-	if (character.lives > character.max_lives):
+	if (character.lives == character.max_lives):
+		
+		if (self.global_position.x > default_position):
+			character_target_position -= distance_to_move
+			return
+
 		print("Already at max distance")
 		return
 		
-	character_target_position -= distance_to_move
+	else:
+		character_target_position -= distance_to_move
 		
 	
 	
