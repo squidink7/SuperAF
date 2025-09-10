@@ -15,6 +15,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5i0tg")
+correct_before_life_increase = 3
+mistakes_before_life_loss = 3
+max_lives = 5
+lives = 3
 
 [node name="Terminal" parent="." instance=ExtResource("2_bdhmt")]
 layout_mode = 1
@@ -77,6 +81,9 @@ offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[connection signal="game_over" from="." to="." method="on_game_over"]
+[connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
+[connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]

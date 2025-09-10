@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-signal game_over
 
 @export var max_lives: int
 @export var lives: int:
@@ -23,10 +22,6 @@ func _process(delta: float) -> void:
 func _on_game_logic_manager_life_lost() -> void:
 		lives -= 1
 		print("Life lost, current: " + str(lives))
-		
-		
-		if (lives <= 0):
-			game_over.emit()
 		
 		#TODO: Play animation
 
