@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lr4bqr6wyyrp"
+path="res://.godot/imported/keypress0.wav-3fae446238b768f2458240b51e2d523f.sample"
+
+[deps]
+
+source_file="res://assets/SFX/button clicks/keypress0.wav"
+dest_files=["res://.godot/imported/keypress0.wav-3fae446238b768f2458240b51e2d523f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

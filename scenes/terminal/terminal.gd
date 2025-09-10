@@ -3,6 +3,9 @@ extends Control
 signal correct_word_entered()
 signal incorrect_character_entered()
 signal typing_complete()
+signal key_pressed()
+
+var valid_input_for_sound = false;
 
 var source_text: String = "The quick brown fox jumps over the lazy dog"
 
@@ -68,6 +71,8 @@ func delete_character():
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey && event.is_pressed():
+		valid_input_for_sound = true;
+
 		if event.keycode == KEY_BACKSPACE:
 			delete_character()
 		elif event.keycode == KEY_SPACE:
@@ -81,4 +86,9 @@ func _input(event: InputEvent) -> void:
 			var key = OS.get_keycode_string(event.keycode)
 			add_character(key)
 		else:
+			valid_input_for_sound = false;
 			print('Ignoring key press: ' + OS.get_keycode_string(event.keycode))
+
+		if valid_input_for_sound == true:
+			key_pressed.emit()
+
