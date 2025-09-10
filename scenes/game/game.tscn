@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://iwyp1k14kx6y"]
+[gd_scene load_steps=7 format=3 uid="uid://iwyp1k14kx6y"]
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_bdhmt"]
 [ext_resource type="AudioStream" uid="uid://bwinosnrlhtc" path="res://assets/SFX/Game SFX/correct.wav" id="3_87uf6"]
 [ext_resource type="AudioStream" uid="uid://xxe2mckdx8fs" path="res://assets/SFX/Game SFX/incorrect_sound.wav" id="4_2a8rs"]
+[ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="4_5i0tg"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="5_4j704"]
 
 [node name="Game" type="Control"]
@@ -27,6 +28,11 @@ offset_bottom = -32.0
 [node name="CorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("3_87uf6")
+
+[node name="KeyPress" type="AudioStreamPlayer" parent="Terminal"]
+unique_name_in_owner = true
+stream = ExtResource("4_5i0tg")
+volume_db = 1.0
 
 [node name="IncorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
@@ -73,3 +79,4 @@ grow_vertical = 2
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
+[connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]

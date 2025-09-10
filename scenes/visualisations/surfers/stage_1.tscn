@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=11 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
+[ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
@@ -73,9 +74,14 @@ script = ExtResource("1_s7m7o")
 correct_before_life_increase = 3
 mistakes_before_life_loss = 3
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(807.375, 184)
+scale = Vector2(0.6469, 0.375)
+texture = ExtResource("2_alf7g")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(810, 429)
-scale = Vector2(0.648, 0.295)
+position = Vector2(808, 429)
+scale = Vector2(0.6464, 0.295)
 texture = ExtResource("2_s7m7o")
 
 [node name="Character" type="CharacterBody2D" parent="."]
