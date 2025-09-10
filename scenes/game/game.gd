@@ -8,12 +8,12 @@ var time: float = 0
 func setup(lesson_text: String, game_mode: String):
 	$Terminal.setup(lesson_text)
 	
-	var game = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
+	var visualisation = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
 
-	$Terminal.correct_word_entered.connect(game.correct)
-	$Terminal.incorrect_character_entered.connect(game.incorrect)
+	$Terminal.correct_word_entered.connect(visualisation.correct)
+	$Terminal.incorrect_character_entered.connect(visualisation.incorrect)
 
-	$Visualisation.add_child(game)
+	$Visualisation.add_child(visualisation)
 
 func _process(delta: float) -> void:
 	time += delta
