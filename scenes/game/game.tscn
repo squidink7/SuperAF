@@ -91,6 +91,8 @@ grow_vertical = 2
 
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
+[connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
+[connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]

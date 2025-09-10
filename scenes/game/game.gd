@@ -1,6 +1,8 @@
 class_name Game
 extends Control
 
+
+enum Difficulty {EASY, MEDIUM, HARD}
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
 signal game_win()
 signal game_lose()
@@ -23,7 +25,7 @@ var current_mistake_count := 0
 		lives = clamp(value,0, max_lives)
 
 
-func setup(lesson_text: String, game_mode: String):
+func setup(lesson_text: String, game_mode: String, difficulty: Difficulty):
 	$Terminal.setup(lesson_text)
 	
 	var visualisation = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
@@ -34,6 +36,27 @@ func setup(lesson_text: String, game_mode: String):
 	game_win.connect(visualisation.game_win)
 	game_lose.connect(visualisation.game_lose)
 	$Visualisation.add_child(visualisation)
+	
+	match difficulty:
+		Difficulty.EASY:
+			correct_before_life_increase = 3
+			mistakes_before_life_loss = 3
+			max_lives = 6
+			lives = 4
+		Difficulty.MEDIUM:
+			correct_before_life_increase = 4
+			mistakes_before_life_loss = 2
+			max_lives = 5
+			lives = 3
+		Difficulty.HARD:
+			correct_before_life_increase = 5
+			mistakes_before_life_loss = 1
+			max_lives = 3
+			lives = 2
+		
+		
+	
+
 	
 
 func _process(delta: float) -> void:
@@ -80,7 +103,10 @@ func typing_incorrect() -> void:
 			
 func typing_complete():
 	game_win.emit()
+<<<<<<< Updated upstream
 
 
 func exit() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))
+=======
+>>>>>>> Stashed changes
