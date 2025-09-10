@@ -6,7 +6,7 @@ var score_multiplier := 1.0
 var time: float = 0
 
 func setup(lesson_text: String, game_mode: String):
-	$Terminal.source_text = lesson_text
+	$Terminal.setup(lesson_text)
 	
 	var game = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
 
