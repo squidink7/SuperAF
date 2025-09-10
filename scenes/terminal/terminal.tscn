@@ -93,8 +93,10 @@ offset_right = -16.0
 offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "This is example text [color=#888]with prompt[/color]"
+scroll_following = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

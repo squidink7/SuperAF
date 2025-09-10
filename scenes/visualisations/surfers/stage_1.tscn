@@ -1,12 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=15 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
+[ext_resource type="Shader" uid="uid://b3ocxbwmir1ev" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
+[ext_resource type="Shader" uid="uid://dktcryorg1o0h" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
 [ext_resource type="Script" uid="uid://7g3x17lqq0gf" path="res://scenes/visualisations/surfers/villian.gd" id="6_m4g1a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh6pm"]
+shader = ExtResource("2_yh6pm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vyyca"]
+shader = ExtResource("4_ux3oo")
 
 [sub_resource type="Animation" id="Animation_alf7g"]
 length = 0.001
@@ -75,11 +83,15 @@ correct_before_life_increase = 3
 mistakes_before_life_loss = 3
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_yh6pm")
 position = Vector2(807.375, 184)
 scale = Vector2(0.6469, 0.375)
 texture = ExtResource("2_alf7g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_vyyca")
 position = Vector2(808, 429)
 scale = Vector2(0.6464, 0.295)
 texture = ExtResource("2_s7m7o")
@@ -89,7 +101,7 @@ unique_name_in_owner = true
 position = Vector2(801, 261)
 script = ExtResource("4_yh6pm")
 max_lives = 5
-lives = 3
+lives = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="Character"]
 scale = Vector2(0.1025, 0.1025)

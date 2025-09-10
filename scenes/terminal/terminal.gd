@@ -31,7 +31,8 @@ func update_text():
 	if incorrect_chars != '':
 		text += '[color=#f00]' + incorrect_chars + '[/color]'
 	else:
-		text += '[color=#888]' + get_prompt_text() + '[/color]'
+		var prompt_text = get_prompt_text()
+		text += '[color=#888][u]' + prompt_text[0] + '[/u]' + prompt_text.substr(1) + '[/color]'
 	
 	%Label.text = text
 
