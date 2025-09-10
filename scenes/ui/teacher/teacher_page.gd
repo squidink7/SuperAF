@@ -24,3 +24,17 @@ func show_lessons(topic: String):
 		var li = lesson_item.instantiate()
 		li.set_data(lesson, lesson_text, true)
 		%Lessons.add_child(li)
+
+
+#func student_pass():
+#	var students = Data.get_studentpass(studentID)
+#		for student in students:
+#			var chk = student_passcheck.instantiate()
+#			chk.set_data(studentID, true, true)
+#			%StudentPassPanel.add_child(chk)
+
+
+	
+
+
+

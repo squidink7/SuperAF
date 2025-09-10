@@ -1,10 +1,13 @@
-[gd_scene format=3 uid="uid://3ggcwo0433gk"]
+[gd_scene load_steps=2 format=3 uid="uid://3ggcwo0433gk"]
+
+[ext_resource type="Script" uid="uid://4jdqgyuna7f2" path="res://scenes/ui/teacher/student_passcheck.gd" id="1_oqo75"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_oqo75")
 
 [node name="StudentCheckPanel" type="Panel" parent="."]
 layout_mode = 0
@@ -14,20 +17,21 @@ offset_right = 576.0
 offset_bottom = 128.0
 
 [node name="StudentID" type="Label" parent="StudentCheckPanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_right = 349.0
 offset_bottom = 45.0
 
-[node name="QuizComplete" type="Label" parent="."]
+[node name="QuizComplete" type="Label" parent="StudentCheckPanel"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 448.0
-offset_top = 83.0
-offset_right = 512.0
-offset_bottom = 128.0
+offset_left = 349.0
+offset_right = 413.0
+offset_bottom = 45.0
 
-[node name="LessonComplete" type="Label" parent="."]
+[node name="LessonComplete" type="Label" parent="StudentCheckPanel"]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 512.0
-offset_top = 83.0
-offset_right = 576.0
-offset_bottom = 128.0
+offset_left = 413.0
+offset_right = 477.0
+offset_bottom = 45.0
