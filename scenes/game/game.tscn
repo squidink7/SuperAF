@@ -87,3 +87,4 @@ grow_vertical = 2
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
+[connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]

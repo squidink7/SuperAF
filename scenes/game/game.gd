@@ -2,7 +2,8 @@ class_name Game
 extends Control
 
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
-signal game_over
+signal game_win()
+signal game_lose()
 
 var score: int = 0
 var score_multiplier := 1.0
@@ -30,6 +31,8 @@ func setup(lesson_text: String, game_mode: String):
 	$Terminal.correct_word_entered.connect(visualisation.correct)
 	$Terminal.incorrect_character_entered.connect(visualisation.incorrect)
 	life_changed.connect(visualisation.life_changed)
+	game_win.connect(visualisation.game_win)
+	game_lose.connect(visualisation.game_lose)
 	$Visualisation.add_child(visualisation)
 	
 
@@ -50,12 +53,7 @@ func incorrect():
 	score -= 1
 	print("Incorrect character pressed!")
 	$Score.text = 'Score: ' + str(score)
-	%IncorrectSound.play()
-	
-	
-func on_game_over():
-	print("Game over")
-	
+	%IncorrectSound.play()	
 
 func typing_correct() -> void:
 	current_correct_count += 1
@@ -78,5 +76,7 @@ func typing_incorrect() -> void:
 		life_changed.emit(lives, max_lives, false)
 		
 		if (lives <= 0): 
-			game_over.emit()
+			game_lose.emit()
 			
+func typing_complete():
+	game_win.emit()

@@ -24,6 +24,7 @@ var incorrect_chars: String = ''
 func setup(text: String):
 	source_text = text
 	update_text()
+	process_mode = Node.PROCESS_MODE_INHERIT
 
 func update_text():
 	var text = source_text.substr(0, char_index)
@@ -95,3 +96,6 @@ func _input(event: InputEvent) -> void:
 
 		if valid_input_for_sound == true:
 			key_pressed.emit()
+
+func game_over():
+	process_mode = Node.PROCESS_MODE_DISABLED

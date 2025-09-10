@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctaboy2ynsoel"]
+[gd_scene load_steps=9 format=3 uid="uid://ctaboy2ynsoel"]
 
 [ext_resource type="Script" uid="uid://c545cdpty8qhe" path="res://scenes/visualisations/surfers/visualisation.gd" id="1_s3p1r"]
 [ext_resource type="PackedScene" uid="uid://bvf1ybjl7k11r" path="res://scenes/visualisations/surfers/stage_1.tscn" id="2_rtl32"]
+[ext_resource type="PackedScene" uid="uid://be6krggkl251t" path="res://scenes/ui/game_states/win_screen.tscn" id="3_gne4c"]
+[ext_resource type="PackedScene" uid="uid://cg880pmddjqbh" path="res://scenes/ui/game_states/lose_screen.tscn" id="4_mpqlg"]
 
 [sub_resource type="Animation" id="Animation_kmt88"]
 length = 0.001
@@ -51,6 +53,14 @@ unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_mm13q")
 }
+
+[node name="win_screen" parent="." instance=ExtResource("3_gne4c")]
+visible = false
+layout_mode = 2
+
+[node name="lose_screen" parent="." instance=ExtResource("4_mpqlg")]
+visible = false
+layout_mode = 2
 
 [connection signal="fail" from="." to="Viewport/World/Stage" method="typing_incorrect"]
 [connection signal="success" from="." to="Viewport/World/Stage" method="typing_correct"]
