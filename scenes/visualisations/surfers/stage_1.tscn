@@ -1,18 +1,27 @@
-[gd_scene load_steps=16 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=21 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
 [ext_resource type="Shader" uid="uid://b3ocxbwmir1ev" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
+[ext_resource type="Texture2D" uid="uid://vflpbrbbqj70" path="res://assets/textures/background_buildings.png" id="4_m4g1a"]
 [ext_resource type="Shader" uid="uid://dktcryorg1o0h" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
+[ext_resource type="Shader" uid="uid://2yu2jy8pl702" path="res://scenes/visualisations/surfers/buidlings_front.gdshader" id="5_ai23s"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
+[ext_resource type="Texture2D" uid="uid://pot3k6rd2ry0" path="res://assets/textures/foreground_buildings.png" id="6_d38ph"]
 [ext_resource type="Script" uid="uid://7g3x17lqq0gf" path="res://scenes/visualisations/surfers/villian.gd" id="6_m4g1a"]
 [ext_resource type="Script" uid="uid://dx5h3phi2awwu" path="res://scripts/object_spawner.gd" id="10_ux3oo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yh6pm"]
 shader = ExtResource("2_yh6pm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_seh6l"]
+shader = ExtResource("2_yh6pm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgrew"]
+shader = ExtResource("5_ai23s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vyyca"]
 shader = ExtResource("4_ux3oo")
@@ -86,9 +95,23 @@ mistakes_before_life_loss = 3
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_yh6pm")
-position = Vector2(807.375, 184)
+position = Vector2(808, 184)
 scale = Vector2(0.6469, 0.375)
 texture = ExtResource("2_alf7g")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_seh6l")
+position = Vector2(631.688, 220)
+scale = Vector2(0.5, 0.435)
+texture = ExtResource("4_m4g1a")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_sgrew")
+position = Vector2(624, 256.5)
+scale = Vector2(0.5, 0.511)
+texture = ExtResource("6_d38ph")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_repeat = 2
@@ -96,6 +119,10 @@ material = SubResource("ShaderMaterial_vyyca")
 position = Vector2(808, 429)
 scale = Vector2(0.6464, 0.295)
 texture = ExtResource("2_s7m7o")
+
+[node name="Object Spawner" type="Node2D" parent="."]
+position = Vector2(1271, 262)
+script = ExtResource("10_ux3oo")
 
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
@@ -124,7 +151,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_vyyca")
 }
 speed_scale = 2.0
-
-[node name="Object Spawner" type="Node2D" parent="."]
-position = Vector2(1271, 262)
-script = ExtResource("10_ux3oo")
