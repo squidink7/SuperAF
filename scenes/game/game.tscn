@@ -36,7 +36,7 @@ stream = ExtResource("3_87uf6")
 [node name="KeyPress" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("4_5i0tg")
-volume_db = 1.0
+volume_db = -15.0
 
 [node name="IncorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true

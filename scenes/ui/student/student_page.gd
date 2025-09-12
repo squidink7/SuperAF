@@ -1,5 +1,7 @@
 extends Control
 
+signal button_clicked()
+
 var current_topic: String
 var current_lesson: String
 
@@ -25,8 +27,10 @@ func show_lessons(topic: String):
 		b.text = lesson
 		b.pressed.connect(set_lesson.bind(topic, lesson))
 		%Lessons.add_child(b)
+		button_clicked.emit()
 
 func set_lesson(topic: String, lesson: String):
+	button_clicked.emit()
 	var lesson_text = Data.get_lesson(topic, lesson)
 
 	current_topic = topic
@@ -51,6 +55,8 @@ func get_lesson_settings():
 
 	return [game_mode, game_difficulty]
 	
+
+
 
 func start_lesson():
 	var lesson_text = Data.get_lesson(current_topic, current_lesson)
