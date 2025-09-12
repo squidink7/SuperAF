@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=6 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
+[ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
 [ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
+[ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
@@ -12,6 +14,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cmtof")
+
+[node name="ButtonClick" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_dhq80")
+volume_db = -15.0
+
+[node name="KeyPress" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_81rr2")
+volume_db = -15.0
 
 [node name="TopicsPanel" type="Panel" parent="."]
 layout_mode = 1
@@ -340,5 +352,13 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
 
+[connection signal="button_clicked" from="." to="ButtonClick" method="play"]
 [connection signal="pressed" from="BackButton" to="." method="exit"]
 [connection signal="pressed" from="GoButton" to="." method="start_lesson"]
+[connection signal="pressed" from="DifficultySelectPanel/Difficulty1" to="ButtonClick" method="play"]
+[connection signal="pressed" from="DifficultySelectPanel/Difficulty2" to="ButtonClick" method="play"]
+[connection signal="pressed" from="DifficultySelectPanel/Difficulty3" to="ButtonClick" method="play"]
+[connection signal="pressed" from="GameModePanel/SubwaySurfersMode" to="ButtonClick" method="play"]
+[connection signal="pressed" from="GameModePanel/EndlessRunnerMode" to="ButtonClick" method="play"]
+[connection signal="pressed" from="GameModePanel/MeteorDefenseMode" to="ButtonClick" method="play"]
+[connection signal="pressed" from="GameModePanel/RandomGameMode" to="ButtonClick" method="play"]
