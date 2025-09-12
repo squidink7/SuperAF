@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
-[ext_resource type="ButtonGroup" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
+[ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
@@ -154,12 +154,12 @@ offset_bottom = 28.0
 text = "Difficulty Setting"
 
 [node name="Difficulty1" type="CheckButton" parent="DifficultySelectPanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -1.0
 offset_top = 15.0
 offset_right = 64.0
 offset_bottom = 63.0
-button_pressed = true
 button_group = ExtResource("2_qbap6")
 
 [node name="Difficulty1Label" type="Label" parent="DifficultySelectPanel/Difficulty1"]
@@ -171,6 +171,7 @@ offset_bottom = 36.0
 text = "1"
 
 [node name="Difficulty2" type="CheckButton" parent="DifficultySelectPanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 93.0
 offset_top = 15.0
@@ -187,6 +188,7 @@ offset_bottom = 35.0
 text = "2"
 
 [node name="Difficulty3" type="CheckButton" parent="DifficultySelectPanel"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 199.0
 offset_top = 16.0

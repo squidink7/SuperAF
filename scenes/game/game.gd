@@ -2,7 +2,11 @@ class_name Game
 extends Control
 
 
-enum Difficulty {EASY, MEDIUM, HARD}
+#enum Difficulty {EASY, MEDIUM, HARD}
+
+var game_difficulty = 0 #Can you interact with private enums from external scripts? Surely its too much pain to figure out.
+
+
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
 signal game_win()
 signal game_lose()
@@ -25,7 +29,7 @@ var current_mistake_count := 0
 		lives = clamp(value,0, max_lives)
 
 
-func setup(lesson_text: String, game_mode: String, difficulty: Difficulty):
+func setup(lesson_text: String, game_mode: String, difficulty: int):
 	$Terminal.setup(lesson_text)
 	
 	var visualisation = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
@@ -38,17 +42,17 @@ func setup(lesson_text: String, game_mode: String, difficulty: Difficulty):
 	$Visualisation.add_child(visualisation)
 	
 	match difficulty:
-		Difficulty.EASY:
+		1:
 			correct_before_life_increase = 3
 			mistakes_before_life_loss = 3
 			max_lives = 6
 			lives = 4
-		Difficulty.MEDIUM:
+		2:
 			correct_before_life_increase = 4
 			mistakes_before_life_loss = 2
 			max_lives = 5
 			lives = 3
-		Difficulty.HARD:
+		3:
 			correct_before_life_increase = 5
 			mistakes_before_life_loss = 1
 			max_lives = 3

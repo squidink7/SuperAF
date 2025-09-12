@@ -34,19 +34,33 @@ func set_lesson(topic: String, lesson: String):
 
 	%LessonText.text = lesson_text
 
+func get_lesson_settings():
+	var game_mode = ""
+	var game_difficulty = 0
+
+	if %SubwaySurfersMode.button_pressed:
+		game_mode = "surfers"
+	#More gamemode buttons
+
+	if %Difficulty1.button_pressed:
+		game_difficulty = 1
+	elif %Difficulty2.button_pressed:
+		game_difficulty = 2
+	elif %Difficulty3.button_pressed:
+		game_difficulty = 3
+
+	return [game_mode, game_difficulty]
+	
+
 func start_lesson():
 	var lesson_text = Data.get_lesson(current_topic, current_lesson)
-	var game_mode = ''
+	var game_settings = get_lesson_settings()
 
-	if %RandomGameMode.button_pressed:
-		game_mode = 'melons'
-	elif %SubwaySurfersMode.button_pressed:
-		game_mode = 'surfers'
+		
 
-	var game = $/root/Main.load_scene('game/game')
-	
+	var game = $/root/Main.load_scene('game/game')	
 	$/root/Main.add_child(game)
-	game.setup(lesson_text, game_mode)
+	game.setup(lesson_text, game_settings[0], game_settings[1])
 	$/root/Main.remove_child(self)
 
 
