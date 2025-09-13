@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cjlwsm8l4xv7"]
+
+[ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="1_bgu20"]
+[ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scenes/Asteroids/asteroids.gd" id="1_bogip"]
+[ext_resource type="Texture2D" uid="uid://bnvyglvs2hp87" path="res://assets/textures/visualisation game textures/Asteroids Textures/Background_space.png" id="2_daty3"]
+[ext_resource type="Script" uid="uid://b23juy4p7slg5" path="res://scenes/Asteroids/asteroid_spawner.gd" id="3_daty3"]
+[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scenes/Asteroids/ground.gd" id="5_ld5pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]
+size = Vector2(1269, 145)
+
+[node name="Asteroids" type="Node2D"]
+script = ExtResource("1_bogip")
+
+[node name="BackgroundSpace" type="Sprite2D" parent="."]
+position = Vector2(568.065, 5.49899)
+scale = Vector2(1.15833, 1.15833)
+texture = ExtResource("2_daty3")
+
+[node name="AsteroidsCharacter" type="CharacterBody2D" parent="."]
+position = Vector2(3, -191.501)
+
+[node name="AsteroidSpawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(3, -191.501)
+script = ExtResource("3_daty3")
+
+[node name="Ground" type="Area2D" parent="."]
+position = Vector2(-15.9351, -239.501)
+script = ExtResource("5_ld5pd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(573, 616)
+scale = Vector2(2.344, 0.112)
+texture = ExtResource("1_bgu20")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(561, 659)
+shape = SubResource("RectangleShape2D_bogip")
+
+[node name="room" type="Area2D" parent="."]
+
+[connection signal="area_entered" from="Ground" to="Ground" method="_on_area_entered"]
+[connection signal="destroy_asteroid" from="Ground" to="AsteroidSpawner" method="destroy_asteroid"]

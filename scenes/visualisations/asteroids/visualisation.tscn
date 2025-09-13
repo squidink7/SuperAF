@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2px723wtyog2"]
+
+[ext_resource type="Script" uid="uid://byhd44f7absu1" path="res://scenes/visualisations/asteroids/visualisation.gd" id="1_b85ef"]
+[ext_resource type="PackedScene" uid="uid://cjlwsm8l4xv7" path="res://scenes/Asteroids/asteroids.tscn" id="1_k8hqr"]
+[ext_resource type="PackedScene" uid="uid://be6krggkl251t" path="res://scenes/ui/game_states/win_screen.tscn" id="3_e2u6d"]
+[ext_resource type="PackedScene" uid="uid://cg880pmddjqbh" path="res://scenes/ui/game_states/lose_screen.tscn" id="4_3j6h6"]
+
+[node name="Visualisation" type="SubViewportContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("1_b85ef")
+
+[node name="Viewport" type="SubViewport" parent="."]
+unique_name_in_owner = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="World" type="Node2D" parent="Viewport"]
+
+[node name="Asteroids" parent="Viewport/World" instance=ExtResource("1_k8hqr")]
+unique_name_in_owner = true
+
+[node name="win_screen" parent="." instance=ExtResource("3_e2u6d")]
+visible = false
+layout_mode = 2
+
+[node name="lose_screen" parent="." instance=ExtResource("4_3j6h6")]
+visible = false
+layout_mode = 2
