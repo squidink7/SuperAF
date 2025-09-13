@@ -64,3 +64,7 @@ layout_mode = 2
 
 [connection signal="fail" from="." to="Viewport/World/Stage" method="typing_incorrect"]
 [connection signal="success" from="." to="Viewport/World/Stage" method="typing_correct"]
+[connection signal="back" from="win_screen" to="." method="back"]
+[connection signal="restart" from="win_screen" to="." method="restart_game"]
+[connection signal="back" from="lose_screen" to="." method="back"]
+[connection signal="restart" from="lose_screen" to="." method="restart_game"]

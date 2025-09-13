@@ -29,10 +29,18 @@ var current_mistake_count := 0
 	set(value):
 		lives = clamp(value,0, max_lives)
 
+var current_game_mode: String = ''
 
 func setup(lesson_text: String, game_mode: String, difficulty: int):
 	$Terminal.setup(lesson_text)
-	
+
+	current_game_mode = game_mode
+	game_difficulty = difficulty
+
+	for node in $Visualisation.get_children():
+		$Visualisation.remove_child(node)
+		node.queue_free()
+
 	var visualisation = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
 
 	$Terminal.correct_word_entered.connect(visualisation.correct)
@@ -40,6 +48,7 @@ func setup(lesson_text: String, game_mode: String, difficulty: int):
 	life_changed.connect(visualisation.life_changed)
 	game_win.connect(visualisation.game_win)
 	game_lose.connect(visualisation.game_lose)
+	visualisation.restart.connect(restart)
 	$Visualisation.add_child(visualisation)
 	
 	if (game_mode == "Asteroids"):
@@ -74,15 +83,12 @@ func _process(delta: float) -> void:
 func correct():
 	score_multiplier += 0.5
 	score += 1 * score_multiplier
-	print("Correct word entered!")
 	$Score.text = 'Score: ' + str(score)
-	print(score)
 	%CorrectSound.play()
 
 func incorrect():
 	score_multiplier = 0.0
-	score -= 1
-	print("Incorrect character pressed!")
+	score = max(0, score-1)
 	$Score.text = 'Score: ' + str(score)
 	%IncorrectSound.play()	
 
@@ -94,9 +100,6 @@ func typing_correct() -> void:
 		lives += 1
 		print("Life gained, current " + str(lives))
 		life_changed.emit(lives, max_lives, true)
-		
-
-
 
 func typing_incorrect() -> void:
 	current_mistake_count += 1
@@ -112,6 +115,8 @@ func typing_incorrect() -> void:
 func typing_complete():
 	game_win.emit()
 
-
 func exit() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))
+
+func restart():
+	setup($Terminal.source_text, current_game_mode, game_difficulty)

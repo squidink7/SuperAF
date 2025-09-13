@@ -5,9 +5,9 @@ signal incorrect_character_entered()
 signal typing_complete()
 signal key_pressed()
 
-var valid_input_for_sound = false;
+var source_text := "The quick brown fox jumps over the lazy dog"
 
-var source_text: String = "The quick brown fox jumps over the lazy dog"
+var paused := false
 
 const allowed_characters = [
 	'A','B','C','D','E','F','G','H','I',
@@ -18,11 +18,13 @@ const allowed_characters = [
 
 const LOOKAHEAD = 2
 
-var char_index: int = 0
-var incorrect_chars: String = ''
+var char_index := 0
+var incorrect_chars := ''
 
 func setup(text: String):
 	source_text = text
+	char_index = 0
+	incorrect_chars = ''
 	update_text()
 	process_mode = Node.PROCESS_MODE_INHERIT
 
@@ -74,8 +76,10 @@ func delete_character():
 	update_text()
 
 func _input(event: InputEvent) -> void:
+	if paused: return
+	
 	if event is InputEventKey && event.is_pressed():
-		valid_input_for_sound = true;
+		var valid_input_for_sound = true;
 
 		if event.keycode == KEY_BACKSPACE:
 			delete_character()
@@ -101,10 +105,4 @@ func _input(event: InputEvent) -> void:
 			key_pressed.emit()
 
 func game_over():
-	process_mode = Node.PROCESS_MODE_DISABLED
-
-
-
-func on_asteroids_selected(visualisation: Node2D):
-	typing_complete.connect(visualisation.typing_complete)
-	incorrect_character_entered.connect(visualisation.typing_incorrect)
+	paused = true

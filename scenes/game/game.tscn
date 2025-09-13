@@ -89,7 +89,8 @@ offset_bottom = -7.992
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="asteroids_selected" from="." to="Terminal" method="on_asteroids_selected"]
+[connection signal="game_lose" from="." to="Terminal" method="game_over"]
+[connection signal="game_win" from="." to="Terminal" method="game_over"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
