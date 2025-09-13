@@ -4,11 +4,6 @@ extends Node
 
 
 # Values are in inspector so they can be changed to whatever we decide on.
-@export var correct_before_life_increase: int
-var current_correct_count := 0
-
-@export var mistakes_before_life_loss: int
-var current_mistake_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

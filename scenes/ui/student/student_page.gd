@@ -45,6 +45,9 @@ func get_lesson_settings():
 	if %SubwaySurfersMode.button_pressed:
 		game_mode = "surfers"
 	#More gamemode buttons
+	
+	if %MeteorDefenseMode.button_pressed:
+		game_mode = "asteroids"
 
 	if %Difficulty1.button_pressed:
 		game_difficulty = 1

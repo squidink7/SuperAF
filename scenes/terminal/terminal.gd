@@ -102,3 +102,9 @@ func _input(event: InputEvent) -> void:
 
 func game_over():
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+
+
+func on_asteroids_selected(visualisation: Node2D):
+	typing_complete.connect(visualisation.typing_complete)
+	incorrect_character_entered.connect(visualisation.typing_incorrect)

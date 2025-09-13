@@ -10,6 +10,7 @@ var game_difficulty = 0 #Can you interact with private enums from external scrip
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
 signal game_win()
 signal game_lose()
+signal asteroids_selected(visualisation: Node2D)
 
 var score: int = 0
 var score_multiplier := 1.0
@@ -40,6 +41,9 @@ func setup(lesson_text: String, game_mode: String, difficulty: int):
 	game_win.connect(visualisation.game_win)
 	game_lose.connect(visualisation.game_lose)
 	$Visualisation.add_child(visualisation)
+	
+	if (game_mode == "Asteroids"):
+		asteroids_selected.emit(visualisation)
 	
 	match difficulty:
 		1:
