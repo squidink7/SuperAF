@@ -16,11 +16,11 @@ var rocks = [
 ]
 
 #Object spawn position ranges:
-var background_y_range = [100, 250]
-var forground_y_range = [375, 450]
+var background_y_range = [200, 350]
+var forground_y_range = [475, 550]
 var object_x_position = 1200
 
-var background_speed = 320
+var background_speed = 100
 var foreground_speed = 800
 
 #Object spawn timers:
@@ -49,7 +49,7 @@ func get_new_spawn_times():
 
 func spawn_cloud():
 	var cloud = clouds[randi_range(0, len(clouds) - 1)].instantiate()
-	add_child(cloud)
+	$'../CloudSpawner'.add_child(cloud)
 	cloud.configure_object(background_speed, Vector2(object_x_position, randi_range(background_y_range[0], background_y_range[1])), 30)  
 
 func spawn_rock():
