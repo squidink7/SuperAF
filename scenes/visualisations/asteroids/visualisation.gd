@@ -1,5 +1,9 @@
 extends SubViewportContainer
 
+signal success
+signal fail
+signal restart
+
 func _process(delta: float):
 	# Scale content to fit, keeping aspect ratio
 	var zoom_scale = (%Viewport.size as Vector2) / Vector2(1152,648)
@@ -23,5 +27,5 @@ func game_lose():
 	%Asteroids.process_mode = Node.PROCESS_MODE_DISABLED
 	$lose_screen.show()
 	
-	
+
 	

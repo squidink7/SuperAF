@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://iwyp1k14kx6y"]
+[gd_scene load_steps=9 format=3 uid="uid://iwyp1k14kx6y"]
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_5i0tg"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_bdhmt"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://xxe2mckdx8fs" path="res://assets/SFX/Game SFX/incorrect_sound.wav" id="4_2a8rs"]
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="4_5i0tg"]
 [ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="5_4j704"]
+[ext_resource type="PackedScene" uid="uid://be6krggkl251t" path="res://scenes/ui/game_states/win_screen.tscn" id="7_87uf6"]
+[ext_resource type="PackedScene" uid="uid://cg880pmddjqbh" path="res://scenes/ui/game_states/lose_screen.tscn" id="8_2a8rs"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -78,7 +80,7 @@ text = "Time: 0"
 unique_name_in_owner = true
 script = ExtResource("5_4j704")
 
-[node name="Visualisation" type="Control" parent="."]
+[node name="VisualisationContainer" type="Control" parent="."]
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 0.679
@@ -89,6 +91,25 @@ offset_bottom = -7.992
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Visualisation" type="Control" parent="VisualisationContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinScreen" parent="VisualisationContainer" instance=ExtResource("7_87uf6")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="LoseScreen" parent="VisualisationContainer" instance=ExtResource("8_2a8rs")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
 [connection signal="game_lose" from="." to="Terminal" method="game_over"]
 [connection signal="game_win" from="." to="Terminal" method="game_over"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
@@ -98,3 +119,6 @@ grow_vertical = 2
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
 [connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]
 [connection signal="pressed" from="BackButton" to="." method="exit"]
+[connection signal="back" from="VisualisationContainer/WinScreen" to="." method="exit_lesson"]
+[connection signal="next" from="VisualisationContainer/WinScreen" to="." method="next_lesson"]
+[connection signal="restart" from="VisualisationContainer/WinScreen" to="." method="restart_lesson"]

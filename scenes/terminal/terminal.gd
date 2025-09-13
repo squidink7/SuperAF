@@ -25,6 +25,7 @@ func setup(text: String):
 	source_text = text
 	char_index = 0
 	incorrect_chars = ''
+	paused = false
 	update_text()
 	process_mode = Node.PROCESS_MODE_INHERIT
 

@@ -3,7 +3,7 @@ extends Node2D
 var asteroid_single = preload("res://objects/asteroids/asteroid_single.tscn")
 var spawn_position: Vector2
 #@onready var viewport: SubViewport = get_node()
-@onready var viewport: SubViewport = $/root/Main/Game/Visualisation/Visualisation/Viewport
+@onready var viewport: SubViewport = $'../../../'
 @onready var viewport_x: int = viewport.size.x
 
 
@@ -26,8 +26,6 @@ func destroy_asteroid():
 	child_asteroid.queue_free()
 	#await get_tree().create_timer(0.1).timeout
 	call_deferred("spawn_asteroid")
-
-
 
 func typing_incorrect():
 	#TODO: FIX

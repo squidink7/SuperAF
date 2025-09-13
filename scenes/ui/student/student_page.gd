@@ -38,6 +38,8 @@ func set_lesson(topic: String, lesson: String):
 
 	%LessonText.text = lesson_text
 
+	%GoButton.disabled = false
+
 func get_lesson_settings():
 	var game_mode = ""
 	var game_difficulty = 0

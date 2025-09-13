@@ -10,7 +10,6 @@ var game_difficulty = 0 #Can you interact with private enums from external scrip
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
 signal game_win()
 signal game_lose()
-signal asteroids_selected(visualisation: Node2D)
 
 var score: int = 0
 var score_multiplier := 1.0
@@ -21,7 +20,6 @@ var current_correct_count := 0
 
 @export var mistakes_before_life_loss: int
 var current_mistake_count := 0
-
 
 @export var max_lives: int
 @export var lives: int:
@@ -37,22 +35,23 @@ func setup(lesson_text: String, game_mode: String, difficulty: int):
 	current_game_mode = game_mode
 	game_difficulty = difficulty
 
-	for node in $Visualisation.get_children():
-		$Visualisation.remove_child(node)
+	for node in %Visualisation.get_children():
+		%Visualisation.remove_child(node)
 		node.queue_free()
+	
+	%WinScreen.hide()
+	%LoseScreen.hide()
 
 	var visualisation = $/root/Main.load_scene('visualisations/' + game_mode + '/visualisation')
 
 	$Terminal.correct_word_entered.connect(visualisation.correct)
 	$Terminal.incorrect_character_entered.connect(visualisation.incorrect)
+
 	life_changed.connect(visualisation.life_changed)
-	game_win.connect(visualisation.game_win)
-	game_lose.connect(visualisation.game_lose)
-	visualisation.restart.connect(restart)
-	$Visualisation.add_child(visualisation)
-	
-	if (game_mode == "Asteroids"):
-		asteroids_selected.emit(visualisation)
+	# game_win.connect(visualisation.game_win)
+	# game_lose.connect(visualisation.game_lose)
+
+	%Visualisation.add_child(visualisation)
 	
 	match difficulty:
 		1:
@@ -70,10 +69,6 @@ func setup(lesson_text: String, game_mode: String, difficulty: int):
 			mistakes_before_life_loss = 1
 			max_lives = 3
 			lives = 2
-		
-		
-	
-
 	
 
 func _process(delta: float) -> void:
@@ -111,12 +106,17 @@ func typing_incorrect() -> void:
 		
 		if (lives <= 0): 
 			game_lose.emit()
+			%LoseScreen.show()
 			
 func typing_complete():
 	game_win.emit()
+	%WinScreen.show()
 
-func exit() -> void:
+func exit_lesson() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))
 
-func restart():
+func restart_lesson():
 	setup($Terminal.source_text, current_game_mode, game_difficulty)
+
+func next_lesson() -> void:
+	pass # Replace with function body.

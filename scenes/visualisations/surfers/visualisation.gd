@@ -18,18 +18,3 @@ func incorrect():
 	
 func life_changed(current_lives: int, max_lives: int, increase: bool):
 	%Stage.on_life_changed(current_lives, max_lives, increase)
-
-func game_win():
-	%Stage.process_mode = Node.PROCESS_MODE_DISABLED
-	$win_screen.show()
-
-func game_lose():
-	%Stage.process_mode = Node.PROCESS_MODE_DISABLED
-	$lose_screen.show()
-
-func restart_game():
-	restart.emit()
-
-func back():
-	var student_page = $/root/Main.load_scene('ui/student/student_page')
-	$/root/Main.set_scene(student_page)
