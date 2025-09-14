@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b56n5pjnbnu3j"]
+[gd_scene load_steps=4 format=3 uid="uid://b56n5pjnbnu3j"]
 
+[ext_resource type="Script" uid="uid://dc7dg130ptott" path="res://scenes/ui/admin/login.gd" id="1_crl8a"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_ec7l3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pymad"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_crl8a")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -83,7 +85,17 @@ texture = ExtResource("1_ec7l3")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="IDPanel" type="Panel" parent="."]
+[node name="IDPanel" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.313726)
+
+[node name="IDPanel" type="Panel" parent="IDPanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,13 +104,14 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -224.0
 offset_top = -132.0
-offset_right = 216.0
+offset_right = 224.0
 offset_bottom = 132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_pymad")
 
-[node name="LineEdit" type="LineEdit" parent="IDPanel"]
+[node name="IDBox" type="LineEdit" parent="IDPanel/IDPanel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -112,22 +125,7 @@ offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="IDPanel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = 68.0
-offset_right = 172.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Confirm"
-
-[node name="Label" type="Label" parent="IDPanel"]
+[node name="Label" type="Label" parent="IDPanel/IDPanel"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -142,3 +140,23 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Please Enter ID"
 horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="IDPanel/IDPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 68.0
+offset_right = 172.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Confirm"
+
+[connection signal="pressed" from="StudentButton" to="." method="student_button_pressed"]
+[connection signal="pressed" from="TeacherButton" to="." method="teacher_button_pressed"]
+[connection signal="gui_input" from="IDPanel" to="." method="id_panel_input"]
+[connection signal="pressed" from="IDPanel/IDPanel/Button" to="." method="login"]

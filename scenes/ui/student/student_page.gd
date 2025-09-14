@@ -5,8 +5,13 @@ signal button_clicked()
 var current_topic: String
 var current_lesson: String
 
-func _ready():
+var current_student_id := ''
+
+func setup(student_id: String):
 	var topics = Data.get_topics()
+
+	current_student_id = student_id
+	%StudentID.text = student_id
 
 	for topic in topics:
 		var b = Button.new()
@@ -59,15 +64,10 @@ func get_lesson_settings():
 		game_difficulty = 3
 
 	return [game_mode, game_difficulty]
-	
-
-
 
 func start_lesson():
 	var lesson_text = Data.get_lesson(current_topic, current_lesson)
 	var game_settings = get_lesson_settings()
-
-		
 
 	var game = $/root/Main.load_scene('game/game')	
 	$/root/Main.add_child(game)

@@ -311,7 +311,7 @@ layout_mode = 0
 offset_left = 984.0
 offset_top = 16.0
 offset_right = 1128.0
-offset_bottom = 48.0
+offset_bottom = 56.0
 text = "High Score"
 
 [node name="TopicLabel" type="Label" parent="."]
@@ -342,13 +342,14 @@ text = "Description"
 horizontal_alignment = 1
 
 [node name="StudentID" type="Label" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -288.0
+offset_left = -424.0
 offset_top = 16.0
-offset_right = -40.0
+offset_right = -176.0
 offset_bottom = 56.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 20

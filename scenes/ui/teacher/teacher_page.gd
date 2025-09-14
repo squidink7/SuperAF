@@ -2,7 +2,7 @@ extends Control
 
 var lesson_item = load('res://scenes/ui/teacher/lesson_item.tscn')
 
-func _ready():
+func setup():
 	var topics = Data.get_topics()
 
 	for topic in topics:
@@ -32,9 +32,4 @@ func show_lessons(topic: String):
 #			var chk = student_passcheck.instantiate()
 #			chk.set_data(studentID, true, true)
 #			%StudentPassPanel.add_child(chk)
-
-
-	
-
-
 
