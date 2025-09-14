@@ -25,13 +25,19 @@ var current_mistake_count := 0
 	set(value):
 		lives = clamp(value,0, max_lives)
 
-var current_game_mode: String = ''
+var current_game_mode := ''
+var current_student_id := ''
+var current_topic := ''
+var current_lesson := ''
 
-func setup(lesson_text: String, game_mode: String, difficulty: int):
-	$Terminal.setup(lesson_text)
+func setup(student_id: String, topic: String, lesson: String, game_mode: String, difficulty: int):
+	$Terminal.setup(Data.get_lesson(topic, lesson))
 
+	current_student_id = student_id
 	current_game_mode = game_mode
 	game_difficulty = difficulty
+	current_topic = topic
+	current_lesson = lesson
 
 	for node in %Visualisation.get_children():
 		%Visualisation.remove_child(node)
@@ -117,12 +123,13 @@ func update_lives_display():
 func typing_complete():
 	game_win.emit()
 	%WinScreen.show()
+	Data.set_highscore(current_student_id, current_topic, current_lesson, score)
 
 func exit_lesson() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))
 
 func restart_lesson():
-	setup($Terminal.source_text, current_game_mode, game_difficulty)
+	setup(current_student_id, current_topic, current_lesson, current_game_mode, game_difficulty)
 
 func next_lesson() -> void:
 	pass # Replace with function body.

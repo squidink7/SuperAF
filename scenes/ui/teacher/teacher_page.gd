@@ -25,6 +25,8 @@ func show_lessons(topic: String):
 		li.set_data(lesson, lesson_text, true)
 		%Lessons.add_child(li)
 
+func exit():
+	$/root/Main.set_scene($/root/Main.load_scene('ui/admin/login'))
 
 #func student_pass():
 #	var students = Data.get_studentpass(studentID)
@@ -32,4 +34,3 @@ func show_lessons(topic: String):
 #			var chk = student_passcheck.instantiate()
 #			chk.set_data(studentID, true, true)
 #			%StudentPassPanel.add_child(chk)
-

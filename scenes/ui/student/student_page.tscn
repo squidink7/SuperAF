@@ -191,13 +191,14 @@ offset_left = 93.0
 offset_top = 15.0
 offset_right = 158.0
 offset_bottom = 63.0
+button_pressed = true
 button_group = ExtResource("2_qbap6")
 
 [node name="Difficulty2Label" type="Label" parent="DifficultySelectPanel/Difficulty2"]
 layout_mode = 0
 offset_left = 11.0
 offset_top = 12.0
-offset_right = 51.0
+offset_right = 33.0
 offset_bottom = 35.0
 text = "2"
 

@@ -66,14 +66,12 @@ func get_lesson_settings():
 	return [game_mode, game_difficulty]
 
 func start_lesson():
-	var lesson_text = Data.get_lesson(current_topic, current_lesson)
 	var game_settings = get_lesson_settings()
 
 	var game = $/root/Main.load_scene('game/game')	
 	$/root/Main.add_child(game)
-	game.setup(lesson_text, game_settings[0], game_settings[1])
+	game.setup(current_student_id, current_topic, current_lesson, game_settings[0], game_settings[1])
 	$/root/Main.remove_child(self)
 
-
 func exit() -> void:
-	pass # Replace with function body.
+	$/root/Main.set_scene($/root/Main.load_scene('ui/admin/login'))

@@ -28,7 +28,19 @@ static func get_student(id: String) -> Student:
 		print('Error loading student')
 		return null
 
-func set_lesson_completion(student_id: String, topic: String, lesson: String):
+# func set_lesson_completion(student_id: String, topic: String, lesson: String):
+# 	var path = 'user://students/' + student_id + '.txt'
+	
+# 	if !FileAccess.file_exists(path):
+# 		# Create student file
+# 		FileAccess.open(path, FileAccess.WRITE).close()
+	
+# 	var file = FileAccess.open(path, FileAccess.WRITE)
+# 	var completed_lessons = file.get_as_text().split('\n')
+# 	if !topic + '/lessons/' + lesson in completed_lessons:
+# 		file.store_string(topic + '/lessons/' + lesson)
+
+static func set_highscore(student_id: String, topic: String, lesson: String, score: int):
 	var path = 'user://students/' + student_id + '.txt'
 	
 	if !FileAccess.file_exists(path):
@@ -38,24 +50,28 @@ func set_lesson_completion(student_id: String, topic: String, lesson: String):
 	var file = FileAccess.open(path, FileAccess.WRITE)
 	var completed_lessons = file.get_as_text().split('\n')
 	if !topic + '/lessons/' + lesson in completed_lessons:
-		file.store_string(topic + '/lessons/' + lesson)
-	
+		file.store_string(topic + '/lessons/' + lesson + '=' + str(score))
 
-func get_students() -> PackedStringArray:
-	if !DirAccess.dir_exists_absolute('user://students/'):
-		return []
-
-	return DirAccess.get_directories_at('user://students/')
-
-func get_lesson_completion(student_id: String, topic: String, lesson: String) -> bool:
+static func get_highscore(student_id: String, topic: String, lesson: String) -> int:
 	var path = 'user://students/' + student_id + '.txt'
 	
 	if !FileAccess.file_exists(path):
 		return false
 	
 	var file = FileAccess.open(path, FileAccess.READ)
-	var completed_lessons = file.get_as_text().split('\n')
-	return topic + '/lessons/' + lesson in completed_lessons
+	var completed_lessons := file.get_as_text().split('\n')
+	
+	for line in completed_lessons:
+		if line.begins_with(topic + '/lessons/' + lesson):
+			return int(line.split('=')[1])
+	
+	return -1
+
+static func get_students() -> PackedStringArray:
+	if !DirAccess.dir_exists_absolute('user://students/'):
+		return []
+
+	return DirAccess.get_directories_at('user://students/')
 
 static func set_student(student: Student):
 	DirAccess.make_dir_absolute("user://students/")
