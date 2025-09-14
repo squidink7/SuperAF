@@ -11,7 +11,6 @@ var spawn_position: Vector2
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -31,7 +30,3 @@ func typing_incorrect():
 	#TODO: FIX
 	var child_asteroid = self.get_child(0)
 	child_asteroid.speed_up()
-	
-	
-	
-	

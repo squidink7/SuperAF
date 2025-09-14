@@ -1,11 +1,9 @@
 class_name Game
 extends Control
 
-
 #enum Difficulty {EASY, MEDIUM, HARD}
 
 var game_difficulty = 0 #Can you interact with private enums from external scripts? Surely its too much pain to figure out.
-
 
 signal life_changed(current_lives: int, max_lives: int, increase: bool)
 signal game_win()
@@ -70,6 +68,8 @@ func setup(lesson_text: String, game_mode: String, difficulty: int):
 			max_lives = 3
 			lives = 2
 	
+	update_lives_display()
+	
 
 func _process(delta: float) -> void:
 	time += delta
@@ -93,6 +93,7 @@ func typing_correct() -> void:
 	if (current_correct_count >= correct_before_life_increase):
 		current_correct_count = 0
 		lives += 1
+		update_lives_display()
 		print("Life gained, current " + str(lives))
 		life_changed.emit(lives, max_lives, true)
 
@@ -101,13 +102,18 @@ func typing_incorrect() -> void:
 	if (current_mistake_count >= mistakes_before_life_loss):
 		current_mistake_count = 0
 		lives -= 1
+		update_lives_display()
 		print("Life lost, current: " + str(lives))
 		life_changed.emit(lives, max_lives, false)
 		
 		if (lives <= 0): 
 			game_lose.emit()
 			%LoseScreen.show()
-			
+
+func update_lives_display():
+	for i in range(max_lives):
+		%Lives.get_child(i).visible = i < lives
+
 func typing_complete():
 	game_win.emit()
 	%WinScreen.show()
