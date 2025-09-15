@@ -159,11 +159,8 @@ expand_mode = 2
 [connection signal="game_lose" from="." to="Terminal" method="game_over"]
 [connection signal="game_win" from="." to="Terminal" method="game_over"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
-<<<<<<< Updated upstream
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
-=======
->>>>>>> Stashed changes
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]

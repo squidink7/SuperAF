@@ -11,6 +11,8 @@ func _ready() -> void:
 # Load a new scene
 func load_scene(scene: String):
 	var new_scene = load('res://scenes/' + scene + '.tscn')
+	if new_scene == null:
+		print("Scene path is invalid")
 	return new_scene.instantiate()
 
 # Update the currently running scene
