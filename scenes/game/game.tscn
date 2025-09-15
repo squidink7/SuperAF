@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4j0otasjtw7b"]
+[gd_scene load_steps=10 format=3 uid="uid://iwyp1k14kx6y"]
 
 [ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_87uf6"]
 [ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_2a8rs"]
@@ -127,31 +127,37 @@ grow_vertical = 2
 alignment = 1
 
 [node name="LifeDisplay1" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay2" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay3" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay4" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay5" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay6" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
@@ -162,7 +168,7 @@ expand_mode = 2
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
 [connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]
-[connection signal="pressed" from="BackButton" to="." method="exit"]
+[connection signal="pressed" from="BackButton" to="." method="exit_lesson"]
 [connection signal="back" from="VisualisationContainer/WinScreen" to="." method="exit_lesson"]
 [connection signal="next" from="VisualisationContainer/WinScreen" to="." method="next_lesson"]
 [connection signal="restart" from="VisualisationContainer/WinScreen" to="." method="restart_lesson"]

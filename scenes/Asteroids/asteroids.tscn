@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://cjlwsm8l4xv7"]
 
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="1_bgu20"]
-[ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scripts/asteroids.gd" id="1_bogip"]
+[ext_resource type="Script" path="res://scripts/asteroids.gd" id="1_bogip"]
 [ext_resource type="Texture2D" uid="uid://bnvyglvs2hp87" path="res://assets/textures/visualisation game textures/Asteroids Textures/Background_space.png" id="2_daty3"]
 [ext_resource type="Script" uid="uid://b23juy4p7slg5" path="res://scenes/Asteroids/asteroid_spawner.gd" id="3_daty3"]
-[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scripts/ground.gd" id="5_ld5pd"]
+[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scenes/Asteroids/ground.gd" id="5_ld5pd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]
 size = Vector2(1269, 145)
 
 [sub_resource type="Curve2D" id="Curve2D_bogip"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -75, -265, 0, 0, 0, 0, 1106, -269)
+"points": PackedVector2Array(0, 0, 0, 0, -71, -266, 0, 0, 0, 0, 1105, -266)
 }
 point_count = 2
 
@@ -48,13 +48,13 @@ shape = SubResource("RectangleShape2D_bogip")
 [node name="room" type="Area2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(52, -70)
+position = Vector2(52, -272.899)
+scale = Vector2(1, -0.0144928)
 curve = SubResource("Curve2D_bogip")
 
 [node name="spawn_position" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2(10.148, -265.288)
-rotation = -0.00338695
+position = Vector2(14.1458, -266)
 progress = 85.1504
 
 [connection signal="area_entered" from="Ground" to="Ground" method="_on_area_entered"]

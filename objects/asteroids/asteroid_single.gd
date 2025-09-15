@@ -5,7 +5,7 @@ var speed = 70
 func configure_position(spawn_position: Vector2):
 	self.global_position = spawn_position
 
-	%asteroid_animation.play("rotation")
+	%asteroid_animation.play("rotate")
 	%asteroid_animation.speed_scale = randf_range(-1, 1)
 
 
