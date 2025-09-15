@@ -21,7 +21,7 @@ var rocks = [
 
 #Object spawn position ranges:
 var background_y_range = [200, 350]
-var forground_y_range = [475, 550]
+var forground_y_range = [475, 500]
 var object_x_position = 1200
 
 var background_speed = 100
@@ -60,6 +60,11 @@ func spawn_rock():
 	add_child(rock)
 	rock.configure_object(foreground_speed, Vector2(object_x_position, randi_range(forground_y_range[0], forground_y_range[1])), 30)
 
+func spawn_bush():
+	var bush = bushes[randi_range(0, len(rocks) - 1)].instantiate()
+	add_child(bush)
+	bush.configure_object(foreground_speed, Vector2(object_x_position, randi_range(forground_y_range[0], forground_y_range[1])), 30)
+
 func _ready():
 	get_new_spawn_times()
 
@@ -76,7 +81,7 @@ func _process(delta: float):
 	
 	if timer > bush_spawn_time and not bush_spawned:
 		bush_spawned = true
-		pass
+		spawn_bush()
 
 	if timer >= max_time:
 		timer = 0;

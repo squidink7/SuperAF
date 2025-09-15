@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvtdqnfmil4yl"]
+[gd_scene load_steps=3 format=3 uid="uid://dvtdqnfmil4yl"]
 
 [ext_resource type="Texture2D" uid="uid://b3xk61ic2xvnk" path="res://assets/textures/visualisation game textures/bush3.png" id="1_nxfio"]
+[ext_resource type="Script" uid="uid://sfqweg8l4b4y" path="res://scripts/decoration_object.gd" id="2_ftw3m"]
 
 [node name="Sprite2D" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_nxfio")
+script = ExtResource("2_ftw3m")
