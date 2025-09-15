@@ -10,8 +10,12 @@ signal game_win()
 signal game_lose()
 
 var score: int = 0
-var score_multiplier := 1.0
+var score_multiplier: float:
+	set(value):
+		score_multiplier = clamp(value, 1.0, 10.0)
+
 var time: float = 0
+
 
 @export var correct_before_life_increase: int
 var current_correct_count := 0
