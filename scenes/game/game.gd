@@ -98,6 +98,7 @@ func incorrect():
 	%IncorrectSound.play()	
 
 func typing_correct() -> void:
+	correct()
 	current_correct_count += 1
 	
 	if (current_correct_count >= correct_before_life_increase):
@@ -108,6 +109,7 @@ func typing_correct() -> void:
 		life_changed.emit(lives, max_lives, true)
 
 func typing_incorrect() -> void:
+	incorrect()
 	current_mistake_count += 1
 	if (current_mistake_count >= mistakes_before_life_loss):
 		current_mistake_count = 0
@@ -122,7 +124,7 @@ func typing_incorrect() -> void:
 
 func update_lives_display():
 	for i in range(max_lives):
-		%Lives.get_child(i).visible = i < lives
+		%Lives.get_child(i).visible = i-1 < lives
 
 func typing_complete():
 	game_win.emit()
@@ -130,7 +132,9 @@ func typing_complete():
 	Data.set_highscore(current_student_id, current_topic, current_lesson, score)
 
 func exit_lesson() -> void:
-	$/root/Main.set_scene($/root/Main.load_scene('ui/student/student_page'))
+	var scene = $/root/Main.load_scene('ui/student/student_page')
+	scene.setup(current_student_id)
+	$/root/Main.set_scene(scene)
 
 func restart_lesson():
 	setup(current_student_id, current_topic, current_lesson, current_game_mode, game_difficulty)

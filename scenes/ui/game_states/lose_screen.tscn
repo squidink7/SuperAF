@@ -61,3 +61,4 @@ grow_vertical = 2
 text = "Back"
 
 [connection signal="pressed" from="RestartButton" to="." method="restart_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="back_button_pressed"]

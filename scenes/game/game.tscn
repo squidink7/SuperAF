@@ -1,14 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://iwyp1k14kx6y"]
+[gd_scene load_steps=10 format=3 uid="uid://4j0otasjtw7b"]
 
-[ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_5i0tg"]
-[ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_bdhmt"]
-[ext_resource type="AudioStream" uid="uid://bwinosnrlhtc" path="res://assets/SFX/Game SFX/correct.wav" id="3_87uf6"]
-[ext_resource type="AudioStream" uid="uid://xxe2mckdx8fs" path="res://assets/SFX/Game SFX/incorrect_sound.wav" id="4_2a8rs"]
-[ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="4_5i0tg"]
-[ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="5_4j704"]
-[ext_resource type="PackedScene" uid="uid://be6krggkl251t" path="res://scenes/ui/game_states/win_screen.tscn" id="7_87uf6"]
+[ext_resource type="Script" uid="uid://y2dpgw41kl8j" path="res://scenes/game/game.gd" id="1_87uf6"]
+[ext_resource type="PackedScene" uid="uid://8lrpv78gfhfa" path="res://scenes/terminal/terminal.tscn" id="2_2a8rs"]
+[ext_resource type="AudioStream" uid="uid://bwinosnrlhtc" path="res://assets/SFX/Game SFX/correct.wav" id="3_4j704"]
+[ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="4_kp23o"]
+[ext_resource type="AudioStream" uid="uid://xxe2mckdx8fs" path="res://assets/SFX/Game SFX/incorrect_sound.wav" id="5_5jirj"]
+[ext_resource type="Script" uid="uid://bhd3uomwv1j5v" path="res://scripts/data.gd" id="6_vaxfo"]
+[ext_resource type="PackedScene" uid="uid://be6krggkl251t" path="res://scenes/ui/game_states/win_screen.tscn" id="7_ftsea"]
 [ext_resource type="PackedScene" uid="uid://cg880pmddjqbh" path="res://scenes/ui/game_states/lose_screen.tscn" id="8_2a8rs"]
-[ext_resource type="Texture2D" uid="uid://prshh0htmwyu" path="res://assets/textures/Tick.png" id="9_2a8rs"]
+[ext_resource type="Texture2D" uid="uid://15agujvrx28e" path="res://assets/textures/heart.png" id="8_otnwt"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -17,13 +17,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5i0tg")
+script = ExtResource("1_87uf6")
 correct_before_life_increase = 3
 mistakes_before_life_loss = 3
 max_lives = 5
 lives = 3
 
-[node name="Terminal" parent="." instance=ExtResource("2_bdhmt")]
+[node name="Terminal" parent="." instance=ExtResource("2_2a8rs")]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.691
@@ -34,16 +34,16 @@ offset_bottom = -32.0
 
 [node name="CorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
-stream = ExtResource("3_87uf6")
+stream = ExtResource("3_4j704")
 
 [node name="KeyPress" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
-stream = ExtResource("4_5i0tg")
+stream = ExtResource("4_kp23o")
 volume_db = -15.0
 
 [node name="IncorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
-stream = ExtResource("4_2a8rs")
+stream = ExtResource("5_5jirj")
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
@@ -79,7 +79,7 @@ text = "Time: 0"
 
 [node name="Data" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("5_4j704")
+script = ExtResource("6_vaxfo")
 
 [node name="VisualisationContainer" type="Control" parent="."]
 layout_mode = 1
@@ -101,7 +101,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WinScreen" parent="VisualisationContainer" instance=ExtResource("7_87uf6")]
+[node name="WinScreen" parent="VisualisationContainer" instance=ExtResource("7_ftsea")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -128,41 +128,43 @@ alignment = 1
 
 [node name="LifeDisplay1" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay2" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay3" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay4" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay5" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay6" type="TextureRect" parent="Lives"]
 layout_mode = 2
-texture = ExtResource("9_2a8rs")
+texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [connection signal="game_lose" from="." to="Terminal" method="game_over"]
 [connection signal="game_win" from="." to="Terminal" method="game_over"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="typing_correct"]
-[connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
-[connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
-[connection signal="incorrect_character_entered" from="Terminal" to="." method="incorrect"]
 [connection signal="incorrect_character_entered" from="Terminal" to="." method="typing_incorrect"]
 [connection signal="key_pressed" from="Terminal" to="Terminal/KeyPress" method="play"]
 [connection signal="typing_complete" from="Terminal" to="." method="typing_complete"]
 [connection signal="pressed" from="BackButton" to="." method="exit"]
+[connection signal="back" from="VisualisationContainer/WinScreen" to="." method="exit_lesson"]
+[connection signal="next" from="VisualisationContainer/WinScreen" to="." method="next_lesson"]
+[connection signal="restart" from="VisualisationContainer/WinScreen" to="." method="restart_lesson"]
+[connection signal="back" from="VisualisationContainer/LoseScreen" to="." method="exit_lesson"]
+[connection signal="restart" from="VisualisationContainer/LoseScreen" to="." method="restart_lesson"]
