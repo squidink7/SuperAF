@@ -36,14 +36,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="TopicsPanel/Topics"]
-layout_mode = 2
-
 [node name="Label" type="Label" parent="TopicsPanel"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 201.0
-offset_bottom = 32.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
 text = "Topics"
 horizontal_alignment = 1
 
