@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bvf1ybjl7k11r"]
+[gd_scene load_steps=24 format=3 uid="uid://bvf1ybjl7k11r"]
 
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
@@ -25,6 +25,44 @@ shader = ExtResource("5_ai23s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vyyca"]
 shader = ExtResource("4_ux3oo")
+
+[sub_resource type="Animation" id="Animation_klbsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a6xrq"]
+resource_name = "rotate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_21orp"]
+_data = {
+&"RESET": SubResource("Animation_klbsg"),
+&"rotate": SubResource("Animation_a6xrq")
+}
 
 [sub_resource type="Animation" id="Animation_alf7g"]
 length = 0.001
@@ -142,6 +180,12 @@ script = ExtResource("6_m4g1a")
 position = Vector2(76, -101)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("13_ai23s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Villian/Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_21orp")
+}
+autoplay = "rotate"
 
 [node name="Hero Animation" type="AnimationPlayer" parent="."]
 libraries = {
