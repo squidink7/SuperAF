@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
 [ext_resource type="Shader" uid="uid://b3ocxbwmir1ev" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://vflpbrbbqj70" path="res://assets/textures/background_buildings.png" id="4_m4g1a"]
-[ext_resource type="Shader" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
+[ext_resource type="Shader" uid="uid://dktcryorg1o0h" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
 [ext_resource type="Shader" uid="uid://2yu2jy8pl702" path="res://scenes/visualisations/surfers/buidlings_front.gdshader" id="5_ai23s"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
@@ -121,10 +121,6 @@ position = Vector2(786, 503)
 scale = Vector2(0.6464, 0.295)
 texture = ExtResource("2_s7m7o")
 
-[node name="Object Spawner" type="Node2D" parent="."]
-position = Vector2(1249, 336)
-script = ExtResource("10_ux3oo")
-
 [node name="Character" type="CharacterBody2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(779, 335)
@@ -152,3 +148,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_vyyca")
 }
 speed_scale = 2.0
+
+[node name="Object Spawner" type="Node2D" parent="."]
+position = Vector2(1249, 336)
+script = ExtResource("10_ux3oo")
