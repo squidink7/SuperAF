@@ -12,17 +12,21 @@ grow_vertical = 2
 script = ExtResource("1_pcbq7")
 
 [node name="TopicPanel" type="Panel" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.361
+anchor_bottom = 0.988
 offset_left = 16.0
 offset_top = 64.0
-offset_right = 408.0
-offset_bottom = 624.0
+offset_right = -7.87204
+offset_bottom = -16.224
 
 [node name="TopicLabel" type="Label" parent="TopicPanel"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 392.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
 text = "Topics"
 horizontal_alignment = 1
 
@@ -40,21 +44,28 @@ horizontal_scroll_mode = 0
 unique_name_in_owner = true
 custom_minimum_size = Vector2(390, 0)
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="TopicPanel/Topics"]
 layout_mode = 2
 
 [node name="LessonPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 432.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361
+anchor_right = 0.778
+anchor_bottom = 1.0
+offset_left = 16.128
 offset_top = 64.0
-offset_right = 872.0
-offset_bottom = 624.0
+offset_right = -24.256
+offset_bottom = -24.0
 
 [node name="LessonsLabel" type="Label" parent="LessonPanel"]
-layout_mode = 0
-offset_right = 440.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
 text = "Lessons"
 horizontal_alignment = 1
 
@@ -72,16 +83,23 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [node name="SettingsPanel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 896.0
-offset_top = 256.0
-offset_right = 1128.0
-offset_bottom = 624.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.778
+anchor_top = 0.37
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.256042
+offset_top = 16.24
+offset_right = -16.0
+offset_bottom = -24.0
 
 [node name="GameSettings" type="Label" parent="SettingsPanel"]
-layout_mode = 2
-offset_right = 232.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_bottom = 23.0
+grow_horizontal = 2
 text = "Game Settings"
 horizontal_alignment = 1
 
@@ -123,74 +141,54 @@ text = "< Back"
 
 [node name="GameModePanel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.764
+anchor_top = 0.099
 anchor_right = 1.0
-offset_left = -256.0
-offset_top = 64.0
-offset_right = -24.0
-offset_bottom = 232.0
+anchor_bottom = 0.358
+offset_left = 15.8719
+offset_top = -0.152008
+offset_right = -16.0
+offset_bottom = 0.0159912
 grow_horizontal = 0
 
 [node name="GameModeSetting" type="Label" parent="GameModePanel"]
-layout_mode = 0
-offset_left = 79.0
-offset_right = 207.0
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
 offset_bottom = 23.0
+grow_horizontal = 2
 text = "Game Mode"
+horizontal_alignment = 1
 
 [node name="SubwaySurfersMode" type="CheckButton" parent="GameModePanel"]
 layout_mode = 0
-offset_left = 188.0
+offset_left = 48.0
 offset_top = 32.0
-offset_right = 232.0
-offset_bottom = 56.0
-
-[node name="GameMode1Label" type="Label" parent="GameModePanel/SubwaySurfersMode"]
-layout_mode = 0
-offset_left = -184.0
-offset_right = -72.0
-offset_bottom = 23.0
+offset_right = 208.0
+offset_bottom = 63.0
 text = "Subway Surfer"
 
 [node name="EndlessRunnerMode" type="CheckButton" parent="GameModePanel"]
 layout_mode = 0
-offset_left = 188.0
+offset_left = 40.0
 offset_top = 64.0
-offset_right = 232.0
-offset_bottom = 88.0
-
-[node name="GameMode2Label" type="Label" parent="GameModePanel/EndlessRunnerMode"]
-layout_mode = 0
-offset_left = -184.0
-offset_right = -68.0
-offset_bottom = 23.0
-text = "EndlessRunner"
+offset_right = 208.0
+offset_bottom = 95.0
+text = "Endless Runner"
 
 [node name="MeteorDefenseMode" type="CheckButton" parent="GameModePanel"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 96.0
-offset_right = 232.0
-offset_bottom = 120.0
-
-[node name="GameMode3Label" type="Label" parent="GameModePanel/MeteorDefenseMode"]
-layout_mode = 0
-offset_left = -184.0
-offset_right = -60.0
-offset_bottom = 23.0
+offset_left = 36.0
+offset_top = 95.0
+offset_right = 208.0
+offset_bottom = 126.0
 text = "Meteor Defense"
 
 [node name="RandomGameMode" type="CheckButton" parent="GameModePanel"]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 128.0
-offset_right = 232.0
-offset_bottom = 152.0
-
-[node name="GameMode4Label" type="Label" parent="GameModePanel/RandomGameMode"]
-layout_mode = 0
-offset_left = -184.0
-offset_right = -119.0
-offset_bottom = 23.0
+offset_left = 96.0
+offset_top = 126.0
+offset_right = 209.0
+offset_bottom = 157.0
 text = "Random"
