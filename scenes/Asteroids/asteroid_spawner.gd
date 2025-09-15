@@ -1,24 +1,18 @@
 extends Node2D
 
-var asteroid_single = preload("res://objects/asteroids/asteroid_single.tscn")
+var asteroid = preload("res://objects/asteroids/asteroid0.tscn")
 var spawn_position: Vector2
 #@onready var viewport: SubViewport = get_node()
 @onready var viewport: SubViewport = $'../../../'
 @onready var viewport_x: int = viewport.size.x
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func spawn_asteroid():
-	var current_asteroid = asteroid_single.instantiate()
+	var current_asteroid = asteroid.instantiate()
 	add_child(current_asteroid)
-	current_asteroid.configure_position(Vector2(randi_range(-380, viewport_x / 2), -480))
+
+	%spawn_position.progress_ratio = randf_range(0.1, 0.9)
+	current_asteroid.configure_position(%spawn_position.global_position)
 	
 func destroy_asteroid():
 	var child_asteroid = self.get_child(0)
