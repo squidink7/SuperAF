@@ -27,6 +27,8 @@ func login():
 
 	if mode == 'student':
 		page.setup(id)
+	elif mode == 'teacher':
+		page.setup()
 
 	$/root/Main.set_scene(page)
 
