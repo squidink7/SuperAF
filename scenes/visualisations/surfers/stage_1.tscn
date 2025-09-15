@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://bjhy13bjo6n0c" path="res://scenes/visualisations/surfers/game_logic_manager.gd" id="1_s7m7o"]
 [ext_resource type="Texture2D" uid="uid://dd7uiuxtgwgyv" path="res://assets/textures/sky.png" id="2_alf7g"]
 [ext_resource type="Texture2D" uid="uid://uwwjfn0emast" path="res://assets/textures/foreground.png" id="2_s7m7o"]
-[ext_resource type="Shader" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
+[ext_resource type="Shader" uid="uid://b3ocxbwmir1ev" path="res://scenes/visualisations/surfers/scroll_background.gdshader" id="2_yh6pm"]
 [ext_resource type="Texture2D" uid="uid://vflpbrbbqj70" path="res://assets/textures/background_buildings.png" id="4_m4g1a"]
 [ext_resource type="Shader" uid="uid://dktcryorg1o0h" path="res://scenes/visualisations/surfers/scroll_foreground.gdshader" id="4_ux3oo"]
 [ext_resource type="Script" uid="uid://jfftskjjcroh" path="res://scenes/visualisations/surfers/character.gd" id="4_yh6pm"]
-[ext_resource type="Shader" path="res://scenes/visualisations/surfers/buidlings_front.gdshader" id="5_ai23s"]
+[ext_resource type="Shader" uid="uid://2yu2jy8pl702" path="res://scenes/visualisations/surfers/buidlings_front.gdshader" id="5_ai23s"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="5_alf7g"]
-[ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="5_ux3oo"]
 [ext_resource type="Texture2D" uid="uid://pot3k6rd2ry0" path="res://assets/textures/foreground_buildings.png" id="6_d38ph"]
 [ext_resource type="Script" uid="uid://7g3x17lqq0gf" path="res://scenes/visualisations/surfers/villian.gd" id="6_m4g1a"]
 [ext_resource type="Script" uid="uid://dx5h3phi2awwu" path="res://scripts/object_spawner.gd" id="10_ux3oo"]
+[ext_resource type="Texture2D" uid="uid://ccgf7gwjewba" path="res://assets/textures/boulder.png" id="13_ai23s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yh6pm"]
 shader = ExtResource("2_yh6pm")
@@ -143,9 +143,9 @@ position = Vector2(224, 412)
 script = ExtResource("6_m4g1a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Villian"]
-position = Vector2(-7.62939e-06, 7.62939e-06)
-scale = Vector2(0.086, 0.086)
-texture = ExtResource("5_ux3oo")
+position = Vector2(76, -101)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("13_ai23s")
 
 [node name="Hero Animation" type="AnimationPlayer" parent="."]
 libraries = {
