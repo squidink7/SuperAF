@@ -118,13 +118,13 @@ func typing_incorrect() -> void:
 		print("Life lost, current: " + str(lives))
 		life_changed.emit(lives, max_lives, false)
 		
-		if (lives <= 0): 
+		if (lives <= 0):
 			game_lose.emit()
 			%LoseScreen.show()
 
 func update_lives_display():
 	for i in range(max_lives):
-		%Lives.get_child(i).visible = i-1 < lives
+		%Lives.get_child(i).visible = i < lives
 
 func typing_complete():
 	game_win.emit()

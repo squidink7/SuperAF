@@ -127,31 +127,37 @@ grow_vertical = 2
 alignment = 1
 
 [node name="LifeDisplay1" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay2" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay3" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay4" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay5" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
 
 [node name="LifeDisplay6" type="TextureRect" parent="Lives"]
+visible = false
 layout_mode = 2
 texture = ExtResource("8_otnwt")
 expand_mode = 2
