@@ -308,11 +308,15 @@ offset_bottom = 23.0
 text = "Random"
 
 [node name="HighScoreButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 984.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -168.0
 offset_top = 16.0
-offset_right = 1128.0
+offset_right = -24.0
 offset_bottom = 56.0
+grow_horizontal = 0
 text = "High Score"
 
 [node name="TopicLabel" type="Label" parent="."]

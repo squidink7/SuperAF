@@ -151,6 +151,11 @@ layout_mode = 2
 texture = ExtResource("9_2a8rs")
 expand_mode = 2
 
+[node name="LifeDisplay6" type="TextureRect" parent="Lives"]
+layout_mode = 2
+texture = ExtResource("9_2a8rs")
+expand_mode = 2
+
 [connection signal="game_lose" from="." to="Terminal" method="game_over"]
 [connection signal="game_win" from="." to="Terminal" method="game_over"]
 [connection signal="correct_word_entered" from="Terminal" to="." method="correct"]
