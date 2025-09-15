@@ -119,8 +119,10 @@ offset_top = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StudentCheck" type="VBoxContainer" parent="StudentCheckPanel/StudentCheck"]
+[node name="StudentScores" type="VBoxContainer" parent="StudentCheckPanel/StudentCheck"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="StudentIDLabel" type="Label" parent="StudentCheckPanel"]
 layout_mode = 1
