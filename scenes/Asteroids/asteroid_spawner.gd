@@ -8,9 +8,10 @@ var spawn_position: Vector2
 @onready var viewport_x: int = viewport.size.x
 
 func show_lazers(asteroid_pos : Vector2):	
-	%lazer0.points[0] = %character.global_position
-	%lazer0.points[1] = asteroid_pos
-	%lazer0.show()
+	var l := %lazer0
+	l.points[0] = l.to_local(%character.global_position)
+	l.points[1] = l.to_local(asteroid_pos)
+	l.show()
 
 func spawn_asteroid():
 	var current_asteroid = asteroid.instantiate()
