@@ -24,9 +24,10 @@ func destroy_asteroid():
 	var child_asteroid = self.get_child(0)
 	child_asteroid.queue_free()
 
-	show_lazers(child_asteroid.global_position)
-	await get_tree().create_timer(.1).timeout
-	%lazer0.hide()
+	if (child_asteroid.spelling_failure == false):
+		show_lazers(child_asteroid.global_position)
+		await get_tree().create_timer(.1).timeout
+		%lazer0.hide()
 	
 	
 	
