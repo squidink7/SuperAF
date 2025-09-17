@@ -23,6 +23,7 @@ func login():
 	
 	# Check teacher password
 	if mode == 'teacher' && id != TEACHER_PASSWORD:
+		%Error.text = "Incorrect ID"
 		return
 
 	var page = $'/root/Main'.load_scene('ui/' + mode + '/' + mode + '_page')

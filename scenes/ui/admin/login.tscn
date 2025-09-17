@@ -157,6 +157,23 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Confirm"
 
+[node name="Error" type="Label" parent="IDPanel/IDPanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -25.0
+offset_right = 128.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+horizontal_alignment = 1
+
 [connection signal="pressed" from="StudentButton" to="." method="student_button_pressed"]
 [connection signal="pressed" from="TeacherButton" to="." method="teacher_button_pressed"]
 [connection signal="gui_input" from="IDPanel" to="." method="id_panel_input"]
