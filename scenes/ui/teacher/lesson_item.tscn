@@ -64,3 +64,5 @@ offset_top = 16.0
 offset_right = -12.0
 offset_bottom = 40.0
 grow_horizontal = 0
+
+[connection signal="gui_input" from="Panel" to="." method="on_panel_input"]

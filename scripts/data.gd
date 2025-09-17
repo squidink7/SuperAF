@@ -41,6 +41,9 @@ static func get_student(id: String) -> Student:
 # 		file.store_string(topic + '/lessons/' + lesson)
 
 static func set_highscore(student_id: String, topic: String, lesson: String, score: int):
+	if get_highscore(student_id, topic, lesson) > score:
+		return
+	
 	var path = 'user://students/' + student_id + '.txt'
 	
 	if !FileAccess.file_exists(path):
@@ -56,7 +59,7 @@ static func get_highscore(student_id: String, topic: String, lesson: String) -> 
 	var path = 'user://students/' + student_id + '.txt'
 	
 	if !FileAccess.file_exists(path):
-		return false
+		return -1
 	
 	var file = FileAccess.open(path, FileAccess.READ)
 	var completed_lessons := file.get_as_text().split('\n')
@@ -71,7 +74,11 @@ static func get_students() -> PackedStringArray:
 	if !DirAccess.dir_exists_absolute('user://students/'):
 		return []
 
-	return DirAccess.get_directories_at('user://students/')
+	var student_files = DirAccess.get_files_at('user://students/')
+	var students = []
+	for file in student_files:
+		students.append(file.replace('.txt',''))
+	return students
 
 static func set_student(student: Student):
 	DirAccess.make_dir_absolute("user://students/")
