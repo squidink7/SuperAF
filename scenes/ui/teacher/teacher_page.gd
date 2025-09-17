@@ -40,6 +40,8 @@ func show_lesson(topic: String, lesson: String):
 
 	for s in students:
 		var score = Data.get_highscore(s, topic, lesson)
+		if score == -1:
+			continue
 		var score_item = student_score_item.instantiate()
 		score_item.set_data(s, score)
 		%StudentScores.add_child(score_item)
