@@ -115,4 +115,38 @@ static func get_lesson(topic: String, lesson: String) -> String:
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()
 
-# func get_
+static func get_lesson_enabled(topic: String, lesson: String) -> bool:
+	var path = 'user://lessons.conf'
+	
+	if !FileAccess.file_exists(path):
+		return true
+	
+	var file = FileAccess.open(path, FileAccess.READ)
+	var lines = file.get_as_text().split('\n')
+	for line in lines:
+		var pref = line.split('=')
+		if pref[0] == topic + '/lessons/' + lesson:
+			return pref[1] == '1'
+	
+	return true
+
+static func set_lesson_enabled(enabled: bool, topic: String, lesson: String):
+	var path = 'user://lessons.conf'
+	
+	if !FileAccess.file_exists(path):
+		# Create lessons.conf
+		FileAccess.open(path, FileAccess.WRITE).close()
+	
+	var file = FileAccess.open(path, FileAccess.READ_WRITE)
+
+	var lines = file.get_as_text().split('\n')
+	var lessons_enabled = []
+
+	for line in lines:
+		var pref = line.split('=')
+		if pref[0] != topic + '/lessons/' + lesson:
+			lessons_enabled.append(line)
+			
+	lessons_enabled.append(topic + '/lessons/' + lesson + '=' + ('1' if enabled else '0'))
+
+	file.store_string('\n'.join(lessons_enabled))

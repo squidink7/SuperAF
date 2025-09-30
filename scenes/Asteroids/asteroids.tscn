@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjlwsm8l4xv7"]
 
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="1_bgu20"]
-[ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scripts/asteroids.gd" id="1_bogip"]
+[ext_resource type="Script" path="res://scripts/asteroids.gd" id="1_bogip"]
 [ext_resource type="Texture2D" uid="uid://bnvyglvs2hp87" path="res://assets/textures/visualisation game textures/Asteroids Textures/Background_space.png" id="2_daty3"]
 [ext_resource type="Script" uid="uid://b23juy4p7slg5" path="res://scenes/Asteroids/asteroid_spawner.gd" id="3_daty3"]
-[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scripts/ground.gd" id="5_ld5pd"]
+[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scenes/Asteroids/ground.gd" id="5_ld5pd"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="6_w5nbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]

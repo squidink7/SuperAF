@@ -28,6 +28,9 @@ func show_lessons(topic: String):
 		child.queue_free()
 
 	for lesson in lessons:
+		if !Data.get_lesson_enabled(topic, lesson):
+			continue
+
 		var b = Button.new()
 		b.text = lesson
 		b.pressed.connect(set_lesson.bind(topic, lesson))

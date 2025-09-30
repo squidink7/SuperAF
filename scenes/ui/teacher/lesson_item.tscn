@@ -66,3 +66,4 @@ offset_bottom = 40.0
 grow_horizontal = 0
 
 [connection signal="gui_input" from="Panel" to="." method="on_panel_input"]
+[connection signal="toggled" from="Panel/IsActive" to="." method="on_toggle_enabled"]

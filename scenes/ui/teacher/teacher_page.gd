@@ -23,8 +23,9 @@ func show_lessons(topic: String):
 	for lesson in lessons:
 		var lesson_text = Data.get_lesson(topic, lesson)
 		var li = lesson_item.instantiate()
-		li.set_data(lesson, lesson_text, true)
+		li.set_data(lesson, lesson_text, Data.get_lesson_enabled(topic, lesson))
 		li.selected.connect(show_lesson.bind(topic, lesson))
+		li.toggle_enabled.connect(set_lesson_enabled.bind(topic, lesson))
 		%Lessons.add_child(li)
 
 func exit():
@@ -46,6 +47,9 @@ func show_lesson(topic: String, lesson: String):
 		score_item.set_data(s, score)
 		%StudentScores.add_child(score_item)
 
+func set_lesson_enabled(enabled: bool, topic: String, lesson: String):
+	print('setting ' + topic + ' ' + lesson + ' to ' + str(enabled))
+	Data.set_lesson_enabled(enabled, topic, lesson)
 
 #func student_pass():
 #	var students = Data.get_studentpass(studentID)
