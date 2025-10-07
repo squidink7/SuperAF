@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scripts/asteroids.gd" id="1_bogip"]
 [ext_resource type="Texture2D" uid="uid://bnvyglvs2hp87" path="res://assets/textures/visualisation game textures/Asteroids Textures/Background_space.png" id="2_daty3"]
 [ext_resource type="Script" uid="uid://b23juy4p7slg5" path="res://scenes/Asteroids/asteroid_spawner.gd" id="3_daty3"]
-[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scenes/Asteroids/ground.gd" id="5_ld5pd"]
+[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scripts/ground.gd" id="5_ld5pd"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="6_w5nbj"]
 [ext_resource type="PackedScene" uid="uid://b2miope68f6mo" path="res://objects/asteroids/asteroid_particles.tscn" id="7_ld5pd"]
-[ext_resource type="AudioStream" uid="uid://bl4aefd7oa2dg" path="res://assets/music/asteroid song.mp3" id="8_4fnbq"]
+[ext_resource type="AudioStream" uid="uid://uoctts0t0w3h" path="res://assets/music/asteroid_songv2.mp3" id="8_4fnbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]
 size = Vector2(1269, 145)
@@ -62,7 +62,7 @@ progress = 85.1504
 
 [node name="character" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(30, 3)
+position = Vector2(95, 3)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_w5nbj")
 flip_h = true
