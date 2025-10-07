@@ -1,7 +1,75 @@
-[gd_scene load_steps=4 format=3 uid="uid://b56n5pjnbnu3j"]
+[gd_scene load_steps=11 format=3 uid="uid://b56n5pjnbnu3j"]
 
 [ext_resource type="Script" uid="uid://dc7dg130ptott" path="res://scenes/ui/admin/login.gd" id="1_crl8a"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="1_ec7l3"]
+[ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="2_gkxfv"]
+[ext_resource type="StyleBox" uid="uid://c3tgdnlg5ytgs" path="res://assets/styles/button_hover.tres" id="3_t5u0x"]
+[ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="4_2q2wq"]
+
+[sub_resource type="FontVariation" id="FontVariation_gkxfv"]
+variation_embolden = 1.0
+
+[sub_resource type="Animation" id="Animation_gkxfv"]
+resource_name = "sway"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(60, -10), Vector2(0, 0), Vector2(60, 10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.0872665, 0.0872665, -0.0872665, 0.0872665, -0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_t5u0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t5u0x"]
+_data = {
+&"RESET": SubResource("Animation_t5u0x"),
+&"sway": SubResource("Animation_gkxfv")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pymad"]
 bg_color = Color(0.16261, 0.143209, 0.210806, 1)
@@ -21,69 +89,139 @@ script = ExtResource("1_crl8a")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 80.0
-offset_top = -188.0
-offset_right = 371.0
-offset_bottom = -124.0
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.21
+anchor_right = 0.329
+anchor_bottom = 0.309
+offset_left = 0.511993
+offset_top = -0.0800018
+offset_right = -8.00803
+offset_bottom = -0.23201
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = SubResource("FontVariation_gkxfv")
 theme_override_font_sizes/font_size = 32
 text = "Keyboard Warriors"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 96.0
-offset_top = -91.0
-offset_right = 336.0
-offset_bottom = -68.0
+anchors_preset = -1
+anchor_left = 0.083
+anchor_top = 0.36
+anchor_right = 0.292
+anchor_bottom = 0.395
+offset_left = 0.383995
+offset_top = -0.280014
+offset_right = -0.384033
+offset_bottom = 0.0399933
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "I am a"
 horizontal_alignment = 1
 
 [node name="StudentButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 128.0
-offset_top = -36.0
-offset_right = 304.0
-offset_bottom = -4.0
+anchors_preset = -1
+anchor_left = 0.111
+anchor_top = 0.444
+anchor_right = 0.264
+anchor_bottom = 0.494
+offset_left = 0.127991
+offset_top = 0.287964
+offset_right = -0.127991
+offset_bottom = -0.112
 grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed = ExtResource("2_gkxfv")
+theme_override_styles/hover = ExtResource("3_t5u0x")
+theme_override_styles/pressed = ExtResource("2_gkxfv")
+theme_override_styles/normal = ExtResource("4_2q2wq")
 text = "Student"
 
 [node name="TeacherButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 128.0
-offset_top = 28.0
-offset_right = 304.0
-offset_bottom = 60.0
+anchor_left = 0.111
+anchor_top = 0.543
+anchor_right = 0.264
+anchor_bottom = 0.593
+offset_left = 0.127991
+offset_top = 0.135986
+offset_right = -0.127991
+offset_bottom = -0.264038
 grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed = ExtResource("2_gkxfv")
+theme_override_styles/hover = ExtResource("3_t5u0x")
+theme_override_styles/pressed = ExtResource("2_gkxfv")
+theme_override_styles/normal = ExtResource("4_2q2wq")
 text = "Teacher"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.667
+anchor_right = 0.667
+offset_left = -0.384033
+offset_top = -136.0
+offset_right = -0.384033
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="wind" type="CPUParticles2D" parent="Control2"]
+amount = 30
+lifetime = 4.0
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(300, 0)
+direction = Vector2(0, 1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 400.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.535
+anchor_top = 0.198
+anchor_right = 0.833
+anchor_bottom = 0.716
+offset_left = -0.320007
+offset_top = -0.304016
+offset_right = 0.383911
+offset_bottom = 0.0319824
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 576.0
-offset_top = 128.0
-offset_right = -88.0
-offset_bottom = -192.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(172, 168)
 texture = ExtResource("1_ec7l3")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/TextureRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_t5u0x")
+}
+autoplay = "sway"
 
 [node name="IDPanel" type="ColorRect" parent="."]
 unique_name_in_owner = true

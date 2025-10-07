@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://pdh0efxykj27"]
+[gd_scene load_steps=6 format=3 uid="uid://pdh0efxykj27"]
 
 [ext_resource type="Script" uid="uid://but5e1jgc60d1" path="res://scenes/ui/teacher/teacher_page.gd" id="1_erfp6"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="2_d33hq"]
+[ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="3_lpb42"]
+[ext_resource type="StyleBox" uid="uid://c3tgdnlg5ytgs" path="res://assets/styles/button_hover.tres" id="4_hps2e"]
+[ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="5_q7tqj"]
 
 [node name="TeacherPage" type="Control"]
 layout_mode = 3
@@ -18,7 +21,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 24.0
 offset_top = 64.0
-offset_right = 304.0
+offset_right = 320.0
 offset_bottom = -32.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_d33hq")
@@ -57,9 +60,9 @@ autowrap_mode = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 312.0
+offset_left = 344.0
 offset_top = 64.0
-offset_right = 648.0
+offset_right = 680.0
 offset_bottom = -32.0
 grow_vertical = 2
 theme_override_styles/panel = ExtResource("2_d33hq")
@@ -69,8 +72,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
 offset_top = 32.0
-offset_bottom = 3.0
+offset_right = -8.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -97,6 +102,14 @@ offset_left = 33.0
 offset_top = 16.0
 offset_right = 92.0
 offset_bottom = 47.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed = ExtResource("3_lpb42")
+theme_override_styles/hover = ExtResource("4_hps2e")
+theme_override_styles/pressed = ExtResource("3_lpb42")
+theme_override_styles/normal = ExtResource("5_q7tqj")
 text = "< Back"
 
 [node name="Label" type="Label" parent="."]
@@ -114,9 +127,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 664.0
+offset_left = 696.0
 offset_top = 64.0
-offset_right = -46.0
+offset_right = -14.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -127,7 +140,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
 offset_top = 32.0
+offset_right = -10.0
+offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -181,6 +197,14 @@ offset_top = 24.0
 offset_right = -48.0
 offset_bottom = 56.0
 grow_horizontal = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed = ExtResource("3_lpb42")
+theme_override_styles/hover = ExtResource("4_hps2e")
+theme_override_styles/pressed = ExtResource("3_lpb42")
+theme_override_styles/normal = ExtResource("5_q7tqj")
 text = "Manage Lessons"
 
 [connection signal="pressed" from="BackButton" to="." method="exit"]
