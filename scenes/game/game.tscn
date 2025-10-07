@@ -35,15 +35,18 @@ offset_bottom = -32.0
 [node name="CorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("3_4j704")
+bus = &"SFX"
 
 [node name="KeyPress" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("4_kp23o")
 volume_db = -15.0
+bus = &"Typing"
 
 [node name="IncorrectSound" type="AudioStreamPlayer" parent="Terminal"]
 unique_name_in_owner = true
 stream = ExtResource("5_5jirj")
+bus = &"SFX"
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 1
