@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://3ggcwo0433gk"]
+[gd_scene load_steps=3 format=3 uid="uid://3ggcwo0433gk"]
 
 [ext_resource type="Script" uid="uid://4jdqgyuna7f2" path="res://scenes/ui/teacher/student_passcheck.gd" id="1_oqo75"]
+[ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="1_t1s15"]
 
 [node name="StudentCheckPanel" type="Panel"]
 custom_minimum_size = Vector2(0, 56)
@@ -8,6 +9,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 56.0
 grow_horizontal = 2
+theme_override_styles/panel = ExtResource("1_t1s15")
 script = ExtResource("1_oqo75")
 
 [node name="StudentID" type="Label" parent="."]
