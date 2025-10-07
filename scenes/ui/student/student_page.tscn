@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=12 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
@@ -6,7 +6,9 @@
 [ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
+[ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="5_4ddgo"]
 [ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="5_15yjj"]
+[ext_resource type="StyleBox" uid="uid://c3tgdnlg5ytgs" path="res://assets/styles/button_hover.tres" id="6_ypns3"]
 [ext_resource type="AudioStream" uid="uid://jwmfdddu03r3" path="res://assets/music/mainMenu.mp3" id="8_jmxob"]
 
 [sub_resource type="FontVariation" id="FontVariation_81rr2"]
@@ -122,6 +124,14 @@ offset_left = 32.0
 offset_top = 16.0
 offset_right = 91.0
 offset_bottom = 47.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_4ddgo")
+theme_override_styles/hover = ExtResource("6_ypns3")
+theme_override_styles/pressed = ExtResource("5_4ddgo")
+theme_override_styles/normal = ExtResource("5_15yjj")
 text = "< Back"
 
 [node name="GoButton" type="Button" parent="."]
@@ -353,6 +363,14 @@ offset_top = 16.0
 offset_right = -24.0
 offset_bottom = 56.0
 grow_horizontal = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_4ddgo")
+theme_override_styles/hover = ExtResource("6_ypns3")
+theme_override_styles/pressed = ExtResource("5_4ddgo")
+theme_override_styles/normal = ExtResource("5_15yjj")
 text = "High Score"
 
 [node name="StudentID" type="Label" parent="."]
