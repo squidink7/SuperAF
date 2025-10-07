@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
 [ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="5_15yjj"]
-[ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/pressed.tres" id="5_oo83n"]
+[ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="5_oo83n"]
 [ext_resource type="StyleBox" uid="uid://c3tgdnlg5ytgs" path="res://assets/styles/button_hover.tres" id="6_4ddgo"]
 
 [sub_resource type="FontVariation" id="FontVariation_81rr2"]
