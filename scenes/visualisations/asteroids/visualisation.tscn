@@ -24,6 +24,8 @@ render_target_update_mode = 4
 
 [node name="Asteroids" parent="Viewport/World" instance=ExtResource("1_k8hqr")]
 unique_name_in_owner = true
+position = Vector2(-22, 344)
+scale = Vector2(1.00136, 1)
 
 [node name="Camera" type="Camera2D" parent="Viewport/World"]
 unique_name_in_owner = true
