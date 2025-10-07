@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjlwsm8l4xv7"]
+[gd_scene load_steps=12 format=3 uid="uid://cjlwsm8l4xv7"]
 
 [ext_resource type="Texture2D" uid="uid://bl6n26vkfe7y4" path="res://assets/textures/dummy/examplePlayer.png" id="1_bgu20"]
 [ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scripts/asteroids.gd" id="1_bogip"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="6_w5nbj"]
 [ext_resource type="PackedScene" uid="uid://b2miope68f6mo" path="res://objects/asteroids/asteroid_particles.tscn" id="7_ld5pd"]
 [ext_resource type="AudioStream" uid="uid://uoctts0t0w3h" path="res://assets/music/asteroid_songv2.mp3" id="8_4fnbq"]
+[ext_resource type="AudioStream" uid="uid://bl02u2gonvgww" path="res://assets/SFX/laser.wav" id="9_jt2mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]
 size = Vector2(1269, 145)
@@ -81,6 +82,12 @@ amount = 100
 stream = ExtResource("8_4fnbq")
 autoplay = true
 bus = &"Asteroid Music"
+
+[node name="laser_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_jt2mt")
+volume_db = 15.465
+bus = &"Music"
 
 [connection signal="area_entered" from="Ground" to="Ground" method="_on_area_entered"]
 [connection signal="destroy_asteroid" from="Ground" to="AsteroidSpawner" method="destroy_asteroid" binds= [false]]

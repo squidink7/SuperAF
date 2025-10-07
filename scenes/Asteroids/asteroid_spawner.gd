@@ -7,6 +7,7 @@ var spawn_position: Vector2
 @onready var viewport: SubViewport = $'../../../'
 @onready var viewport_x: int = viewport.size.x
 
+
 func show_lazers(asteroid_pos : Vector2):	
 	var l := %lazer0
 	l.points[0] = l.to_local(%character.global_position)
@@ -31,6 +32,7 @@ func destroy_asteroid(showLazer: bool):
 	
 
 	if (showLazer):
+		%laser_sound.play();
 		show_lazers(child_asteroid.global_position)
 		await get_tree().create_timer(.1).timeout
 		%lazer0.hide()
