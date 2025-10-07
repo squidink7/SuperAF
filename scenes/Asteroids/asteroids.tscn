@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scenes/Asteroids/ground.gd" id="5_ld5pd"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="6_w5nbj"]
 [ext_resource type="PackedScene" uid="uid://b2miope68f6mo" path="res://objects/asteroids/asteroid_particles.tscn" id="7_ld5pd"]
-[ext_resource type="AudioStream" uid="uid://kh83eyrpa0vc" path="res://assets/music/asteroids.wav" id="8_4fnbq"]
+[ext_resource type="AudioStream" uid="uid://bl4aefd7oa2dg" path="res://assets/music/asteroid song.mp3" id="8_4fnbq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bogip"]
 size = Vector2(1269, 145)
