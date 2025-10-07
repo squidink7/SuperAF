@@ -62,3 +62,10 @@ func set_lesson_enabled(enabled: bool, topic: String, lesson: String):
 #			var chk = student_passcheck.instantiate()
 #			chk.set_data(studentID, true, true)
 #			%StudentPassPanel.add_child(chk)
+
+func open_lessons_dir():
+	var path = 'user://topics/'
+	DirAccess.make_dir_absolute(path)
+	if !FileAccess.file_exists(path + 'README.txt'):
+		DirAccess.copy_absolute('res://assets/help/README.txt', path + 'README.txt')
+	OS.shell_open(ProjectSettings.globalize_path(path))

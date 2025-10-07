@@ -181,6 +181,7 @@ offset_top = 24.0
 offset_right = -48.0
 offset_bottom = 56.0
 grow_horizontal = 0
-text = "Game Settings"
+text = "Manage Lessons"
 
 [connection signal="pressed" from="BackButton" to="." method="exit"]
+[connection signal="pressed" from="LessonSettingsButton" to="." method="open_lessons_dir"]
