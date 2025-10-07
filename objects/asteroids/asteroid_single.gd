@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 70	
-var spelling_failure = false
+
 # Called when the node enters the scene tree for the first time.
 func configure_position(spawn_position: Vector2):
 	self.global_position = spawn_position
@@ -16,5 +16,4 @@ func _process(delta: float) -> void:
 	self.global_position.y += distance_to_move
 
 func speed_up():
-	spelling_failure = true
 	speed = 2000
