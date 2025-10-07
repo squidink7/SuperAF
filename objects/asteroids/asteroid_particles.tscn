@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2miope68f6mo"]
+
+[ext_resource type="Texture2D" uid="uid://c0w846etx7sdh" path="res://assets/textures/particle.png" id="1_n0osw"]
+[ext_resource type="Script" uid="uid://cjfi5doho1mf2" path="res://scenes/Asteroids/cpu_particles_2d.gd" id="2_8q67e"]
+
+[sub_resource type="Curve" id="Curve_n0osw"]
+_data = [Vector2(0, 0.404494), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8q67e"]
+_limits = [0.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.99999, 200), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="AsteroidParticles" type="CPUParticles2D"]
+emitting = false
+amount = 500
+texture = ExtResource("1_n0osw")
+one_shot = true
+explosiveness = 0.9
+randomness = 1.0
+direction = Vector2(0, 0)
+spread = 180.0
+initial_velocity_min = 499.67
+initial_velocity_max = 1000.0
+scale_amount_curve = SubResource("Curve_n0osw")
+anim_speed_max = 69.16
+anim_speed_curve = SubResource("Curve_8q67e")
+script = ExtResource("2_8q67e")

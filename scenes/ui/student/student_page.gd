@@ -58,6 +58,9 @@ func get_lesson_settings():
 	
 	if %MeteorDefenseMode.button_pressed:
 		game_mode = "asteroids"
+	
+	if %RandomGame.button_pressed:
+		game_mode = "asteroids" if randi_range(0,1) else "surfers"
 
 	if %Difficulty1.button_pressed:
 		game_difficulty = 1

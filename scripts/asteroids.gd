@@ -16,7 +16,7 @@ func on_incorrect():
 	%AsteroidSpawner.typing_incorrect()
 	
 func on_correct():
-	%AsteroidSpawner.destroy_asteroid()
+	%AsteroidSpawner.destroy_asteroid(true)
 	
 	
 

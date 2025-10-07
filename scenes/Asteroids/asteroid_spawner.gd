@@ -20,20 +20,26 @@ func spawn_asteroid():
 	%spawn_position.progress_ratio = randf_range(0.1, 0.9)
 	current_asteroid.configure_position(%spawn_position.global_position)
 	
-func destroy_asteroid():
+func destroy_asteroid(showLazer: bool):
 	var child_asteroid = self.get_child(0)
+	%AsteroidParticles.global_position = child_asteroid.global_position
 	child_asteroid.queue_free()
+	
+	
+	%AsteroidParticles.emitting = true
+	
+	
 
-	if (child_asteroid.spelling_failure == false):
+	if (showLazer):
 		show_lazers(child_asteroid.global_position)
 		await get_tree().create_timer(.1).timeout
 		%lazer0.hide()
+		
 	
 	
 	
 	call_deferred("spawn_asteroid")
 
 func typing_incorrect():
-	#TODO: FIX
 	var child_asteroid = self.get_child(0)
 	child_asteroid.speed_up()

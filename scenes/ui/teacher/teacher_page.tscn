@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://pdh0efxykj27"]
+[gd_scene load_steps=3 format=3 uid="uid://pdh0efxykj27"]
 
 [ext_resource type="Script" uid="uid://but5e1jgc60d1" path="res://scenes/ui/teacher/teacher_page.gd" id="1_erfp6"]
+[ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="2_d33hq"]
 
 [node name="TeacherPage" type="Control"]
 layout_mode = 3
@@ -20,6 +21,7 @@ offset_top = 64.0
 offset_right = 304.0
 offset_bottom = -32.0
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_d33hq")
 
 [node name="Topics" type="ScrollContainer" parent="TopicsPanel"]
 layout_mode = 1
@@ -40,8 +42,10 @@ size_flags_vertical = 3
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_top = 8.0
+offset_bottom = 31.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Topics"
 horizontal_alignment = 1
 autowrap_mode = 2
@@ -55,6 +59,7 @@ offset_top = 64.0
 offset_right = 648.0
 offset_bottom = -32.0
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_d33hq")
 
 [node name="Lessons" type="ScrollContainer" parent="LessonsPanel"]
 layout_mode = 1
@@ -76,16 +81,18 @@ size_flags_vertical = 3
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_top = 8.0
+offset_bottom = 31.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lessons"
 horizontal_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 32.0
+offset_left = 33.0
 offset_top = 16.0
-offset_right = 91.0
+offset_right = 92.0
 offset_bottom = 47.0
 text = "< Back"
 
@@ -95,6 +102,7 @@ offset_left = 112.0
 offset_top = 16.0
 offset_right = 261.0
 offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Select lesson"
 
@@ -109,6 +117,7 @@ offset_right = -46.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_d33hq")
 
 [node name="StudentCheck" type="ScrollContainer" parent="StudentCheckPanel"]
 layout_mode = 1
@@ -126,8 +135,11 @@ size_flags_horizontal = 3
 
 [node name="StudentIDLabel" type="Label" parent="StudentCheckPanel"]
 layout_mode = 1
-offset_right = 168.0
-offset_bottom = 23.0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 192.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Student ID "
 
 [node name="QuizCheckLabel" type="Label" parent="StudentCheckPanel"]
@@ -149,8 +161,10 @@ anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -146.0
-offset_bottom = 23.0
+offset_top = 8.0
+offset_bottom = 31.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Lesson Score"
 horizontal_alignment = 1
 

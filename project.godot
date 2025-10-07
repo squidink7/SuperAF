@@ -25,4 +25,4 @@ project/assembly_name="SuperAF"
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.215816, 0.22462, 0.315235, 1)
+environment/defaults/default_clear_color=Color(0.269183, 0.661663, 0.874443, 1)

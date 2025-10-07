@@ -1,10 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=9 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
 [ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
+[ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
+
+[sub_resource type="FontVariation" id="FontVariation_81rr2"]
+variation_embolden = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81rr2"]
+bg_color = Color(0.803839, 0.798481, 0.28465, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.568504, 0.567241, 0.257738, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="Student Page" type="Control"]
 layout_mode = 3
@@ -35,6 +51,7 @@ offset_top = 64.0
 offset_right = -8.51202
 offset_bottom = -32.0
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_81rr2")
 
 [node name="Topics" type="ScrollContainer" parent="TopicsPanel"]
 layout_mode = 1
@@ -62,6 +79,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Topics"
 horizontal_alignment = 1
 
@@ -77,6 +96,7 @@ offset_right = -15.936
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_81rr2")
 
 [node name="Lessons" type="ScrollContainer" parent="LessonsPanel"]
 layout_mode = 1
@@ -101,6 +121,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Lesson "
 horizontal_alignment = 1
 
@@ -126,6 +148,9 @@ offset_right = -25.0
 offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_81rr2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_81rr2")
 disabled = true
 text = "GO!"
 
@@ -135,6 +160,8 @@ offset_left = 112.0
 offset_top = 16.0
 offset_right = 261.0
 offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Select lesson"
 
@@ -147,9 +174,10 @@ anchor_bottom = 1.0
 offset_left = 8.06396
 offset_top = 64.0
 offset_right = -24.0
-offset_bottom = -344.0
+offset_bottom = -376.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("4_81rr2")
 
 [node name="LessonText" type="Label" parent="LessonPreview"]
 unique_name_in_owner = true
@@ -173,6 +201,8 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Description"
 horizontal_alignment = 1
 
@@ -183,12 +213,12 @@ anchor_left = 0.75
 anchor_top = 1.0
 anchor_right = 1.007
 anchor_bottom = 1.0
-offset_left = -6.10352e-05
-offset_top = -328.0
-offset_right = -32.0641
-offset_bottom = -272.0
+offset_top = -360.0
+offset_right = -32.064
+offset_bottom = -304.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = ExtResource("4_81rr2")
 
 [node name="DifficultySetting" type="Label" parent="DifficultySelectPanel"]
 layout_mode = 0
@@ -196,15 +226,20 @@ offset_left = 62.0
 offset_top = 5.0
 offset_right = 227.0
 offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Difficulty Setting"
 
 [node name="Difficulty1" type="CheckButton" parent="DifficultySelectPanel"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = -1.0
+offset_left = 16.0001
 offset_top = 15.0
-offset_right = 64.0
+offset_right = 81.0001
 offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_group = ExtResource("2_qbap6")
 text = "1"
 
@@ -218,6 +253,9 @@ offset_left = -36.0
 offset_top = 15.0
 offset_right = 29.0
 offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_pressed = true
 button_group = ExtResource("2_qbap6")
 text = "2"
@@ -228,18 +266,14 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.996
 anchor_right = 0.996
-offset_left = -63.944
+offset_left = -86.9439
 offset_top = 16.0
-offset_right = 1.056
+offset_right = -21.9439
 offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_group = ExtResource("2_qbap6")
-
-[node name="Difficulty3Label" type="Label" parent="DifficultySelectPanel/Difficulty3"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 11.0
-offset_right = 49.0
-offset_bottom = 34.0
 text = "3"
 
 [node name="GameModePanel" type="Panel" parent="."]
@@ -249,19 +283,23 @@ anchor_left = 0.75
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -6.10352e-05
-offset_top = -256.0
+offset_top = -288.0
 offset_right = -24.0
 offset_bottom = -136.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_styles/panel = ExtResource("4_81rr2")
 
 [node name="GameModeSetting" type="Label" parent="GameModePanel"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 23.0
+offset_top = 8.0
+offset_right = 6.10352e-05
+offset_bottom = 34.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
 text = "Game Mode"
 horizontal_alignment = 1
 
@@ -272,25 +310,15 @@ anchors_preset = -1
 anchor_left = 0.424
 anchor_right = 0.424
 offset_left = -63.936
-offset_top = 16.0
+offset_top = 40.0
 offset_right = 100.064
-offset_bottom = 47.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_pressed = true
 button_group = ExtResource("2_ds8ba")
 text = "Boulder Dash"
-
-[node name="EndlessRunnerMode" type="CheckButton" parent="GameModePanel"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.364
-anchor_right = 0.364
-offset_left = -56.096
-offset_top = 40.0
-offset_right = 115.904
-offset_bottom = 71.0
-button_group = ExtResource("2_ds8ba")
-text = "Endless Runner "
 
 [node name="MeteorDefenseMode" type="CheckButton" parent="GameModePanel"]
 unique_name_in_owner = true
@@ -299,9 +327,12 @@ anchors_preset = -1
 anchor_left = 0.364
 anchor_right = 0.364
 offset_left = -56.096
-offset_top = 64.0
+offset_top = 72.0
 offset_right = 115.904
-offset_bottom = 95.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_group = ExtResource("2_ds8ba")
 text = "Meteor Defense"
 
@@ -312,9 +343,12 @@ anchors_preset = -1
 anchor_left = 0.364
 anchor_right = 0.364
 offset_left = -0.0960083
-offset_top = 88.0
+offset_top = 104.0
 offset_right = 116.904
-offset_bottom = 119.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 button_group = ExtResource("2_ds8ba")
 text = "Random "
 
@@ -351,6 +385,5 @@ horizontal_alignment = 2
 [connection signal="pressed" from="DifficultySelectPanel/Difficulty2" to="ButtonClick" method="play"]
 [connection signal="pressed" from="DifficultySelectPanel/Difficulty3" to="ButtonClick" method="play"]
 [connection signal="pressed" from="GameModePanel/SubwaySurfersMode" to="ButtonClick" method="play"]
-[connection signal="pressed" from="GameModePanel/EndlessRunnerMode" to="ButtonClick" method="play"]
 [connection signal="pressed" from="GameModePanel/MeteorDefenseMode" to="ButtonClick" method="play"]
 [connection signal="pressed" from="GameModePanel/RandomGameMode" to="ButtonClick" method="play"]
