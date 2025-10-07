@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://df2kqtpump4ga"]
+[gd_scene load_steps=3 format=3 uid="uid://df2kqtpump4ga"]
 
 [ext_resource type="Script" uid="uid://bw0ybg1avrllc" path="res://scenes/ui/teacher/lesson_item.gd" id="1_6eip7"]
+[ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="2_14wq2"]
 
 [node name="TeacherLessonItem" type="Control"]
 custom_minimum_size = Vector2(256, 128)
@@ -22,6 +23,7 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_14wq2")
 
 [node name="Title" type="Label" parent="Panel"]
 unique_name_in_owner = true

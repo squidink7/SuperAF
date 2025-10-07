@@ -19,6 +19,9 @@ func setup(student_id: String):
 		b.pressed.connect(show_lessons.bind(topic))
 		b.add_theme_color_override("font_color", Color.BLACK)
 		b.add_theme_stylebox_override("normal", load("res://assets/styles/button_default.tres"))
+		b.add_theme_stylebox_override("hover", load("res://assets/styles/button_hover.tres"))
+		b.add_theme_stylebox_override("hover_pressed", load("res://assets/styles/button_pressed.tres"))
+		b.add_theme_stylebox_override("pressed", load("res://assets/styles/button_pressed.tres"))
 		%Topics.add_child(b)
 
 func show_lessons(topic: String):
@@ -32,10 +35,15 @@ func show_lessons(topic: String):
 	for lesson in lessons:
 		if !Data.get_lesson_enabled(topic, lesson):
 			continue
-
+		
 		var b = Button.new()
 		b.text = lesson
 		b.pressed.connect(set_lesson.bind(topic, lesson))
+		b.add_theme_color_override("font_color", Color.BLACK)
+		b.add_theme_stylebox_override("normal", load("res://assets/styles/button_default.tres"))
+		b.add_theme_stylebox_override("hover", load("res://assets/styles/button_hover.tres"))
+		b.add_theme_stylebox_override("hover_pressed", load("res://assets/styles/button_pressed.tres"))
+		b.add_theme_stylebox_override("pressed", load("res://assets/styles/button_pressed.tres"))
 		%Lessons.add_child(b)
 		button_clicked.emit()
 
@@ -59,7 +67,7 @@ func get_lesson_settings():
 	elif %MeteorDefenseMode.button_pressed:
 		game_mode = "asteroids"
 	elif %RandomGameMode.button_pressed:
-		game_mode = "asteroids" if randi_range(0,1) else "surfers"
+		game_mode = "asteroids" if randi_range(0, 1) else "surfers"
 
 	if %Difficulty1.button_pressed:
 		game_difficulty = 1
@@ -73,7 +81,7 @@ func get_lesson_settings():
 func start_lesson():
 	var game_settings = get_lesson_settings()
 
-	var game = $/root/Main.load_scene('game/game')	
+	var game = $/root/Main.load_scene('game/game')
 	
 		
 	$/root/Main.add_child(game)
@@ -82,4 +90,3 @@ func start_lesson():
 
 func exit() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/admin/login'))
-	
