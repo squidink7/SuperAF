@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=10 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
 [ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="5_15yjj"]
+[ext_resource type="AudioStream" uid="uid://jwmfdddu03r3" path="res://assets/music/mainMenu.mp3" id="8_jmxob"]
 
 [sub_resource type="FontVariation" id="FontVariation_81rr2"]
 variation_embolden = 1.0
@@ -367,6 +368,11 @@ offset_bottom = 56.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jmxob")
+autoplay = true
+bus = &"Music"
 
 [connection signal="button_clicked" from="." to="ButtonClick" method="play"]
 [connection signal="pressed" from="BackButton" to="." method="exit"]
