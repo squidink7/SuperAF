@@ -17,6 +17,8 @@ func setup(student_id: String):
 		var b = Button.new()
 		b.text = topic
 		b.pressed.connect(show_lessons.bind(topic))
+		b.add_theme_color_override("font_color", Color.BLACK)
+		b.add_theme_stylebox_override("normal", load("res://assets/styles/button_default.tres"))
 		%Topics.add_child(b)
 
 func show_lessons(topic: String):
