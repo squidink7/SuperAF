@@ -88,9 +88,9 @@ func start_lesson():
 	var game = $/root/Main.load_scene('game/game')
 	
 		
-	$/root/Main.add_child(game)
+	$/root/Main.add_scene(game)
 	game.setup(current_student_id, current_topic, current_lesson, game_settings[0], game_settings[1])
-	$/root/Main.remove_child(self)
+	$/root/Main.remove_scene(self)
 
 func exit() -> void:
 	$/root/Main.set_scene($/root/Main.load_scene('ui/admin/login'))

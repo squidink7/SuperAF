@@ -20,13 +20,18 @@ func set_scene(scene: Node):
 	clear_scene()
 	%Scene.add_child(scene)
 
+func add_scene(scene: Node):
+	%Scene.add_child(scene)
+
+func remove_scene(scene: Node):
+	%Scene.remove_child(scene)
+	scene.queue_free()
+
 # Clear any existing scene
 func clear_scene():
 	for scene in %Scene.get_children():
 		%Scene.remove_child(scene)
 		scene.queue_free()
-		
-		
 		
 func stop_music():
 	$MainMenuMusic.stream_paused = true
