@@ -94,6 +94,8 @@ func _input(event: InputEvent) -> void:
 			add_character('\n')
 		elif event.keycode == KEY_MINUS:
 			add_character('-')
+		elif event.keycode == KEY_APOSTROPHE:
+			add_character('\'');
 		elif OS.get_keycode_string(event.keycode) in allowed_characters:
 			# Pressed key to enter text
 			var key = OS.get_keycode_string(event.keycode)
