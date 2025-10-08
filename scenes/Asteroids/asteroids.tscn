@@ -87,7 +87,7 @@ bus = &"Asteroid Music"
 unique_name_in_owner = true
 stream = ExtResource("9_jt2mt")
 volume_db = 15.465
-bus = &"Music"
+bus = &"laser"
 
 [connection signal="area_entered" from="Ground" to="Ground" method="_on_area_entered"]
 [connection signal="destroy_asteroid" from="Ground" to="AsteroidSpawner" method="destroy_asteroid" binds= [false]]
