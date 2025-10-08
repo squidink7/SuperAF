@@ -50,7 +50,7 @@ static func set_highscore(student_id: String, topic: String, lesson: String, sco
 		# Create student file
 		FileAccess.open(path, FileAccess.WRITE).close()
 	
-	var file = FileAccess.open(path, FileAccess.WRITE)
+	var file = FileAccess.open(path, FileAccess.READ_WRITE)
 	var completed_lessons = file.get_as_text().split('\n')
 	if !topic + '/lessons/' + lesson in completed_lessons:
 		file.store_string(topic + '/lessons/' + lesson + '=' + str(score))
@@ -91,26 +91,34 @@ static func set_student(student: Student):
 	file.store_string(var_to_str(student))
 
 static func get_topics() -> PackedStringArray:
-	return DirAccess.get_directories_at('res://assets/text/')
+	var builtin_topics = DirAccess.get_directories_at('res://assets/text/')
+	var user_topics = DirAccess.get_directories_at('user://topics/')
+	return builtin_topics + user_topics
 
 static func get_lessons(topic: String) -> PackedStringArray:
-	if !DirAccess.dir_exists_absolute('res://assets/text/' + topic):
+	var files: PackedStringArray = []
+
+	if DirAccess.dir_exists_absolute('user://topics/' + topic):
+		files = DirAccess.get_files_at('user://topics/' + topic + '/lessons/')
+	elif DirAccess.dir_exists_absolute('res://assets/text/'):
+		files = DirAccess.get_files_at('res://assets/text/' + topic + '/lessons/')
+	else:
 		return []
-	
-	var files = DirAccess.get_files_at('res://assets/text/' + topic + '/lessons/')
 
 	var lessons: PackedStringArray = []
 
 	for file in files:
 		lessons.append(file.replace('.txt',''))
-	
+
 	return lessons
 
 static func get_lesson(topic: String, lesson: String) -> String:
-	var path = 'res://assets/text/' + topic + '/lessons/' + lesson + '.txt'
+	var path = 'user://topics/' + topic + '/lessons/' + lesson + '.txt'
 	
 	if !FileAccess.file_exists(path):
-		return ''
+		path = 'res://assets/text/' + topic + '/lessons/' + lesson + '.txt'
+		if !FileAccess.file_exists(path):
+			return ''
 	
 	var file = FileAccess.open(path, FileAccess.READ)
 	return file.get_as_text()

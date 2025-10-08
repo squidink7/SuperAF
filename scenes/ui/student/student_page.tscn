@@ -1,15 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxgssobc54n4n"]
+[gd_scene load_steps=11 format=3 uid="uid://cxgssobc54n4n"]
 
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
-[ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
+[ext_resource type="ButtonGroup" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
 [ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="5_4ddgo"]
 [ext_resource type="StyleBox" uid="uid://ntj56aqq4ecm" path="res://assets/styles/button_default.tres" id="5_15yjj"]
 [ext_resource type="StyleBox" uid="uid://c3tgdnlg5ytgs" path="res://assets/styles/button_hover.tres" id="6_ypns3"]
-[ext_resource type="AudioStream" uid="uid://jwmfdddu03r3" path="res://assets/music/mainMenu.mp3" id="8_jmxob"]
 
 [sub_resource type="FontVariation" id="FontVariation_81rr2"]
 variation_embolden = 1.0
@@ -238,6 +237,8 @@ offset_left = 16.0001
 offset_top = 15.0
 offset_right = 81.0001
 offset_bottom = 63.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -254,6 +255,8 @@ offset_left = -36.0
 offset_top = 15.0
 offset_right = 29.0
 offset_bottom = 63.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -271,6 +274,8 @@ offset_left = -86.9439
 offset_top = 16.0
 offset_right = -21.9439
 offset_bottom = 64.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -314,6 +319,8 @@ offset_left = -63.936
 offset_top = 40.0
 offset_right = 100.064
 offset_bottom = 71.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -331,6 +338,8 @@ offset_left = -56.096
 offset_top = 72.0
 offset_right = 115.904
 offset_bottom = 103.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -347,6 +356,8 @@ offset_left = -0.0960083
 offset_top = 104.0
 offset_right = 116.904
 offset_bottom = 135.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -387,11 +398,6 @@ grow_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 horizontal_alignment = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_jmxob")
-autoplay = true
-bus = &"Music"
 
 [connection signal="button_clicked" from="." to="ButtonClick" method="play"]
 [connection signal="pressed" from="BackButton" to="." method="exit"]
