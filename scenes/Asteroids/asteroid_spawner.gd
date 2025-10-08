@@ -10,7 +10,7 @@ var spawn_position: Vector2
 
 func show_lazers(asteroid_pos : Vector2):	
 	var l := %lazer0
-	l.points[0] = l.to_local(%character.global_position)
+	l.points[0] = l.to_local(%character.global_position) + Vector2(0, -50)
 	l.points[1] = l.to_local(asteroid_pos)
 	l.show()
 
@@ -22,23 +22,21 @@ func spawn_asteroid():
 	current_asteroid.configure_position(%spawn_position.global_position)
 	
 func destroy_asteroid(showLazer: bool):
+
+	if (self.get_child(0) == null):
+		return
+	
 	var child_asteroid = self.get_child(0)
 	%AsteroidParticles.global_position = child_asteroid.global_position
 	child_asteroid.queue_free()
 	
-	
 	%AsteroidParticles.emitting = true
 	
-	
-
 	if (showLazer):
 		%laser_sound.play();
 		show_lazers(child_asteroid.global_position)
 		await get_tree().create_timer(.1).timeout
 		%lazer0.hide()
-		
-	
-	
 	
 	call_deferred("spawn_asteroid")
 
