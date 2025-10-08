@@ -50,7 +50,7 @@ static func set_highscore(student_id: String, topic: String, lesson: String, sco
 		# Create student file
 		FileAccess.open(path, FileAccess.WRITE).close()
 	
-	var file = FileAccess.open(path, FileAccess.WRITE)
+	var file = FileAccess.open(path, FileAccess.READ_WRITE)
 	var completed_lessons = file.get_as_text().split('\n')
 	if !topic + '/lessons/' + lesson in completed_lessons:
 		file.store_string(topic + '/lessons/' + lesson + '=' + str(score))
