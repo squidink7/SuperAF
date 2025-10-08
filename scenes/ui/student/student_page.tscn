@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://darnphekqlp7w" path="res://scenes/ui/student/student_page.gd" id="1_cmtof"]
 [ext_resource type="AudioStream" uid="uid://b0tn7u4r5htqv" path="res://assets/SFX/button clicks/buttonclick0.wav" id="2_dhq80"]
 [ext_resource type="ButtonGroup" uid="uid://dflymejev5ehq" path="res://scenes/ui/student/game_mode_button_group.tres" id="2_ds8ba"]
-[ext_resource type="ButtonGroup" uid="uid://b5g41n8qkunlm" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
+[ext_resource type="ButtonGroup" path="res://scenes/ui/student/difficulty_button_group.tres" id="2_qbap6"]
 [ext_resource type="AudioStream" uid="uid://lr4bqr6wyyrp" path="res://assets/SFX/button clicks/keypress0.wav" id="3_81rr2"]
 [ext_resource type="StyleBox" uid="uid://d3bke221qjiwb" path="res://assets/styles/panel.tres" id="4_81rr2"]
 [ext_resource type="StyleBox" uid="uid://bblnlk01egx71" path="res://assets/styles/button_pressed.tres" id="5_4ddgo"]
