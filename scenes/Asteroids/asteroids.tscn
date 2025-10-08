@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dcrefagwi3ii7" path="res://scripts/asteroids.gd" id="1_bogip"]
 [ext_resource type="Texture2D" uid="uid://bnvyglvs2hp87" path="res://assets/textures/visualisation game textures/Asteroids Textures/Background_space.png" id="2_daty3"]
 [ext_resource type="Script" uid="uid://b23juy4p7slg5" path="res://scenes/Asteroids/asteroid_spawner.gd" id="3_daty3"]
-[ext_resource type="Script" uid="uid://ctn3f5a3qvptd" path="res://scripts/ground.gd" id="5_ld5pd"]
+[ext_resource type="Script" path="res://scripts/ground.gd" id="5_ld5pd"]
 [ext_resource type="Texture2D" uid="uid://ittob6p8kt7y" path="res://assets/textures/hero.png" id="6_w5nbj"]
 [ext_resource type="PackedScene" uid="uid://b2miope68f6mo" path="res://objects/asteroids/asteroid_particles.tscn" id="7_ld5pd"]
 [ext_resource type="AudioStream" uid="uid://cl1rtn6c5u7u" path="res://assets/music/asteroid songv3.mp3" id="8_jt2mt"]

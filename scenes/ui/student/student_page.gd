@@ -7,6 +7,10 @@ var current_lesson: String
 
 var current_student_id := ''
 
+func _ready():
+	$/root/Main.play_music()
+	
+
 func setup(student_id: String):
 	var topics = Data.get_topics()
 

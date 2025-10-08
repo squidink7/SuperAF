@@ -18,10 +18,18 @@ func load_scene(scene: String):
 # Update the currently running scene
 func set_scene(scene: Node):
 	clear_scene()
-	add_child(scene)
+	%Scene.add_child(scene)
 
 # Clear any existing scene
 func clear_scene():
-	for scene in get_children():
-		remove_child(scene)
+	for scene in %Scene.get_children():
+		%Scene.remove_child(scene)
 		scene.queue_free()
+		
+		
+		
+func stop_music():
+	$MainMenuMusic.stream_paused = true
+	
+func play_music():
+	$MainMenuMusic.stream_paused = false

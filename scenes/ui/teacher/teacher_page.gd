@@ -3,7 +3,11 @@ extends Control
 var lesson_item = load('res://scenes/ui/teacher/lesson_item.tscn')
 var student_score_item = load('res://scenes/ui/teacher/student_passcheck.tscn')
 
+
+func _ready():
+	$/root/Main.play_music()
 func setup():
+	$/root/Main.play_music()
 	var topics = Data.get_topics()
 
 	for topic in topics:
